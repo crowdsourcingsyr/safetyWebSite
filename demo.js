@@ -6,32 +6,49 @@ if (Meteor.isClient) {
     Meteor.subscribe('queuemap', function() {});
     Meteor.subscribe('markers', function() {});
     Meteor.subscribe('safetyevents', {
-        onReady: function() {
-            var i = 0;
-            data_array = [0, 0, 0];
-            SafetyEvents.find().forEach(function(obj) { //traverse the collection and add to heatmap layer
-                data_array[i] = [obj.Lat, obj.Lon, .3];
-                i++;
-            })
+	    onReady: function() {
+		    var i = 0;
+		    data_array = [0, 0, 0];
+		    SafetyEvents.find().forEach(function(obj) { //traverse the collection and add to heatmap layer
+		        data_array[i] = [obj.Lat, obj.Lon, .3];
+		        i++;
+		    })
 
-            heat = L.heatLayer(data_array, {
-                radius: 20,
-                blur: 15,
-                max: 1,
-                gradient: {
-                    0: 'orange',
-                    1: 'red'
-                }
-            }).addTo(map);
-        }
+		   heat = L.heatLayer(data_array, {
+		        radius: 20,
+		        blur: 15,
+		        max: 1,
+		        gradient: {
+		            0: 'orange',
+		            1: 'red'
+		        }
+		    }).addTo(map);
+		}
+	    });
+     Meteor.startup(function() {
+		sAlert.config({
+		effect: '',
+		position: 'top-right',
+		timeout: 5000,
+		html: false,
+		onRouteClose: true,
+		stack: true,
+		offset: 0, // in px - will be added to first alert (bottom or top - depends of the position in config)
+		beep: false,
+		onClose: _.noop
+      });
+
     });
-
+	
     Template.map.rendered = function() {
+ 	$('.datetimepicker').each(function(){
+           $(this).datetimepicker(); 
+     	});
         L.Icon.Default.imagePath = 'packages/bevanhunt_leaflet/images';
 
         map = L.map('map', {
             doubleClickZoom: false
-        }).setView([43.0391534, -76.1351158], 15);
+        }).setView([43.0391534, -76.1351158], 14);
 
         var tiles = L.tileLayer.provider('MapQuestOpen.OSM').addTo(map);
 
@@ -115,16 +132,29 @@ if (Meteor.isClient) {
         });
     };
 
+    
+    Template.map.events({
+    "change #category-select": function (event, template) {
+        var category = $(event.currentTarget).val();
+        console.log("category : " + category);
+        // additional code to do what you want with the category
+    }
+    });
+
+     
+
+
     $(function() {
         $(document).ready(function() {
             $('#map').css({
-                height: $(window).height() + 'px'
+                height: $(window).height()*.65 + 'px'
             });
         });
         $(window).resize(function() {
             $('#map').css({
-                height: $(window).height() + 'px'
+                height: $(window).height()*.65 + 'px'
             });
+	   
         });
     });
 }

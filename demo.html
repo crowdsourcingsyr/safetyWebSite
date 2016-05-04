@@ -1,9 +1,53 @@
 <head>
   <title>Salt lab Demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 
 <body>
+	 {{> sAlert}}
+         <div class="page-header">
+        	<h3>Public Safety Website</h3>
+        </div>
+
+     
+	<form>
+	    <div class="form-group">
+		 <div class="row">
+		<div class="col-md-4">
+		<label for="myInput">Start Date</label>
+	 	<div class="input-group datetimepicker">
+		     <input name="idInput" id="idInput" class="set-due-date form-control" type="text"/>
+		      <span class="input-group-addon">
+		            <span class="glyphicon glyphicon-calendar"></span>
+		      </span>
+		 </div>
+		</div>
+		<div class="col-md-4">
+		<label for="myInput">End Date</label>
+	 	<div class="input-group datetimepicker">
+		       <input name="idInput" id="idInput" class="set-due-date form-control" type="text"/>
+			<span class="input-group-addon">
+		            <span class="glyphicon glyphicon-calendar"></span>
+		      </span>
+		  </div>
+		</div>
+		<div class="col-md-4">
+		<label for="myInput">Severity Level</label><br>
+		<select id="category-select" class="btn btn-default dropdown-toggle">
+	    		<option value="any" selected="selected">Any</option> 
+	    		<option value="low">Low</option>
+			<option value="medium">Medium</option>
+			<option value="high">High</option>
+
+		</select>
+		</div>
+	     </div>
+	    </div>
+		<button type="button" class="btn btn-default">Submit</button>
+		<button type="button" class="btn btn-default">Reset</button>
+	  </form>
+	
+	
+	
   {{> map}}
 </body>
 
