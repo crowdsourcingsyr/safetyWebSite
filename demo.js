@@ -3,47 +3,108 @@ QueueMap = new Mongo.Collection('queuemap');
 SafetyEvents = new Mongo.Collection('safetyevents');
 
 if (Meteor.isClient) {
+
     Meteor.subscribe('queuemap', function() {});
     Meteor.subscribe('markers', function() {});
     Meteor.subscribe('safetyevents', {
-	    onReady: function() {
-		    var i = 0;
-		    data_array = [0, 0, 0];
-		    SafetyEvents.find().forEach(function(obj) { //traverse the collection and add to heatmap layer
-		        data_array[i] = [obj.Lat, obj.Lon, .3];
-		        i++;
-		    })
-
-		   heat = L.heatLayer(data_array, {
-		        radius: 20,
-		        blur: 15,
-		        max: 1,
-		        gradient: {
-		            0: 'orange',
-		            1: 'red'
-		        }
-		    }).addTo(map);
-		}
-	    });
-     Meteor.startup(function() {
-		sAlert.config({
-		effect: '',
-		position: 'top-right',
-		timeout: 5000,
-		html: false,
-		onRouteClose: true,
-		stack: true,
-		offset: 0, // in px - will be added to first alert (bottom or top - depends of the position in config)
-		beep: false,
-		onClose: _.noop
-      });
+        onReady: function() {
+            var data_array = [0, 0, 0];
+            heat = L.heatLayer(data_array, {
+                radius: 20,
+                blur: 15,
+                max: 1,
+                gradient: {
+                    0: 'orange',
+                    1: 'red'
+                }
+            });
+            map.addLayer(heat);
+            dataLoading = false; //to prevent tracker.autorun being called when data is loading to client collection
+        }
 
     });
-	
+    Meteor.startup(function() {
+        dataLoading = true;
+        sAlert.config({
+            effect: '',
+            position: 'top-right',
+            timeout: 5000,
+            html: false,
+            onRouteClose: true,
+            stack: true,
+            offset: 0, // in px - will be added to first alert (bottom or top - depends of the position in config)
+            beep: false,
+            onClose: _.noop
+        });
+        Tracker.autorun(function() {
+            SafetyEvents.find().observeChanges({
+                added: function(id, doc) {
+                    if (!dataLoading) {
+                        var alertTriggered = false;
+                        console.log(doc.Lat);
+                        Markers.find().forEach(function(obj) {
+                            if ((doc.Lat - obj.latlng.lat) ^ 2 + (doc.Lon - obj.latlng.lng) ^ 2 < obj.latlng.radius ^ 2) //check if the point is within each of the markers
+                                alertTriggered = true;
+                        })
+                        if (alertTriggered)
+                            sAlert.info('Crime Event Occured At 120 E Colvin');
+                    }
+                }
+            });
+
+        });
+
+
+    });
+
+
+    Template.form.events({ //filter map data on form submit
+        'submit form': function(event) {
+            event.preventDefault();
+            var startDate = event.target.start_date.value;
+            var endDate = event.target.end_date.value;
+            var severity = parseInt(event.target.severity.value);
+            var i = 0;
+            var data_array = [0, 0, 0];
+
+            if (severity == 10)
+                var results = SafetyEvents.find({
+                    "Date_Time_Reported": {
+                        $gte: new Date(startDate),
+                        $lte: new Date(endDate)
+                    }
+                });
+            else
+                var results = SafetyEvents.find({
+                    "Date_Time_Reported": {
+                        $gte: new Date(startDate),
+                        $lte: new Date(endDate)
+                    },
+                    "Severity": severity
+                });
+            results.forEach(function(obj) { //update the query based on filtering params
+                data_array[i] = [obj.Lat, obj.Lon, .7];
+                i++;
+            })
+            map.removeLayer(heat);
+
+
+            heat = L.heatLayer(data_array, {
+                radius: 20,
+                blur: 15,
+                max: 1,
+                gradient: {
+                    0: 'orange',
+                    1: 'red'
+                }
+            });
+            map.addLayer(heat);
+        }
+    });
     Template.map.rendered = function() {
- 	$('.datetimepicker').each(function(){
-           $(this).datetimepicker(); 
-     	});
+        $('.datetimepicker').each(function() {
+            $(this).datetimepicker();
+        });
         L.Icon.Default.imagePath = 'packages/bevanhunt_leaflet/images';
 
         map = L.map('map', {
@@ -57,12 +118,13 @@ if (Meteor.isClient) {
         map.addControl(new L.Control.Draw({
             draw: {
                 polyline: false,
-                polygon: false,
-                rectangle: false
+                polygon: true,
+                rectangle: false,
+		marker:false
             },
             edit: {
                 featureGroup: drawnItems,
-                edit: false,
+                edit: true,
                 remove: true
             }
         }));
@@ -132,29 +194,20 @@ if (Meteor.isClient) {
         });
     };
 
-    
-    Template.map.events({
-    "change #category-select": function (event, template) {
-        var category = $(event.currentTarget).val();
-        console.log("category : " + category);
-        // additional code to do what you want with the category
-    }
-    });
 
-     
 
 
     $(function() {
         $(document).ready(function() {
             $('#map').css({
-                height: $(window).height()*.65 + 'px'
+                height: $(window).height() * .65 + 'px'
             });
         });
         $(window).resize(function() {
             $('#map').css({
-                height: $(window).height()*.65 + 'px'
+                height: $(window).height() * .65 + 'px'
             });
-	   
+
         });
     });
 }
