@@ -1,8 +1,6 @@
  Meteor.startup(function() {
         dataLoading = true;
        
-	   
-
         sAlert.config({
             effect: '',
             position: 'top-right',

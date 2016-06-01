@@ -29,9 +29,15 @@ if (Meteor.isClient) {
             SafetyEvents.find().forEach(function(obj) {//assuming that safetyevents takes longer to load than markers. When the number of users becomes larger than number of events, this will have to be changed. Currently meteor has no way to trigger event when all data subsciptions are loaded
             var results = Markers.find();
             results.forEach(function(doc) { 
-
-            if (getDistanceFromLatLonInKm(obj.Lat,obj.Lon,doc.latlng.lat,doc.latlng.lng) < doc.radius/1000) //check if the point is within each of the markers
+            if (doc.LayerType =='circle'){
+                if (getDistanceFromLatLonInKm(obj.Lat,obj.Lon,doc.latlng.lat,doc.latlng.lng) < doc.radius/1000) //check if the point is within each of the markers
                     triggeredEvents.push(obj);
+            }
+            else
+            {
+                if(isInPolygon(obj.Lat,obj.Lon,doc.latlngs))
+                     triggeredEvents.push(obj);
+            }
 
           })
       
@@ -93,8 +99,8 @@ if (Meteor.isClient) {
             map.addLayer(heat);*/
         },
         'click .reset': function (e) {
-              e.preventDefault();
-              console.log("You pressed the button");
+            //  e.preventDefault();
+            
              Markers.find({}).forEach(function(doc){
                 Markers.remove({_id:doc._id });
             });
@@ -133,8 +139,8 @@ if (Meteor.isClient) {
             },
             edit: {
                 featureGroup: drawnItems,
-                edit: true,
-                remove: true
+                edit: false,
+                remove: false
             }
         }));
 
@@ -154,6 +160,9 @@ if (Meteor.isClient) {
                 case 'circle':
                     feature.latlng = event.layer._latlng;
                     feature.radius = event.layer._mRadius;
+                    break;
+                case 'polygon':
+                    feature.latlngs = event.layer._latlngs;
                     break;
             }
             console.log(feature);
@@ -185,6 +194,11 @@ if (Meteor.isClient) {
                         var circle = L.circle(document.latlng, document.radius);
                         circle._leaflet_id = document._id;
                         circle.addTo(drawnItems);
+                        break;
+                    case 'polygon':
+                        var polygon = L.polygon(document.latlngs);
+                        polygon._leaflet_id = document._id;
+                        polygon.addTo(drawnItems);
                         break;
                 }
             },
@@ -218,7 +232,7 @@ if (Meteor.isClient) {
             }
         for(i=0;i<eventMarker.length;i++)
                 map.removeLayer(eventMarker[i]);
-        eventMarker[0] =  L.marker([this.Lat, this.Lon], {icon: greenIcon}).addTo(map).bindPopup("<b>Type:</b> "+this.Nature_Classification+"<br>"+"<b>Location:</b>"+this.General_Location);
+                eventMarker[0] =  L.marker([this.Lat, this.Lon], {icon: greenIcon}).addTo(map).bindPopup("<b>Type:</b> "+this.Nature_Classification+"<br>"+"<b>Location:</b>"+this.General_Location);
         //$('.eventRow').removeClass('highlight');
         //$(e.currentTarget).addClass('highlight');
       }
@@ -238,7 +252,7 @@ if (Meteor.isClient) {
         }
     }});
 
-
+   
    $(function() {
         $(document).ready(function() {
             $('#map').css({
@@ -271,3 +285,25 @@ function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
       var d = R * c; // Distance in km
       return d;
     }
+
+
+    function isInPolygon(lat,lon, vs) {
+    // ray-casting algorithm based on
+    // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
+
+
+    var x = lat, y = lon;
+
+    var inside = false;
+    for (var i = 1, j = vs.length -1; i < vs.length; j = i++) {
+
+        var xi = vs[i].lat, yi = vs[i].lng;
+        var xj = vs[j].lat, yj = vs[j].lng;
+
+        var intersect = ((yi > y) != (yj > y))
+            && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+        if (intersect) inside = !inside;
+    }
+
+    return inside;
+};
