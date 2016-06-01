@@ -29,7 +29,8 @@ if (Meteor.isClient) {
             SafetyEvents.find().forEach(function(obj) {//assuming that safetyevents takes longer to load than markers. When the number of users becomes larger than number of events, this will have to be changed. Currently meteor has no way to trigger event when all data subsciptions are loaded
             var results = Markers.find();
             results.forEach(function(doc) { 
-            if (doc.LayerType =='circle'){
+                console.log(doc.layerType);
+            if (doc.layerType =='circle'){
                 if (getDistanceFromLatLonInKm(obj.Lat,obj.Lon,doc.latlng.lat,doc.latlng.lng) < doc.radius/1000) //check if the point is within each of the markers
                     triggeredEvents.push(obj);
             }
