@@ -12,6 +12,11 @@
             beep: false,
             onClose: _.noop
         });
+        Comments.config({
+          anonymous: true,
+          anonymousSalt: 'myRandomSalt',
+          template: 'bootstrap' 
+        });
         Tracker.autorun(function() {
             SafetyEvents.find().observeChanges({
                 added: function(id, doc) {

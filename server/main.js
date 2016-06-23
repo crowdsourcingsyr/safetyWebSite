@@ -1,18 +1,7 @@
 Markers = new Mongo.Collection('markers');
-//QueueMap = new Mongo.Collection('queuemap');
+Comments = new Mongo.Collection("eventcomments");
 SafetyEvents = new Mongo.Collection('safetyevents');
-if (Meteor.isServer) {
- 
-     Meteor.publish('markers', function() {
-                return Markers.find({});
-        });
- /*   Meteor.publish('queuemap', function() {
-        return QueueMap.find({});
-    });*/
-    Meteor.publish('safetyevents', function() {
-        return SafetyEvents.find({});
-    });
-}
+
 
 
 if (Meteor.isServer) {
@@ -62,9 +51,9 @@ if (Meteor.isServer) {
      Meteor.publish('markers', function() {
                 return Markers.find({});
         });
- /*   Meteor.publish('queuemap', function() {
-        return QueueMap.find({});
-    });*/
+   Meteor.publish('eventcomments', function() {
+        return Comments.find({});
+    });
     Meteor.publish('safetyevents', function() {
         return SafetyEvents.find({});
     });

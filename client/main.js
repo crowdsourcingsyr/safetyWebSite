@@ -1,11 +1,17 @@
 Markers = new Mongo.Collection('markers');
-//QueueMap = new Mongo.Collection('queuemap');
 SafetyEvents = new Mongo.Collection('safetyevents');
+Comments = new Mongo.Collection("eventcomments");
+
 
 if (Meteor.isClient) {
 
  //   Meteor.subscribe('queuemap', function() {});
     Meteor.subscribe('markers', {
+        onReady: function(){
+      
+    }
+});
+    Meteor.subscribe('eventcomments', {
         onReady: function(){
       
     }
@@ -82,7 +88,29 @@ if (Meteor.isClient) {
             
             results.forEach(function(obj) { //update the query based on filtering params
                 data_array[i] = [obj.Lat, obj.Lon, .7];
-                eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: greenIcon}).addTo(map).bindPopup("<b>Type:</b> "+obj.Nature_Classification+"<br>"+"<b>Location:</b>"+obj.General_Location);
+                //eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: greenIcon}).addTo(map).bindPopup("<b>Type:</b> "+obj.Nature_Classification+"<br>"+"<b>Location:</b>"+obj.General_Location);
+               eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: greenIcon}).addTo(map);
+               containerNode = document.createElement('div'); // wrapping node for bindPopup;
+                  // Which template to use for the popup? Some data for it, and attach it to the containerNode
+                 var commentsJSON = {
+                    comment: []
+                };
+
+                 Comments.find({}, {sort: {count:-1}, limit:5}).forEach(function(obj){
+                         commentsJSON.comment.push({ 
+                           "content"       : obj.message 
+                    });
+                 })
+               /*  dataContext = {comment: [
+                { content: 'David' },
+                { content: 'Shaune' }
+              ]};*/
+              
+                  Blaze.renderWithData(Template.eventComments, commentsJSON, containerNode);
+                  // Finally bind the containerNode to the popup
+                  eventMarker[i].bindPopup(containerNode).openPopup();
+
+
                 i++;
             })
           /*  map.removeLayer(heat);
@@ -99,12 +127,24 @@ if (Meteor.isClient) {
             });
             map.addLayer(heat);*/
         },
+        "change #university": function(evt) {
+          var newValue = $(evt.target).val();
+          console.log(newValue);
+          var oldValue = Session.get("university");
+          if (newValue != oldValue) {
+            // value changed, let's do something
+           Session.setPersistent('university', newValue);
+           location.reload();
+          }
+          
+        },
         'click .reset': function (e) {
             //  e.preventDefault();
             
              Markers.find({}).forEach(function(doc){
                 Markers.remove({_id:doc._id });
             });
+            location.reload();
     }
     });
     Template.map.rendered = function() {
@@ -122,10 +162,21 @@ if (Meteor.isClient) {
                 popupAnchor:  [-3, -76]
             }
         });
-        greenIcon = new LeafIcon({iconUrl: 'green.png'}),
-        map = L.map('map', {
-            doubleClickZoom: false
-        }).setView([43.0391534, -76.1351158], 14);
+        greenIcon = new LeafIcon({iconUrl: 'green.png'});
+        console.log(Session.get('university'));
+        if(Session.get('university')==1)
+        {
+             map = L.map('map', {
+                    doubleClickZoom: false
+                }).setView([34.068921, -118.4451811], 14);
+
+        }
+        else
+        {
+                map = L.map('map', {
+                    doubleClickZoom: false
+                }).setView([43.0391534, -76.1351158], 14);
+        }
 
         var tiles = L.tileLayer.provider('MapQuestOpen.OSM').addTo(map);
 
@@ -226,6 +277,15 @@ if (Meteor.isClient) {
            return triggeredEvents;
         }
     });
+     Template.form.helpers({
+        syracuseSelected: function () {
+          return (Session.get('university') == 0) ? 'selected' : '';
+        },
+        uclaSelected: function () {
+          return (Session.get('university') == 1) ? 'selected' : '';
+        }
+    });
+
     Template.eventRow.events({
       'click': function(e) {
         if (typeof eventMarker == 'undefined') {
@@ -233,7 +293,7 @@ if (Meteor.isClient) {
             }
         for(i=0;i<eventMarker.length;i++)
                 map.removeLayer(eventMarker[i]);
-                eventMarker[0] =  L.marker([this.Lat, this.Lon], {icon: greenIcon}).addTo(map).bindPopup("<b>Type:</b> "+this.Nature_Classification+"<br>"+"<b>Location:</b>"+this.General_Location);
+                eventMarker[0] =  L.marker([this.Lat, this.Lon], {icon: greenIcon}).addTo(map).bindPopup("<b>Type:</b> "+this.Nature_Classification+"<br>"+"<b>Location:</b>"+this.General_Location+"<br>{{>eventComments}}");
         //$('.eventRow').removeClass('highlight');
         //$(e.currentTarget).addClass('highlight');
       }
@@ -288,7 +348,7 @@ function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
     }
 
 
-    function isInPolygon(lat,lon, vs) {
+function isInPolygon(lat,lon, vs) {
     // ray-casting algorithm based on
     // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
 

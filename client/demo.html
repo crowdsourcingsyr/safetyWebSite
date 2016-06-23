@@ -77,6 +77,17 @@
 <template name="form">
 <form id="filter-form">
 	    <div class="form-group">
+	     <div class="row">
+		<div class="col-md-12">
+		<label for="myInput">University</label><br>
+		<select id="university" class="btn btn-default dropdown-toggle">
+				
+	    		<option value="0" {{syracuseSelected}}>Syracuse University</option> 
+	    		<option value="1" {{uclaSelected}}>UCLA</option>
+	    		
+		</select>
+		</div>
+	     </div>
 		 <div class="row">
 		<div class="col-md-6">
 		<label for="myInput">Start Date</label>
@@ -163,4 +174,20 @@
                            {{Nature_Classification}}
                         </td>
                     </tr>
+</template>
+
+<template name="eventComments">
+    <ul>
+        {{#each comment}}
+           <li>{{content}}</li>
+        {{/each}}
+        {{>enterComment}}
+    </ul>
+</template>
+
+ <template name="enterComment">
+    {{> commentsBox 
+        id=post._id 
+        
+    }}
 </template>
