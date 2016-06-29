@@ -84,7 +84,9 @@
 				
 	    		<option value="0" {{syracuseSelected}}>Syracuse University</option> 
 	    		<option value="1" {{uclaSelected}}>UCLA</option>
-	    		
+                <option value="2" {{cornellSelected}}>Cornell</option>
+                <option value="3" {{NYUSelected}}>New York University</option>
+	    		<option value="4" {{stanfordSelected}}>Stanford University</option>
 		</select>
 		</div>
 	     </div>
@@ -178,16 +180,33 @@
 
 <template name="eventComments">
     <ul>
+    <b>Event Type:</b> {{Nature_Classification}}<br>
+    <b>Occured at: </b> {{Date_Time_Occurred}}
+    </ul>   
+    <ul>
+        <b>Comments:</b>
         {{#each comment}}
            <li>{{content}}</li>
         {{/each}}
-        {{>enterComment}}
+        {{>commentSubmit}}
     </ul>
 </template>
 
- <template name="enterComment">
-    {{> commentsBox 
-        id=post._id 
-        
-    }}
+ <template name="commentSubmit">
+  <form id="comment" class="comment-form">
+    <div class="control-group">
+        <div class="controls">
+            <label for="body">Comment on this event</label>
+
+            <textarea name="commentText"></textarea>
+             <textarea name="event_id" style="display:none">{{event_id}}</textarea>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button  class="commentbtn">Add Comment</button>
+        </div>
+    </div>
+
+  </form>
 </template>

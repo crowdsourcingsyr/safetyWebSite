@@ -1,6 +1,7 @@
 Markers = new Mongo.Collection('markers');
 Comments = new Mongo.Collection("eventcomments");
 SafetyEvents = new Mongo.Collection('safetyevents');
+EventToComment = new Mongo.Collection("eventtocomment");
 
 
 
@@ -53,6 +54,9 @@ if (Meteor.isServer) {
         });
    Meteor.publish('eventcomments', function() {
         return Comments.find({});
+    });
+    Meteor.publish('eventtocomment', function() {
+        return EventToComment.find({});
     });
     Meteor.publish('safetyevents', function() {
         return SafetyEvents.find({});

@@ -1,19 +1,20 @@
 Markers = new Mongo.Collection('markers');
 SafetyEvents = new Mongo.Collection('safetyevents');
 Comments = new Mongo.Collection("eventcomments");
+EventToComment = new Mongo.Collection("eventtocomment");
 
 
 if (Meteor.isClient) {
-
- //   Meteor.subscribe('queuemap', function() {});
     Meteor.subscribe('markers', {
-        onReady: function(){
-      
+        onReady: function(){      
     }
 });
     Meteor.subscribe('eventcomments', {
-        onReady: function(){
-      
+        onReady: function(){      
+    }
+});
+     Meteor.subscribe('eventtocomment', {
+        onReady: function(){      
     }
 });
     Meteor.subscribe('safetyevents', {
@@ -29,8 +30,6 @@ if (Meteor.isClient) {
                 }
             });
             map.addLayer(heat);
-
-
             triggeredEvents= []
             SafetyEvents.find().forEach(function(obj) {//assuming that safetyevents takes longer to load than markers. When the number of users becomes larger than number of events, this will have to be changed. Currently meteor has no way to trigger event when all data subsciptions are loaded
             var results = Markers.find();
@@ -83,50 +82,57 @@ if (Meteor.isClient) {
             if (typeof eventMarker == 'undefined') {
                 eventMarker=[];
             }
+           
             for(i=0;i<eventMarker.length;i++)
                 map.removeLayer(eventMarker[i]);
             
-            results.forEach(function(obj) { //update the query based on filtering params
-                data_array[i] = [obj.Lat, obj.Lon, .7];
-                //eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: greenIcon}).addTo(map).bindPopup("<b>Type:</b> "+obj.Nature_Classification+"<br>"+"<b>Location:</b>"+obj.General_Location);
-               eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: greenIcon}).addTo(map);
-               containerNode = document.createElement('div'); // wrapping node for bindPopup;
-                  // Which template to use for the popup? Some data for it, and attach it to the containerNode
-                 var commentsJSON = {
-                    comment: []
-                };
-
-                 Comments.find({}, {sort: {count:-1}, limit:5}).forEach(function(obj){
-                         commentsJSON.comment.push({ 
-                           "content"       : obj.message 
-                    });
-                 })
-               /*  dataContext = {comment: [
-                { content: 'David' },
-                { content: 'Shaune' }
-              ]};*/
-              
-                  Blaze.renderWithData(Template.eventComments, commentsJSON, containerNode);
-                  // Finally bind the containerNode to the popup
-                  eventMarker[i].bindPopup(containerNode).openPopup();
-
-
-                i++;
+            results.forEach(function(obj) { //add markers to map for each result
+                if(obj.Severity==2)
+                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: highIcon,riseOnHover:true,opacity:0.8}).addTo(map);
+                else if(obj.Severity==1)
+                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: mediumIcon,riseOnHover:true,opacity:0.8}).addTo(map);
+                else if(obj.Severity==0)
+                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: lowIcon,riseOnHover:true,opacity:0.8}).addTo(map);
+           
+                eventMarker[i].eventId = obj.ReportID;//pass the event id
+                eventMarker[i].addTo(map).on('mouseover', function(e) {//marker on click 
+                    
+                    comments=  EventToComment.find({ "event_id": e.target.eventId }).fetch();//search for comments that are connected to that event 
+                    commentsJSON={comment: [],event_id:0, Date_Time_Occurred: 0, Nature_Classification:0};
+                     for(j=0;j<comments.length;j++){
+                        Comments.find({id:comments[j].comment_id}, {sort: {count:-1}, limit:5}).forEach(function(obj){//pass the comments to datacontext i.e. commentsJSON
+                                commentsJSON.comment.push({ 
+                                "content"       : obj.message 
+                                });
+                            })
+                    }
+                    
+                    containerNode = document.createElement('div'); 
+                     
+                    commentsJSON.event_id=e.target.eventId;
+                    commentsJSON.Date_Time_Occurred=obj.Date_Time_Occurred;
+                    commentsJSON.Nature_Classification= obj.Nature_Classification;
+                    Blaze.renderWithData(Template.eventComments, commentsJSON, containerNode);//pass the data into the eventComments template
+                    popup = this.bindPopup(containerNode);
+                    popup.openPopup();
+                    $("#comment").submit(function(e){//comment form submit button handler
+                        e.preventDefault();
+                        commentId = Math.floor(Math.random()*1000000);
+                        Comments.insert({
+                                id: commentId,
+                                message: e.target.commentText.value
+                            });
+                        EventToComment.insert({                            
+                            event_id:e.target.event_id.value,
+                            comment_id: commentId
+                            });
+                            });
+                        });
+                    i++;
             })
-          /*  map.removeLayer(heat);
-
-
-            heat = L.heatLayer(data_array, {
-                radius: 20,
-                blur: 15,
-                max: 1,
-                gradient: {
-                    0: 'orange',
-                    1: 'red'
-                }
-            });
-            map.addLayer(heat);*/
+         
         },
+       
         "change #university": function(evt) {
           var newValue = $(evt.target).val();
           console.log(newValue);
@@ -139,13 +145,12 @@ if (Meteor.isClient) {
           
         },
         'click .reset': function (e) {
-            //  e.preventDefault();
-            
-             Markers.find({}).forEach(function(doc){
+                Markers.find({}).forEach(function(doc){
                 Markers.remove({_id:doc._id });
             });
             location.reload();
     }
+
     });
     Template.map.rendered = function() {
         $('.datetimepicker').each(function() {
@@ -155,27 +160,48 @@ if (Meteor.isClient) {
         var LeafIcon = L.Icon.extend({
             options: {
              //   shadowUrl: 'marker_shadow.png',
-                iconSize:     [38, 50],
+                iconSize:     [15, 15],
                 shadowSize:   [50, 64],
-                iconAnchor:   [22, 94],
+                iconAnchor:   [10, 10],
                 shadowAnchor: [4, 62],
-                popupAnchor:  [-3, -76]
+                popupAnchor:  [0, 0]
             }
         });
-        greenIcon = new LeafIcon({iconUrl: 'green.png'});
+        highIcon = new LeafIcon({iconUrl: 'high.png'});
+         mediumIcon = new LeafIcon({iconUrl: 'medium.png'});
+        lowIcon = new LeafIcon({iconUrl: 'low.png'});
         console.log(Session.get('university'));
-        if(Session.get('university')==1)
+         if(Session.get('university')==0)
+        {
+                map = L.map('map', {
+                    doubleClickZoom: false
+                }).setView([43.0391534, -76.1351158], 14);
+        }
+        else if(Session.get('university')==1)
         {
              map = L.map('map', {
                     doubleClickZoom: false
                 }).setView([34.068921, -118.4451811], 14);
 
         }
-        else
+        else if(Session.get('university')==2)
+        {
+             map = L.map('map', {
+                    doubleClickZoom: false
+                }).setView([42.4534492, -76.4735027], 14);
+
+        }
+         else if(Session.get('university')==3)
         {
                 map = L.map('map', {
                     doubleClickZoom: false
-                }).setView([43.0391534, -76.1351158], 14);
+                }).setView([40.7295134, -73.9964609], 15);
+        }
+         else if(Session.get('university')==4)
+        {
+                map = L.map('map', {
+                    doubleClickZoom: false
+                }).setView([37.4274745, -122.169719], 14);
         }
 
         var tiles = L.tileLayer.provider('MapQuestOpen.OSM').addTo(map);
@@ -283,6 +309,15 @@ if (Meteor.isClient) {
         },
         uclaSelected: function () {
           return (Session.get('university') == 1) ? 'selected' : '';
+        },
+        cornellSelected: function () {
+          return (Session.get('university') == 2) ? 'selected' : '';
+        },
+         NYUSelected: function () {
+          return (Session.get('university') == 3) ? 'selected' : '';
+        },
+         stanfordSelected: function () {
+          return (Session.get('university') == 4) ? 'selected' : '';
         }
     });
 
@@ -293,7 +328,7 @@ if (Meteor.isClient) {
             }
         for(i=0;i<eventMarker.length;i++)
                 map.removeLayer(eventMarker[i]);
-                eventMarker[0] =  L.marker([this.Lat, this.Lon], {icon: greenIcon}).addTo(map).bindPopup("<b>Type:</b> "+this.Nature_Classification+"<br>"+"<b>Location:</b>"+this.General_Location+"<br>{{>eventComments}}");
+                eventMarker[0] =  L.marker([this.Lat, this.Lon], {icon: highIcon}).addTo(map).bindPopup("<b>Type:</b> "+this.Nature_Classification+"<br>"+"<b>Location:</b>"+this.General_Location+"<br>{{>eventComments}}");
         //$('.eventRow').removeClass('highlight');
         //$(e.currentTarget).addClass('highlight');
       }
@@ -332,39 +367,3 @@ if (Meteor.isClient) {
 
 
 
-
-function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
-      var R = 6371; // Radius of the earth in km
-      var dLat = (lat2-lat1)*(Math.PI/180)  // deg2rad 
-      var dLon = (lon2-lon1)*(Math.PI/180) 
-      var a = 
-        Math.sin(dLat/2) * Math.sin(dLat/2) +
-        Math.cos(lat1*(Math.PI/180)) * Math.cos(lat2*Math.PI/180) * 
-        Math.sin(dLon/2) * Math.sin(dLon/2)
-        ; 
-      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-      var d = R * c; // Distance in km
-      return d;
-    }
-
-
-function isInPolygon(lat,lon, vs) {
-    // ray-casting algorithm based on
-    // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
-
-
-    var x = lat, y = lon;
-
-    var inside = false;
-    for (var i = 1, j = vs.length -1; i < vs.length; j = i++) {
-
-        var xi = vs[i].lat, yi = vs[i].lng;
-        var xj = vs[j].lat, yj = vs[j].lng;
-
-        var intersect = ((yi > y) != (yj > y))
-            && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
-        if (intersect) inside = !inside;
-    }
-
-    return inside;
-};
