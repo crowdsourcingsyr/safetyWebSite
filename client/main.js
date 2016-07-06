@@ -29,6 +29,8 @@ if (Meteor.isClient) {
                     1: 'red'
                 }
             });
+           Session.set('fromDate', "'"+moment().subtract(6, "months").format("L")+"'");
+            Session.set('toDate', "'"+moment().format("L")+"'");
             map.addLayer(heat);
             triggeredEvents= []
             SafetyEvents.find().forEach(function(obj) {//assuming that safetyevents takes longer to load than markers. When the number of users becomes larger than number of events, this will have to be changed. Currently meteor has no way to trigger event when all data subsciptions are loaded
@@ -56,82 +58,7 @@ if (Meteor.isClient) {
 
 
     Template.form.events({ //filter map data on form submit
-        'submit form': function(event) {
-            event.preventDefault();
-            var startDate = event.target.start_date.value;
-            var endDate = event.target.end_date.value;
-            var severity = parseInt(event.target.severity.value);
-            var i = 0;
-            var data_array = [0, 0, 0];
-
-            if (severity == 10)
-                var results = SafetyEvents.find({
-                    "Date_Time_Reported": {
-                        $gte: new Date(startDate),
-                        $lte: new Date(endDate)
-                    }
-                });
-            else
-                var results = SafetyEvents.find({
-                    "Date_Time_Reported": {
-                        $gte: new Date(startDate),
-                        $lte: new Date(endDate)
-                    },
-                    "Severity": severity
-                });
-            if (typeof eventMarker == 'undefined') {
-                eventMarker=[];
-            }
-           
-            for(i=0;i<eventMarker.length;i++)
-                map.removeLayer(eventMarker[i]);
-            
-            results.forEach(function(obj) { //add markers to map for each result
-                if(obj.Severity==2)
-                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: highIcon,riseOnHover:true,opacity:0.8}).addTo(map);
-                else if(obj.Severity==1)
-                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: mediumIcon,riseOnHover:true,opacity:0.8}).addTo(map);
-                else if(obj.Severity==0)
-                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: lowIcon,riseOnHover:true,opacity:0.8}).addTo(map);
-           
-                eventMarker[i].eventId = obj.ReportID;//pass the event id
-                eventMarker[i].addTo(map).on('mouseover', function(e) {//marker on click 
-                    
-                    comments=  EventToComment.find({ "event_id": e.target.eventId }).fetch();//search for comments that are connected to that event 
-                    commentsJSON={comment: [],event_id:0, Date_Time_Occurred: 0, Nature_Classification:0};
-                     for(j=0;j<comments.length;j++){
-                        Comments.find({id:comments[j].comment_id}, {sort: {count:-1}, limit:5}).forEach(function(obj){//pass the comments to datacontext i.e. commentsJSON
-                                commentsJSON.comment.push({ 
-                                "content"       : obj.message 
-                                });
-                            })
-                    }
-                    
-                    containerNode = document.createElement('div'); 
-                     
-                    commentsJSON.event_id=e.target.eventId;
-                    commentsJSON.Date_Time_Occurred=obj.Date_Time_Occurred;
-                    commentsJSON.Nature_Classification= obj.Nature_Classification;
-                    Blaze.renderWithData(Template.eventComments, commentsJSON, containerNode);//pass the data into the eventComments template
-                    popup = this.bindPopup(containerNode);
-                    popup.openPopup();
-                    $("#comment").submit(function(e){//comment form submit button handler
-                        e.preventDefault();
-                        commentId = Math.floor(Math.random()*1000000);
-                        Comments.insert({
-                                id: commentId,
-                                message: e.target.commentText.value
-                            });
-                        EventToComment.insert({                            
-                            event_id:e.target.event_id.value,
-                            comment_id: commentId
-                            });
-                            });
-                        });
-                    i++;
-            })
-         
-        },
+      
        
         "change #university": function(evt) {
           var newValue = $(evt.target).val();
@@ -144,6 +71,106 @@ if (Meteor.isClient) {
           }
           
         },
+        "change #severity": function(evt) {
+             var newValue = $(evt.target).val();
+             var oldValue = Session.get("severity");
+             if (newValue != oldValue) {
+                 // value changed, let's do something
+                 Session.set('severity', newValue);
+                 var fromDate = Session.get("fromDate");
+                 var toDate = Session.get("toDate");
+                 var severity = Session.get('severity');
+                 if (severity == 10) {
+                     var results = SafetyEvents.find({
+                         "Date_Time_Reported": {
+                             $gte: new Date(fromDate),
+                             $lte: new Date(toDate)
+                         }
+                     });
+                 } else {
+                     var results = SafetyEvents.find({
+                         "Date_Time_Reported": {
+                             $gte: new Date(fromDate),
+                             $lte: new Date(toDate)
+                         },
+                         "Severity": +severity
+                     });
+                 }
+                 if (typeof eventMarker == 'undefined') {
+                     eventMarker = [];
+                 }
+                 for (i = 0; i < eventMarker.length; i++)
+                     map.removeLayer(eventMarker[i]);
+                 results.forEach(function(obj) { //add markers to map for each result
+                     if (obj.Severity == 2)
+                         eventMarker[i] = L.marker([obj.Lat, obj.Lon], {
+                             icon: highIcon,
+                             riseOnHover: true,
+                             opacity: 0.8
+                         }).addTo(map);
+                     else if (obj.Severity == 1)
+                         eventMarker[i] = L.marker([obj.Lat, obj.Lon], {
+                             icon: mediumIcon,
+                             riseOnHover: true,
+                             opacity: 0.8
+                         }).addTo(map);
+                     else if (obj.Severity == 0)
+                         eventMarker[i] = L.marker([obj.Lat, obj.Lon], {
+                             icon: lowIcon,
+                             riseOnHover: true,
+                             opacity: 0.8
+                         }).addTo(map);
+
+                     eventMarker[i].eventId = obj.ReportID; //pass the event id
+                     eventMarker[i].addTo(map).on('mouseover', function(e) { //marker on click 
+
+                         comments = EventToComment.find({
+                             "event_id": e.target.eventId
+                         }).fetch(); //search for comments that are connected to that event 
+                         commentsJSON = {
+                             comment: [],
+                             event_id: 0,
+                             Date_Time_Occurred: 0,
+                             Nature_Classification: 0
+                         };
+                         for (j = 0; j < comments.length; j++) {
+                             Comments.find({
+                                 id: comments[j].comment_id
+                             }, {
+                                 sort: {
+                                     count: -1
+                                 },
+                                 limit: 5
+                             }).forEach(function(obj) { //pass the comments to datacontext i.e. commentsJSON
+                                 commentsJSON.comment.push({
+                                     "content": obj.message
+                                 });
+                             })
+                         }
+                         containerNode = document.createElement('div');
+                         commentsJSON.event_id = e.target.eventId;
+                         commentsJSON.Date_Time_Occurred = obj.Date_Time_Occurred;
+                         commentsJSON.Nature_Classification = obj.Nature_Classification;
+                         Blaze.renderWithData(Template.eventComments, commentsJSON, containerNode); //pass the data into the eventComments template
+                         popup = this.bindPopup(containerNode);
+                         popup.openPopup();
+                         $("#comment").submit(function(e) { //comment form submit button handler
+                             e.preventDefault();
+                             commentId = Math.floor(Math.random() * 1000000);
+                             Comments.insert({
+                                 id: commentId,
+                                 message: e.target.commentText.value
+                             });
+                             EventToComment.insert({
+                                 event_id: e.target.event_id.value,
+                                 comment_id: commentId
+                             });
+                         });
+                     });
+                     i++;
+                 })
+             }
+         },
         'click .reset': function (e) {
                 Markers.find({}).forEach(function(doc){
                 Markers.remove({_id:doc._id });
@@ -156,6 +183,7 @@ if (Meteor.isClient) {
         $('.datetimepicker').each(function() {
             $(this).datetimepicker();
         });
+         Session.set('severity',10);
         L.Icon.Default.imagePath = '/public';
         var LeafIcon = L.Icon.extend({
             options: {
@@ -181,27 +209,27 @@ if (Meteor.isClient) {
         {
              map = L.map('map', {
                     doubleClickZoom: false
-                }).setView([34.068921, -118.4451811], 14);
+                }).setView([33.7925195,-84.3239989], 14);
 
         }
         else if(Session.get('university')==2)
         {
              map = L.map('map', {
                     doubleClickZoom: false
-                }).setView([42.4534492, -76.4735027], 14);
+                }).setView([29.7173941,-95.4018312], 14);
 
         }
          else if(Session.get('university')==3)
         {
                 map = L.map('map', {
                     doubleClickZoom: false
-                }).setView([40.7295134, -73.9964609], 15);
+                }).setView([33.7756178,-84.396285], 14);
         }
          else if(Session.get('university')==4)
         {
                 map = L.map('map', {
                     doubleClickZoom: false
-                }).setView([37.4274745, -122.169719], 14);
+                }).setView([43.0008093,-78.7889697], 14);
         }
 
         var tiles = L.tileLayer.provider('MapQuestOpen.OSM').addTo(map);
@@ -294,6 +322,93 @@ if (Meteor.isClient) {
             }
         });
     };
+     Template.form.rendered=function(){
+        $("#daterange").ionRangeSlider({
+              type: "double",
+        min: +moment().subtract(3, "years").format("X"),
+        max: +moment().format("X"),
+        from: +moment().subtract(6, "months").format("X"),
+        to:+moment().format("X"),
+        onFinish: function (data) {
+
+        var fromDate="'"+moment.unix(data.from).format("MM/DD/YYYY")+"'";
+         var toDate="'"+moment.unix(data.to).format("MM/DD/YYYY")+"'";
+         Session.set('fromDate', fromDate);
+         Session.set('toDate', toDate);
+
+         var severity=Session.get('severity'); 
+         if (severity== 10){
+                var results = SafetyEvents.find({
+                    "Date_Time_Reported": {
+                        $gte: new Date(fromDate),
+                        $lte: new Date(toDate)
+                    }
+                });
+            }
+            else{
+                var results = SafetyEvents.find({
+                    "Date_Time_Reported": {
+                        $gte: new Date(fromDate),
+                        $lte: new Date(toDate)
+                    },
+                    "Severity": +severity
+                });
+           }
+            if (typeof eventMarker == 'undefined') {
+                eventMarker=[];
+            }
+            for(i=0;i<eventMarker.length;i++)
+                map.removeLayer(eventMarker[i]);
+            results.forEach(function(obj) { //add markers to map for each result
+                if(obj.Severity==2)
+                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: highIcon,riseOnHover:true,opacity:0.8}).addTo(map);
+                else if(obj.Severity==1)
+                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: mediumIcon,riseOnHover:true,opacity:0.8}).addTo(map);
+                else if(obj.Severity==0)
+                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: lowIcon,riseOnHover:true,opacity:0.8}).addTo(map);
+           
+                eventMarker[i].eventId = obj.ReportID;//pass the event id
+                eventMarker[i].addTo(map).on('mouseover', function(e) {//marker on click 
+                    
+                    comments=  EventToComment.find({ "event_id": e.target.eventId }).fetch();//search for comments that are connected to that event 
+                    commentsJSON={comment: [],event_id:0, Date_Time_Occurred: 0, Nature_Classification:0};
+                     for(j=0;j<comments.length;j++){
+                        Comments.find({id:comments[j].comment_id}, {sort: {count:-1}, limit:5}).forEach(function(obj){//pass the comments to datacontext i.e. commentsJSON
+                                commentsJSON.comment.push({ 
+                                "content"       : obj.message 
+                                });
+                            })
+                    }
+                    containerNode = document.createElement('div'); 
+                    commentsJSON.event_id=e.target.eventId;
+                    commentsJSON.Date_Time_Occurred=obj.Date_Time_Occurred;
+                    commentsJSON.Nature_Classification= obj.Nature_Classification;
+                    Blaze.renderWithData(Template.eventComments, commentsJSON, containerNode);//pass the data into the eventComments template
+                    popup = this.bindPopup(containerNode);
+                    popup.openPopup();
+                    $("#comment").submit(function(e){//comment form submit button handler
+                        e.preventDefault();
+                        commentId = Math.floor(Math.random()*1000000);
+                        Comments.insert({
+                                id: commentId,
+                                message: e.target.commentText.value
+                            });
+                        EventToComment.insert({                            
+                            event_id:e.target.event_id.value,
+                            comment_id: commentId
+                            });
+                            });
+                        });
+                    i++;
+            })
+        },
+        prettify: function (num) {
+              return moment(num, "X").format("MMM Do YYYY");
+        }
+
+    });
+       
+    };
     Template.eventtable.onCreated(function(){
          this.subscribe("safetyevents");
           this.subscribe("markers");
@@ -307,16 +422,16 @@ if (Meteor.isClient) {
         syracuseSelected: function () {
           return (Session.get('university') == 0) ? 'selected' : '';
         },
-        uclaSelected: function () {
+        emorySelected: function () {
           return (Session.get('university') == 1) ? 'selected' : '';
         },
-        cornellSelected: function () {
+        riceSelected: function () {
           return (Session.get('university') == 2) ? 'selected' : '';
         },
-         NYUSelected: function () {
+         georgiatechSelected: function () {
           return (Session.get('university') == 3) ? 'selected' : '';
         },
-         stanfordSelected: function () {
+         ubuffaloSelected: function () {
           return (Session.get('university') == 4) ? 'selected' : '';
         }
     });
@@ -367,3 +482,39 @@ if (Meteor.isClient) {
 
 
 
+ 
+function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+      var R = 6371; // Radius of the earth in km
+      var dLat = (lat2-lat1)*(Math.PI/180)  // deg2rad 
+      var dLon = (lon2-lon1)*(Math.PI/180) 
+      var a = 
+        Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(lat1*(Math.PI/180)) * Math.cos(lat2*Math.PI/180) * 
+        Math.sin(dLon/2) * Math.sin(dLon/2)
+        ; 
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+      var d = R * c; // Distance in km
+      return d;
+    }
+
+
+function isInPolygon(lat,lon, vs) {
+    // ray-casting algorithm based on
+    // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
+
+
+    var x = lat, y = lon;
+
+    var inside = false;
+    for (var i = 1, j = vs.length -1; i < vs.length; j = i++) {
+
+        var xi = vs[i].lat, yi = vs[i].lng;
+        var xj = vs[j].lat, yj = vs[j].lng;
+
+        var intersect = ((yi > y) != (yj > y))
+            && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+        if (intersect) inside = !inside;
+    }
+
+    return inside;
+};

@@ -83,35 +83,22 @@
 		<select id="university" class="btn btn-default dropdown-toggle">
 				
 	    		<option value="0" {{syracuseSelected}}>Syracuse University</option> 
-	    		<option value="1" {{uclaSelected}}>UCLA</option>
-                <option value="2" {{cornellSelected}}>Cornell</option>
-                <option value="3" {{NYUSelected}}>New York University</option>
-	    		<option value="4" {{stanfordSelected}}>Stanford University</option>
+	    		<option value="1" {{emorySelected}}>Emory University</option>
+                <option value="2" {{riceSelected}}>Rice University</option>
+                <option value="3" {{georgiatechSelected}}>Georgia Institute of Technology</option>
+	    		<option value="4" {{ubuffaloSelected}}>University at Buffalo</option>
 		</select>
 		</div>
 	     </div>
 		 <div class="row">
 		<div class="col-md-6">
-		<label for="myInput">Start Date</label>
-	 	<div class="input-group datetimepicker">
-		     <input  name="start_date" class="set-due-date form-control" type="text"/>
-		      <span class="input-group-addon">
-		            <span class="glyphicon glyphicon-calendar"></span>
-		      </span>
-		 </div>
+        <label for="myInput">Select Date Range</label><br>
+		  <input id="daterange" />
 		</div>
-		<div class="col-md-6">
-		<label for="myInput">End Date</label>
-	 	<div class="input-group datetimepicker">
-		       <input name="idInput" id="end_date" class="set-due-date form-control" type="text" />
-			<span class="input-group-addon">
-		            <span class="glyphicon glyphicon-calendar"></span>
-		      </span>
-		  </div>
-		</div>
-		</div>
+        </div>
 		 <div class="row">
 		<div class="col-md-12">
+      
 		<label for="myInput">Severity Level</label><br>
 		<select id="severity" class="btn btn-default dropdown-toggle">
 	    		<option value="10" selected="selected">Any</option> 
@@ -124,7 +111,6 @@
 	     </div>
 	
 	    </div>
-		<button id="submit" type="submit" class="btn btn-danger">Submit</button>
         <button  type="submit" class="btn btn-danger reset" style="background-color:#303030">Reset Subscription</button>
 		
 	  </form>
