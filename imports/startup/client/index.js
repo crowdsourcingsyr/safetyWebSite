@@ -2,7 +2,7 @@
 
         dataLoading = true;
      
-
+        Session.setPersistent('university', 0);
         sAlert.config({
             effect: '',
             position: 'top-right',

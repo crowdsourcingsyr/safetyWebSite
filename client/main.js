@@ -20,20 +20,16 @@ if (Meteor.isClient) {
     Meteor.subscribe('safetyevents', {
         onReady: function() {
             var data_array = [0, 0, 0];
-            heat = L.heatLayer(data_array, {
-                radius: 20,
-                blur: 15,
-                max: 1,
-                gradient: {
-                    0: 'orange',
-                    1: 'red'
-                }
-            });
-           Session.set('fromDate', "'"+moment().subtract(6, "months").format("L")+"'");
+            Session.set('fromDate', "'"+moment().subtract(6, "months").format("L")+"'");
             Session.set('toDate', "'"+moment().format("L")+"'");
-            map.addLayer(heat);
             triggeredEvents= []
-            SafetyEvents.find().forEach(function(obj) {//assuming that safetyevents takes longer to load than markers. When the number of users becomes larger than number of events, this will have to be changed. Currently meteor has no way to trigger event when all data subsciptions are loaded
+            triggeredEventsDep = new Tracker.Dependency();
+            SafetyEvents.find({
+                    "Date_Time_Reported": {
+                        $gte: new Date(Session.get('fromDate')),
+                        $lte: new Date(Session.get('toDate'))
+                    }
+                }).forEach(function(obj) {//assuming that safetyevents takes longer to load than markers. When the number of users becomes larger than number of events, this will have to be changed. Currently meteor has no way to trigger event when all data subsciptions are loaded
             var results = Markers.find();
             results.forEach(function(doc) { 
                 console.log(doc.layerType);
@@ -46,30 +42,22 @@ if (Meteor.isClient) {
                 if(isInPolygon(obj.Lat,obj.Lon,doc.latlngs))
                      triggeredEvents.push(obj);
             }
-
           })
-      
         })
-        dataLoading = false; //to prevent tracker.autorun being called when data is loading to client collection
-        
+        dataLoading = false; //to prevent tracker.autorun being called when data is loading to client collection     
         }
-
     });
 
-
     Template.form.events({ //filter map data on form submit
-      
-       
         "change #university": function(evt) {
           var newValue = $(evt.target).val();
           console.log(newValue);
           var oldValue = Session.get("university");
           if (newValue != oldValue) {
-            // value changed, let's do something
+            // value changed
            Session.setPersistent('university', newValue);
            location.reload();
-          }
-          
+          }    
         },
         "change #severity": function(evt) {
              var newValue = $(evt.target).val();
@@ -232,7 +220,7 @@ if (Meteor.isClient) {
                 }).setView([43.0008093,-78.7889697], 14);
         }
 
-        var tiles = L.tileLayer.provider('MapQuestOpen.OSM').addTo(map);
+        var tiles = L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map);
 
         var drawnItems = L.featureGroup().addTo(map);
 
@@ -329,8 +317,8 @@ if (Meteor.isClient) {
         max: +moment().format("X"),
         from: +moment().subtract(6, "months").format("X"),
         to:+moment().format("X"),
-        onFinish: function (data) {
-
+        onFinish: function (data) {//fired when the date range slider is moved to a new position
+        markerClusters = L.markerClusterGroup();
         var fromDate="'"+moment.unix(data.from).format("MM/DD/YYYY")+"'";
          var toDate="'"+moment.unix(data.to).format("MM/DD/YYYY")+"'";
          Session.set('fromDate', fromDate);
@@ -354,53 +342,97 @@ if (Meteor.isClient) {
                     "Severity": +severity
                 });
            }
+
             if (typeof eventMarker == 'undefined') {
                 eventMarker=[];
+                triggeredEvents=[];
             }
             for(i=0;i<eventMarker.length;i++)
                 map.removeLayer(eventMarker[i]);
+            triggeredEvents=[];
+            i=0;
             results.forEach(function(obj) { //add markers to map for each result
-                if(obj.Severity==2)
-                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: highIcon,riseOnHover:true,opacity:0.8}).addTo(map);
-                else if(obj.Severity==1)
-                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: mediumIcon,riseOnHover:true,opacity:0.8}).addTo(map);
-                else if(obj.Severity==0)
-                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: lowIcon,riseOnHover:true,opacity:0.8}).addTo(map);
-           
-                eventMarker[i].eventId = obj.ReportID;//pass the event id
-                eventMarker[i].addTo(map).on('mouseover', function(e) {//marker on click 
-                    
-                    comments=  EventToComment.find({ "event_id": e.target.eventId }).fetch();//search for comments that are connected to that event 
-                    commentsJSON={comment: [],event_id:0, Date_Time_Occurred: 0, Nature_Classification:0};
-                     for(j=0;j<comments.length;j++){
-                        Comments.find({id:comments[j].comment_id}, {sort: {count:-1}, limit:5}).forEach(function(obj){//pass the comments to datacontext i.e. commentsJSON
-                                commentsJSON.comment.push({ 
-                                "content"       : obj.message 
+                //break if events not within marker area
+                var withinSubscription=0;
+                  var eventmarkers = Markers.find();
+                eventmarkers.forEach(function(doc) { 
+                if (doc.layerType =='circle'){
+                    if (getDistanceFromLatLonInKm(obj.Lat,obj.Lon,doc.latlng.lat,doc.latlng.lng) < doc.radius/1000) //check if the point is within each of the markers
+                       withinSubscription=1;
+                }
+                else
+                {
+                    if(isInPolygon(obj.Lat,obj.Lon,doc.latlngs))
+                        withinSubscription =1;
+                }
+                })
+                if(withinSubscription==1)
+                {
+                    triggeredEvents.push(obj);
+                    if(obj.Severity==2)
+                            eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: highIcon,riseOnHover:true,opacity:0.8});
+                    else if(obj.Severity==1)
+                            eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: mediumIcon,riseOnHover:true,opacity:0.8});
+                    else if(obj.Severity==0)
+                            eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: lowIcon,riseOnHover:true,opacity:0.8});
+               
+                    eventMarker[i].eventId = obj.ReportID;//pass the event id
+                    markerClusters.addLayer(eventMarker[i]);
+                    map.addLayer(markerClusters);
+
+                    markerClusters.on('clustermouseover', function (a) {
+                                    // a.layer is actually a cluster
+                                   // console.log('cluster ' + a.layer.getAllChildMarkers());
+                                  //  markers = a.layer.getAllChildMarkers();
+                                console.log('test');
+                                  //  console.log(markers.length);
+                                      var popup = L.popup()
+                                          .setLatLng(a.layer.getLatLng())
+                                          .setContent(a.layer._childCount +' Locations(click to Zoom)')
+                                          .openOn(map);
+                                
+
                                 });
-                            })
+                       
+
+                  /*  eventMarker[i].addTo(map).on('mouseover', function(e) {//marker on click 
+                        
+                        comments=  EventToComment.find({ "event_id": e.target.eventId }).fetch();//search for comments that are connected to that event 
+                        commentsJSON={comment: [],event_id:0, Date_Time_Occurred: 0, Nature_Classification:0};
+                         for(j=0;j<comments.length;j++){
+                            Comments.find({id:comments[j].comment_id}, {sort: {count:-1}, limit:5}).forEach(function(obj){//pass the comments to datacontext i.e. commentsJSON
+                                    commentsJSON.comment.push({ 
+                                    "content"       : obj.message 
+                                    });
+                                })
+                        }
+                        containerNode = document.createElement('div'); 
+                        commentsJSON.event_id=e.target.eventId;
+                        commentsJSON.Date_Time_Occurred=obj.Date_Time_Occurred;
+                        commentsJSON.Nature_Classification= obj.Nature_Classification;
+                        Blaze.renderWithData(Template.eventComments, commentsJSON, containerNode);//pass the data into the eventComments template
+                        popup = this.bindPopup(containerNode);
+                        popup.openPopup();
+                        $("#comment").submit(function(e){//comment form submit button handler
+                            e.preventDefault();
+                            commentId = Math.floor(Math.random()*1000000);
+                            Comments.insert({
+                                    id: commentId,
+                                    message: e.target.commentText.value
+                                });
+                            EventToComment.insert({                            
+                                event_id:e.target.event_id.value,
+                                comment_id: commentId
+                                });
+                                });
+                            });*/
+                      
+                             
+                        i++;
                     }
-                    containerNode = document.createElement('div'); 
-                    commentsJSON.event_id=e.target.eventId;
-                    commentsJSON.Date_Time_Occurred=obj.Date_Time_Occurred;
-                    commentsJSON.Nature_Classification= obj.Nature_Classification;
-                    Blaze.renderWithData(Template.eventComments, commentsJSON, containerNode);//pass the data into the eventComments template
-                    popup = this.bindPopup(containerNode);
-                    popup.openPopup();
-                    $("#comment").submit(function(e){//comment form submit button handler
-                        e.preventDefault();
-                        commentId = Math.floor(Math.random()*1000000);
-                        Comments.insert({
-                                id: commentId,
-                                message: e.target.commentText.value
-                            });
-                        EventToComment.insert({                            
-                            event_id:e.target.event_id.value,
-                            comment_id: commentId
-                            });
-                            });
-                        });
-                    i++;
+
             })
+            triggeredEventsDep.changed();
         },
         prettify: function (num) {
               return moment(num, "X").format("MMM Do YYYY");
@@ -409,12 +441,14 @@ if (Meteor.isClient) {
     });
        
     };
+           
     Template.eventtable.onCreated(function(){
          this.subscribe("safetyevents");
           this.subscribe("markers");
     });
     Template.eventtable.helpers({
         'getData': function() { 
+            triggeredEventsDep.depend();
            return triggeredEvents;
         }
     });
@@ -443,7 +477,7 @@ if (Meteor.isClient) {
             }
         for(i=0;i<eventMarker.length;i++)
                 map.removeLayer(eventMarker[i]);
-                eventMarker[0] =  L.marker([this.Lat, this.Lon], {icon: highIcon}).addTo(map).bindPopup("<b>Type:</b> "+this.Nature_Classification+"<br>"+"<b>Location:</b>"+this.General_Location+"<br>{{>eventComments}}");
+                eventMarker[0] =  L.marker([this.Lat, this.Lon], {icon: highIcon}).addTo(map).bindPopup("<b>Type:</b> "+this.Nature_Classification+"<br>"+"<b>Location:</b>"+this.General_Location+"<br>").openPopup();
         //$('.eventRow').removeClass('highlight');
         //$(e.currentTarget).addClass('highlight');
       }

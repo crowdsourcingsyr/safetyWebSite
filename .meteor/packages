@@ -32,3 +32,4 @@ email
 u2622:persistent-session
 postrednik:meteor-rangeslider
 momentjs:moment
+herrhelms:meteor-leaflet-markercluster
