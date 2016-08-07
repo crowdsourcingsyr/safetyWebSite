@@ -59,6 +59,16 @@ if (Meteor.isClient) {
            location.reload();
           }    
         },
+         "change #isCity": function(evt) {
+          var newValue = $(evt.target).val();
+          console.log(newValue);
+          var oldValue = Session.get("isCity");
+          if (newValue != oldValue) {
+            // value changed
+           Session.setPersistent('isCity', newValue);
+           location.reload();
+          }    
+        },
         "change #severity": function(evt) {
              var newValue = $(evt.target).val();
              var oldValue = Session.get("severity");
@@ -73,7 +83,8 @@ if (Meteor.isClient) {
                          "Date_Time_Reported": {
                              $gte: new Date(fromDate),
                              $lte: new Date(toDate)
-                         }
+                         },
+                         "Is_City":{$eq:0}
                      });
                  } else {
                      var results = SafetyEvents.find({
@@ -81,6 +92,7 @@ if (Meteor.isClient) {
                              $gte: new Date(fromDate),
                              $lte: new Date(toDate)
                          },
+                          "Is_City":{$eq:0},
                          "Severity": +severity
                      });
                  }
@@ -219,6 +231,12 @@ if (Meteor.isClient) {
                     doubleClickZoom: false
                 }).setView([43.0008093,-78.7889697], 14);
         }
+          else if(Session.get('university')==5)
+        {
+                map = L.map('map', {
+                    doubleClickZoom: false
+                }).setView([40.7686793,-73.9647192], 14);
+        }
 
         var tiles = L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map);
 
@@ -323,14 +341,15 @@ if (Meteor.isClient) {
          var toDate="'"+moment.unix(data.to).format("MM/DD/YYYY")+"'";
          Session.set('fromDate', fromDate);
          Session.set('toDate', toDate);
-
+         console.log(Session.get("isCity"));
          var severity=Session.get('severity'); 
          if (severity== 10){
                 var results = SafetyEvents.find({
                     "Date_Time_Reported": {
                         $gte: new Date(fromDate),
                         $lte: new Date(toDate)
-                    }
+                    },
+                     "Is_City":+(Session.get('isCity'))
                 });
             }
             else{
@@ -339,9 +358,11 @@ if (Meteor.isClient) {
                         $gte: new Date(fromDate),
                         $lte: new Date(toDate)
                     },
+                     "Is_City":+(Session.get('isCity')),
                     "Severity": +severity
                 });
            }
+
 
             if (typeof eventMarker == 'undefined') {
                 eventMarker=[];
@@ -467,6 +488,15 @@ if (Meteor.isClient) {
         },
          ubuffaloSelected: function () {
           return (Session.get('university') == 4) ? 'selected' : '';
+        },
+          uhunterSelected: function () {
+          return (Session.get('university') == 5) ? 'selected' : '';
+        },
+            citySelected: function () {
+          return (Session.get('isCity') == 1) ? 'selected' : '';
+        },
+            campusSelected: function () {
+          return (Session.get('isCity') == 0) ? 'selected' : '';
         }
     });
 

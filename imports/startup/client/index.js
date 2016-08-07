@@ -3,6 +3,7 @@
         dataLoading = true;
      
         Session.setPersistent('university', 0);
+         Session.setPersistent('IsCity', 0);
         sAlert.config({
             effect: '',
             position: 'top-right',
