@@ -33,3 +33,6 @@ u2622:persistent-session
 postrednik:meteor-rangeslider
 momentjs:moment
 herrhelms:meteor-leaflet-markercluster
+ian:accounts-ui-bootstrap-3
+accounts-password
+reactive-var
