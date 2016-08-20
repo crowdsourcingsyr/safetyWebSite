@@ -1,0 +1,7 @@
+{
+  "galaxy.meteor.com": {
+     "env": {
+       "MONGO_URL": "mongodb://safetysite:nopass@ds161505.mlab.com:61505/safetysite"
+     }
+   }
+}
