@@ -50,7 +50,7 @@ if (Meteor.isClient) {
         }
     });
 
-    Handlebars.registerHelper('getRowClass', function(Severity) {
+  /*  Handlebars.registerHelper('getRowClass', function(Severity) {
     switch (Severity) {
         case 0 : {
             return 'active';
@@ -63,7 +63,7 @@ if (Meteor.isClient) {
         default : {
             return 'danger';
         }
-    }});
+    }});*/
 
 
    $(function() {
@@ -88,14 +88,42 @@ Template.eventtable.onCreated(function(){
 });
 
 Template.eventtable.helpers({
-    'getData': function() {
+    getData: function() {
        triggeredEventsDep.depend();
        return triggeredEvents;
+    },
+    getRowClass: function(item){
+      return function (item) {
+          var Severity = item.Severity;
+          switch (Severity) {
+              case 0 : {
+                  return 'active';
+              }
+              break;
+              case 1 : {
+                  return 'warning';
+              }
+              break;
+              default : {
+                  return 'danger';
+              }
+            }
+      };
+  },
+    settings: function(){
+      return {
+        showFilter:true,
+        fields:[
+          {key:'Case_Number',label:'Index'},
+          {key:'Date_Time_Reported',label:'Date'},
+          {key:'General_Location', label:'Location'},
+          {key:'Nature_Classification', label:'description'}]
+      };
     }
 });
 
-Template.eventRow.events({
-  'click': function(e) {
+Template.eventtable.events({
+  'click .reactive-table tbody tr':function(e){
     if (typeof eventMarker == 'undefined') {
             eventMarker=[];
         }
@@ -103,7 +131,7 @@ Template.eventRow.events({
             map.removeLayer(eventMarker[i]);
     eventMarker[0] =  L.marker([this.Lat, this.Lon], {icon: highIcon})
                       .addTo(map)
-                      .bindPopup("<b>Typeu:</b> "+this.Nature_Classification+"<br>"+"<b>Location:</b>"+this.General_Location+"<br>")
+                      .bindPopup("<b>Type:</b> "+this.Nature_Classification+"<br>"+"<b>Location:</b>"+this.General_Location+"<br>")
                       .openPopup();
 
     var keyword = this.Nature_Classification.split(" ");
@@ -126,14 +154,45 @@ Template.eventRow.events({
 
     console.log(rowpos);
     $("#tipsTable").animate({scrollTop:rowpos},1000);
-  /*  var rowpos = tableRow.position();
-    console.log(rowpos);
-    $('#tipsTable').scrollTop(rowpos.top);*/
 
-    //$('.eventRow').removeClass('highlight');
-    //$(e.currentTarget).addClass('highlight');
   }
+
 });
+/*
+Template.eventRow.events({
+  'click': function(e) {
+    if (typeof eventMarker == 'undefined') {
+            eventMarker=[];
+        }
+    for(i=0;i<eventMarker.length;i++)
+            map.removeLayer(eventMarker[i]);
+    eventMarker[0] =  L.marker([this.Lat, this.Lon], {icon: highIcon})
+                      .addTo(map)
+                      .bindPopup("<b>Type:</b> "+this.Nature_Classification+"<br>"+"<b>Location:</b>"+this.General_Location+"<br>")
+                      .openPopup();
+
+    var keyword = this.Nature_Classification.split(" ");
+    if(keyword[0].indexOf(',') > 0){
+        keyword = this.Nature_Classification.split(",");
+    }
+    var tableRows = $("#tipsTable").find("td").filter(function(){
+      return $(this).text().trim().indexOf(keyword[0].trim())== -1;
+    }).closest("tr");
+    tableRows.css({"font-weight": "normal"});
+    var tableRow = $("#tipsTable").find("td").filter(function(){
+      return $(this).text().trim().indexOf(keyword[0].trim())!= -1;
+    }).closest("tr");
+    var baseRow = $("#tipsTable").find("th").filter(function(){
+      return $(this).text().trim() == "Category";
+    }).closest("tr");
+    console.log(tableRow);
+    tableRow.css({"font-weight": "bold"});
+    var rowpos = tableRow.position().top-baseRow.position().top;
+
+    console.log(rowpos);
+    $("#tipsTable").animate({scrollTop:rowpos},1000);
+  }
+});*/
 
 Template.form.onCreated(function(){
   this.subscribe("safetyevents");

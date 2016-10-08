@@ -4,6 +4,7 @@ allow-deny@1.0.5
 amplify@1.0.0
 anti:i18n@0.4.3
 artwells:queue@0.1.2
+aslagle:reactive-table@0.8.36
 autoupdate@1.2.11
 babel-compiler@6.9.1
 babel-runtime@0.1.11
