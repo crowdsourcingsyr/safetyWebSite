@@ -27,7 +27,7 @@ if (Meteor.isClient) {
             Session.set('toDate', "'"+moment().format("L")+"'");
             triggeredEvents= []
             triggeredEventsDep = new Tracker.Dependency();
-            SafetyEvents.find({
+            /*SafetyEvents.find({
                     "Date_Time_Reported": {
                         $gte: new Date(Session.get('fromDate')),
                         $lte: new Date(Session.get('toDate'))
@@ -45,7 +45,7 @@ if (Meteor.isClient) {
                      triggeredEvents.push(obj);
             }
           })
-        })
+        })*/
         dataLoading = false; //to prevent tracker.autorun being called when data is loading to client collection
         }
     });
@@ -112,7 +112,7 @@ Template.eventtable.helpers({
   },
     settings: function(){
       return {
-        showFilter:true,
+        showFilter:false,
         fields:[
           {key:'Case_Number',label:'Index'},
           {key:'Date_Time_Reported',label:'Date'},
@@ -225,103 +225,17 @@ Template.form.events({ //filter map data on form submit
          var oldValue = Session.get("severity");
          if (newValue != oldValue) {
              // value changed, let's do something
-             Session.set('severity', newValue);
-             var fromDate = Session.get("fromDate");
-             var toDate = Session.get("toDate");
-             var severity = Session.get('severity');
-             if (severity == 10) {
-                 var results = SafetyEvents.find({
-                     "Date_Time_Reported": {
-                         $gte: new Date(fromDate),
-                         $lte: new Date(toDate)
-                     },
-                     "Is_City":{$eq:0}
-                 });
-             } else {
-                 var results = SafetyEvents.find({
-                     "Date_Time_Reported": {
-                         $gte: new Date(fromDate),
-                         $lte: new Date(toDate)
-                     },
-                      "Is_City":{$eq:0},
-                     "Severity": +severity
-                 });
-             }
-             if (typeof eventMarker == 'undefined') {
-                 eventMarker = [];
-             }
-             for (i = 0; i < eventMarker.length; i++)
-                 map.removeLayer(eventMarker[i]);
-             results.forEach(function(obj) { //add markers to map for each result
-                 if (obj.Severity == 2)
-                     eventMarker[i] = L.marker([obj.Lat, obj.Lon], {
-                         icon: highIcon,
-                         riseOnHover: true,
-                         opacity: 0.8
-                     }).addTo(map);
-                 else if (obj.Severity == 1)
-                     eventMarker[i] = L.marker([obj.Lat, obj.Lon], {
-                         icon: mediumIcon,
-                         riseOnHover: true,
-                         opacity: 0.8
-                     }).addTo(map);
-                 else if (obj.Severity == 0)
-                     eventMarker[i] = L.marker([obj.Lat, obj.Lon], {
-                         icon: lowIcon,
-                         riseOnHover: true,
-                         opacity: 0.8
-                     }).addTo(map);
-
-                 eventMarker[i].eventId = obj.ReportID; //pass the event id
-                 /*eventMarker[i].addTo(map).on('mouseover', function(e) { //marker on click
-                      console.log("hello==");
-
-                     comments = EventToComment.find({
-                         "event_id": e.target.eventId
-                     }).fetch(); //search for comments that are connected to that event
-                     commentsJSON = {
-                         comment: [],
-                         event_id: 0,
-                         Date_Time_Occurred: 0,
-                         Nature_Classification: 0
-                     };
-                     for (j = 0; j < comments.length; j++) {
-                         Comments.find({
-                             id: comments[j].comment_id
-                         }, {
-                             sort: {
-                                 count: -1
-                             },
-                             limit: 5
-                         }).forEach(function(obj) { //pass the comments to datacontext i.e. commentsJSON
-                             commentsJSON.comment.push({
-                                 "content": obj.message
-                             });
-                         })
-                     }
-                     containerNode = document.createElement('div');
-                     commentsJSON.event_id = e.target.eventId;
-                     commentsJSON.Date_Time_Occurred = obj.Date_Time_Occurred;
-                     commentsJSON.Nature_Classification = obj.Nature_Classification;
-                     Blaze.renderWithData(Template.eventComments, commentsJSON, containerNode); //pass the data into the eventComments template
-                     popup = this.bindPopup(containerNode);
-                     popup.openPopup();
-                     $("#comment").submit(function(e) { //comment form submit button handler
-                         e.preventDefault();
-                         commentId = Math.floor(Math.random() * 1000000);
-                         Comments.insert({
-                             id: commentId,
-                             message: e.target.commentText.value
-                         });
-                         EventToComment.insert({
-                             event_id: e.target.event_id.value,
-                             comment_id: commentId
-                         });
-                     });
-                 });*/
-                 i++;
-             })
+             Session.setPersistent('severity', newValue);
+             location.reload();
          }
+     },
+     "change #crimeCategory": function(evt) {
+       var newValue = $(evt.target).val();
+       var oldValue = Session.get("crimeCategory");
+       if(newValue != oldValue) {
+         Session.setPersistent('crimeCategory',newValue);
+         location.reload();
+       }
      },
     'click .reset': function (e) {
             Markers.find({"userid": Meteor.userId()}).forEach(function(doc){
@@ -333,6 +247,7 @@ Template.form.events({ //filter map data on form submit
 });
 
  Template.form.rendered=function(){
+    markerClusters = L.markerClusterGroup();
     $("#daterange").ionRangeSlider({
     type: "double",
     min: +moment().subtract(3, "years").format("X"),
@@ -340,39 +255,72 @@ Template.form.events({ //filter map data on form submit
     from: +moment().subtract(6, "months").format("X"),
     to:+moment().format("X"),
     onFinish: function (data) {//fired when the date range slider is moved to a new position
-    markerClusters = L.markerClusterGroup();
     var fromDate="'"+moment.unix(data.from).format("MM/DD/YYYY")+"'";
      var toDate="'"+moment.unix(data.to).format("MM/DD/YYYY")+"'";
      Session.set('fromDate', fromDate);
      Session.set('toDate', toDate);
      //console.log(Session.get("isCity"));
      var severity=Session.get('severity');
-     if (severity== 10){
-            var results = SafetyEvents.find({
-                "Date_Time_Reported": {
-                    $gte: new Date(fromDate),
-                    $lte: new Date(toDate)
+     var crimeCategory=Session.get('crimeCategory');
+     if(crimeCategory != "Any"){
+            if (severity== 10){
+              var results = SafetyEvents.find({
+                  "Date_Time_Reported": {
+                      $gte: new Date(fromDate),
+                      $lte: new Date(toDate)
+                    },
+                    "Is_City":+(Session.get('isCity')),
+                    "Nature_Classification": {
+                      $regex: crimeCategory
+                    }
+                  });
+                }
+              else{
+                  var results = SafetyEvents.find({
+                    "Date_Time_Reported": {
+                      $gte: new Date(fromDate),
+                      $lte: new Date(toDate)
+                    },
+                    "Is_City":+(Session.get('isCity')),
+                    "Severity": +severity,
+                    "Nature_Classification": {
+                      $regex: crimeCategory
+                    }
+                  });
+                }
+      }else{
+        if (severity== 10){
+          var results = SafetyEvents.find({
+              "Date_Time_Reported": {
+                  $gte: new Date(fromDate),
+                  $lte: new Date(toDate)
                 },
-                 "Is_City":+(Session.get('isCity'))
-            });
-        }
-        else{
-            var results = SafetyEvents.find({
+                "Is_City":+(Session.get('isCity'))
+              });
+            }
+          else{
+              var results = SafetyEvents.find({
                 "Date_Time_Reported": {
-                    $gte: new Date(fromDate),
-                    $lte: new Date(toDate)
+                  $gte: new Date(fromDate),
+                  $lte: new Date(toDate)
                 },
-                 "Is_City":+(Session.get('isCity')),
+                "Is_City":+(Session.get('isCity')),
                 "Severity": +severity
-            });
-       }
+              });
+            }
+      }
         if (typeof eventMarker == 'undefined') {
             eventMarker=[];
             triggeredEvents=[];
         }
 
-        for(i=0;i<eventMarker.length;i++)
+
+        /*for(i=0;i<eventMarker.length;i++){
             map.removeLayer(eventMarker[i]);
+        }*/
+        if(map.hasLayer(markerClusters)){
+          map.removeLayer(markerClusters);
+        }
         triggeredEvents=[];
         triggeredTips=[];
         var tipsset = [];
@@ -426,6 +374,7 @@ Template.form.events({ //filter map data on form submit
                 eventMarker[i].eventId = obj.ReportID;//pass the event id
                 markerClusters.addLayer(eventMarker[i]);
                 map.addLayer(markerClusters);
+                //map.addLayer(eventMarker[i]);
 
                 markerClusters.on('clustermouseover', function (a) {
                                 // a.layer is actually a cluster
@@ -459,6 +408,24 @@ Template.form.events({ //filter map data on form submit
 };
 
 Template.form.helpers({
+   syracuseName: function () {
+     return (Session.get('isCity') == 1)?'Syracuse':'Syracue University';
+   },
+   emoryName: function () {
+     return (Session.get('isCity') == 1)?'Atlana':'Emory University';
+   },
+   riceName: function (){
+     return (Session.get('isCity') == 1)?'Houston':'Rice University';
+   },
+   georgiatechName: function (){
+     return (Session.get('isCity') == 1)?'Atlana':'Georgia Institute of Technology';
+   },
+   ubuffaloName: function(){
+     return (Session.get('isCity') == 1)?'Buffalo':'University at Buffalo';
+   },
+   uhunterName: function(){
+     return (Session.get('isCity') == 1)?'New York':'Hunter College';
+   },
    syracuseSelected: function () {
      return (Session.get('university') == 0) ? 'selected' : '';
    },
@@ -480,14 +447,42 @@ Template.form.helpers({
    citySelected: function () {
      return (Session.get('isCity') == 1) ? 'selected' : '';
    },
-   ampusSelected: function () {
+   campusSelected: function () {
      return (Session.get('isCity') == 0) ? 'selected' : '';
+   },
+   anySelected: function () {
+     return (Session.get('severity') == 10) ? 'selected' : '';
+   },
+   lowSelected: function () {
+     return (Session.get('severity') == 0) ? 'selected' : '';
+   },
+   mediumSelected: function () {
+     return (Session.get('severity') == 1) ? 'selected' : '';
+   },
+   highSelected: function () {
+     return (Session.get('severity') == 2) ? 'selected' : '';
    },
    getTips: function () {
      //return SafetyTips.find();
      triggeredTipsDep.depend();
      return triggeredTips;
-   }
+   },
+   getoptions: function () {
+     var options = [];
+     var tips = SafetyTips.find().fetch();
+     var anyoption = new Array();
+     anyoption["crimeCategory"] = "Any";
+     options.push(anyoption);
+     for(var i in tips){
+       var option = new Array();
+       option["crimeCategory"] = tips[i].DescriptionCategory;
+       options.push(option);
+     }
+     return options;
+   },
+   animateselected:function (){
+     return (Session.get('crimeCategory') == this.crimeCategory)? 'selected' : '';
+   },
 
 });
 
@@ -495,7 +490,7 @@ Template.map.rendered = function() {
     $('.datetimepicker').each(function() {
         $(this).datetimepicker();
     });
-     Session.set('severity',10);
+     //Session.set('severity',10);
     L.Icon.Default.imagePath = '/public';
     var LeafIcon = L.Icon.extend({
         options: {

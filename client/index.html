@@ -1,5 +1,5 @@
 <head>
-  <title>Campus Crime Map</title>
+  <title>Crime Map</title>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <span class="navbar-brand">Campus Crime Map</span>
+      <span class="navbar-brand">Crime Map</span>
     </div>
      <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav navbar-right">
@@ -83,33 +83,6 @@
 
 
 <template name="eventtable">
-  <!--<table class="table">
-                <thead>
-                    <tr>
-                        <th>
-                            #
-                        </th>
-                        <th>
-                            Date/Time
-                        </th>
-                        <th>
-                            Address
-                        </th>
-                        <th>
-                            Description
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                 {{#if Template.subscriptionsReady}}
-                {{#each getData}}
-                      {{>eventRow}}
-
-                    {{/each}}
-                {{/if}}
-
-                </tbody>
-            </table>-->
             {{#if Template.subscriptionsReady}}
             {{> reactiveTable class="table" collection=getData settings=settings rowClass=getRowClass}}
             {{/if}}
@@ -118,7 +91,6 @@
 <template name="map">
     <div id="container">
       <div id="map" class="map"></div>
-
     </div>
 </template>
 
@@ -129,32 +101,45 @@
 	    <div class="form-group">
 	     <div class="row">
 		<div class="col-md-12">
-		<label for="myInput">University</label><br>
-		<select id="university" class="btn btn-default dropdown-toggle">
-
-	    		<option value="0" {{syracuseSelected}}>Syracuse University</option>
-	    		<option value="1" {{emorySelected}}>Emory University</option>
-          <option value="2" {{riceSelected}}>Rice University</option>
-          <option value="3" {{georgiatechSelected}}>Georgia Institute of Technology</option>
-	    		<option value="4" {{ubuffaloSelected}}>University at Buffalo</option>
-          <option value="5" {{uhunterSelected}}>Hunter College</option>
-		</select>
+      <div>
+		      <label for="myInput">University</label>
+		        <select id="university" class="btn btn-default dropdown-toggle">
+	    		       <option value="0" {{syracuseSelected}}>{{syracuseName}}</option>
+	    		       <option value="1" {{emorySelected}}>{{emoryName}}</option>
+                 <option value="2" {{riceSelected}}>{{riceName}}</option>
+                 <option value="3" {{georgiatechSelected}}>{{georgiatechName}}</option>
+	    		       <option value="4" {{ubuffaloSelected}}>{{ubuffaloName}}</option>
+                 <option value="5" {{uhunterSelected}}>{{uhunterName}}</option>
+		        </select>
+     </div>
+      <div>
+        <label for="myInput">City &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
         <select id="isCity" class="btn btn-default dropdown-toggle">
                   <option value="0" {{campusSelected}}>Campus Crime</option>
                 <option value="1" {{citySelected}}>City Crime</option>
-
                </select>
+             </div>
 		</div>
 	     </div>
       <div class="row">
   		    <div class="col-md-12">
-  		        <label for="myInput">Severity</label><br>
+              <div>
+  		        <label for="myInput">Severity&nbsp; &nbsp;</label>
   		        <select id="severity" class="btn btn-default dropdown-toggle">
-  	    		       <option value="10" selected="selected">Any</option>
-  	    		       <option value="0">Low</option>
-  			           <option value="1">Medium</option>
-  			           <option value="2">High</option>
+  	    		       <option value="10" {{anySelected}}>Any</option>
+  	    		       <option value="0" {{lowSelected}}>Low</option>
+  			           <option value="1" {{mediumSelected}}>Medium</option>
+  			           <option value="2" {{highSelected}}>High</option>
   		        </select>
+            </div>
+            <div>
+              <label for="myInput">Crime&nbsp;&nbsp; &nbsp; &nbsp;</label>
+              <select id="crimeCategory" class="btn btn-default dropdown-toggle">
+                  {{#each getoptions}}
+                    <option value="{{crimeCategory}}" {{animateselected}}>{{crimeCategory}}</option>
+                  {{/each}}
+              </select>
+            </div>
   		    </div>
   	  </div>
 		 <div class="row">
@@ -169,7 +154,8 @@
         <button  type="submit" class="btn btn-danger reset" style="background-color:#303030">Reset</button>
 
 	  </form>
-		<div id="tipsTable" style="height:250px;width:450px;overflow:auto">
+    <div class="row">
+		<div id="tipsTable">
 		<table class="table">
 			<thead>
 				<tr>
@@ -191,6 +177,7 @@
 			</tbody>
 		</table>
 	</div>
+</div>
 
 </template>
 
