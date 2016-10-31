@@ -102,23 +102,26 @@
 	     <div class="row">
 		<div class="col-md-12">
       <div>
+        <!--<select id="isCity" class="btn btn-default dropdown-toggle">
+                  <option value="0" {{campusSelected}}>Campus Crime</option>
+                <option value="1" {{citySelected}}>City Crime</option>
+              </select>-->
+              {{> toggle_button}}
+       </div>
+      <div>
 		      <label for="myInput">University</label>
 		        <select id="university" class="btn btn-default dropdown-toggle">
-	    		       <option value="0" {{syracuseSelected}}>{{syracuseName}}</option>
+	    		       <!--<option value="0" {{syracuseSelected}}>{{syracuseName}}</option>
 	    		       <option value="1" {{emorySelected}}>{{emoryName}}</option>
                  <option value="2" {{riceSelected}}>{{riceName}}</option>
                  <option value="3" {{georgiatechSelected}}>{{georgiatechName}}</option>
 	    		       <option value="4" {{ubuffaloSelected}}>{{ubuffaloName}}</option>
-                 <option value="5" {{uhunterSelected}}>{{uhunterName}}</option>
+                 <option value="5" {{uhunterSelected}}>{{uhunterName}}</option>-->
+                 {{#each getPlaces}}
+                    <option value="{{placeIndex}}" data-id={{_id}} {{placeSelected}}>{{placeCategory}}</option>
+                 {{/each}}
 		        </select>
      </div>
-      <div>
-        <label for="myInput">City &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
-        <select id="isCity" class="btn btn-default dropdown-toggle">
-                  <option value="0" {{campusSelected}}>Campus Crime</option>
-                <option value="1" {{citySelected}}>City Crime</option>
-               </select>
-             </div>
 		</div>
 	     </div>
       <div class="row">
@@ -245,4 +248,16 @@
     </div>
 
   </form>
+</template>
+
+<template name="toggle_button">
+  <div id="toggle_switch" class="switch-toggle switch-candy" style="width:250px">
+    <input id="city" name="view" type="radio" value="1" {{CityChecked}}>
+    <label for="city" onclick="">City</label>
+
+    <input id="campus" name="view" type="radio" value="0" {{CampusChecked}}>
+    <label for="campus" onclick="">Campus</label>
+
+    <a></a>
+  </div>
 </template>

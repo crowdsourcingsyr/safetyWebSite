@@ -38,3 +38,4 @@ reactive-var@1.0.10
 shell-server
 juliancwirko:postcss
 aslagle:reactive-table
+anbuselvan:meteor-toggle-switch

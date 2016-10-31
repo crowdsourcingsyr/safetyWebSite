@@ -1,5 +1,66 @@
-
 if (Meteor.isClient) {
+    //The universities information for select
+    PlaceInfo = [
+      {"_id": 0, "placeIndex": 0,"placeCategory": 'Syracuse University'},
+      {"_id": 1, "placeIndex": 1,"placeCategory": 'Emory University'},
+      {"_id": 2, "placeIndex": 2,"placeCategory": 'Rice University'},
+      {"_id": 3, "placeIndex": 3,"placeCategory": 'Georgia Institute of Technology'},
+      {"_id": 4, "placeIndex": 4,"placeCategory": 'University at Buffalo'},
+      {"_id": 5, "placeIndex": 5,"placeCategory": 'Hunter College'}
+    ];
+    $.each(PlaceInfo,function(i,item){
+      switch(i){
+        case 0:
+          item["placeCategory"] = (Session.get("isCity") == 1)?'Syracuse':'Syracuse University';
+          break;
+        case 1:
+          item["placeCategory"] = (Session.get("isCity") == 1)?'Atlana':'Emory University';
+          break;
+        case 2:
+          item["placeCategory"] = (Session.get("isCity") == 1)?'Houston':'Rice University';
+          break;
+        case 3:
+          item["placeCategory"] = (Session.get("isCity") == 1)?'Atlana':'Georgia Institute of Technology';
+          break;
+        case 4:
+          item["placeCategory"] = (Session.get("isCity") == 1)?'Buffalo':'University at Buffalo';
+          break;
+        case 5:
+          item["placeCategory"] = (Session.get("isCity") == 1)?'New York':'Hunter College';
+          break;
+      }
+    });
+    PlaceInfoDep = new Tracker.Dependency;
+    getPlaceInfo = function () {
+      PlaceInfoDep.depend();
+      return PlaceInfo;
+    };
+    setPlaceInfo = function (flag) {
+        //console.log(flag);
+        $.each(PlaceInfo,function(i,item){
+          switch(i){
+            case 0:
+              item["placeCategory"] = (flag == 1)?'Syracuse':'Syracuse University';
+              break;
+            case 1:
+              item["placeCategory"] = (flag == 1)?'Atlana':'Emory University';
+              break;
+            case 2:
+              item["placeCategory"] = (flag == 1)?'Houston':'Rice University';
+              break;
+            case 3:
+              item["placeCategory"] = (flag == 1)?'Atlana':'Georgia Institute of Technology';
+              break;
+            case 4:
+              item["placeCategory"] = (flag == 1)?'Buffalo':'University at Buffalo';
+              break;
+            case 5:
+              item["placeCategory"] = (flag == 1)?'New York':'Hunter College';
+              break;
+          }
+        });
+        PlaceInfoDep.changed();
+    };
     Meteor.subscribe('markers', {
         onReady: function(){
         }
@@ -194,6 +255,27 @@ Template.eventRow.events({
   }
 });*/
 
+Template.toggle_button.events({
+  'click #toggle_switch input': function(e){
+    var newValue = $(e.target).val();
+    var oldValue = Session.get("isCity");
+    if(newValue != oldValue){
+      Session.setPersistent('isCity', newValue);
+      setPlaceInfo(newValue);
+    }
+  }
+});
+
+Template.toggle_button.helpers({
+  CityChecked: function() {
+    console.log(Session.get('isCity'));
+    return (Session.get('isCity') == 1) ? 'checked' : '';
+  },
+  CampusChecked: function() {
+    return (Session.get('isCity') == 0) ? 'checked' : '';
+  },
+});
+
 Template.form.onCreated(function(){
   this.subscribe("safetyevents");
   this.subscribe("markers");
@@ -211,15 +293,17 @@ Template.form.events({ //filter map data on form submit
        location.reload();
       }
     },
-     "change #isCity": function(evt) {
+     /*"change #isCity": function(evt) {
       var newValue = $(evt.target).val();
       var oldValue = Session.get("isCity");
       if (newValue != oldValue) {
         // value changed
        Session.setPersistent('isCity', newValue);
-       location.reload();
+       //location.reload();
+       //console.log(newValue);
+       setPlaceInfo(newValue);
       }
-    },
+    },*/
     "change #severity": function(evt) {
          var newValue = $(evt.target).val();
          var oldValue = Session.get("severity");
@@ -408,42 +492,6 @@ Template.form.events({ //filter map data on form submit
 };
 
 Template.form.helpers({
-   syracuseName: function () {
-     return (Session.get('isCity') == 1)?'Syracuse':'Syracue University';
-   },
-   emoryName: function () {
-     return (Session.get('isCity') == 1)?'Atlana':'Emory University';
-   },
-   riceName: function (){
-     return (Session.get('isCity') == 1)?'Houston':'Rice University';
-   },
-   georgiatechName: function (){
-     return (Session.get('isCity') == 1)?'Atlana':'Georgia Institute of Technology';
-   },
-   ubuffaloName: function(){
-     return (Session.get('isCity') == 1)?'Buffalo':'University at Buffalo';
-   },
-   uhunterName: function(){
-     return (Session.get('isCity') == 1)?'New York':'Hunter College';
-   },
-   syracuseSelected: function () {
-     return (Session.get('university') == 0) ? 'selected' : '';
-   },
-   emorySelected: function () {
-     return (Session.get('university') == 1) ? 'selected' : '';
-   },
-   riceSelected: function () {
-     return (Session.get('university') == 2) ? 'selected' : '';
-   },
-   georgiatechSelected: function () {
-     return (Session.get('university') == 3) ? 'selected' : '';
-   },
-   ubuffaloSelected: function () {
-     return (Session.get('university') == 4) ? 'selected' : '';
-   },
-   uhunterSelected: function () {
-     return (Session.get('university') == 5) ? 'selected' : '';
-   },
    citySelected: function () {
      return (Session.get('isCity') == 1) ? 'selected' : '';
    },
@@ -483,6 +531,13 @@ Template.form.helpers({
    animateselected:function (){
      return (Session.get('crimeCategory') == this.crimeCategory)? 'selected' : '';
    },
+   getPlaces: function () {
+     return getPlaceInfo();
+   },
+   placeSelected: function () {
+     return (Session.get('university') == this.placeIndex)? 'selected' : '';
+   },
+
 
 });
 
