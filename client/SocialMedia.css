@@ -1,0 +1,35 @@
+.tips {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+  visibility: hidden;
+  margin-left: 1px;
+}
+
+.dropdown{
+  visibility: visible;
+  background: transparent;
+  color:black;
+  text-transform: capitalize;
+  float:left;
+  overflow: hidden;
+  height: auto;
+}
+
+.sendercount{
+  margin-top: 90px;
+  margin-left: 20px;
+  visibility: visible;
+  background: transparent;
+  float:left;
+  color:black;
+  font-size: 80px;
+  overflow: hidden;
+}
+
+:hover {
+  fill: #F9E79F;
+}

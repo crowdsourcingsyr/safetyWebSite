@@ -1,0 +1,41 @@
+<template name="SocialMedia">
+  <div class="row">
+      <div class ="col-md-12">
+          <div class="row">
+            <div class="col-md-4">
+              {{> SocialMediaForm}}
+            </div>
+            <div class="col-md-4">
+              <svg id="polygon1"></svg>
+            </div>
+            <div class="col-md-4">
+              <div id="label" class="sendercount">
+                <p id="p1" class="counter text-primary"></p>
+              </div>
+            </div>
+          </div>
+
+    </div>
+  </div>
+
+</template>
+
+<template name="SocialMediaForm">
+  <div>
+  <div class="dropdown form-group">
+    <label for="sel1">Set Filter for Police Department Location:</label>
+    <select class="form-control" id="select">
+      <option value="Choose a value"></option>
+    </select>
+  <br><br>
+  <button type="button" id="button" class="btn btn-primary">Reset</button>
+  <table id="stat" class="table stat">
+  <tr>
+      <th>UserRole</th>
+      <th>Number</th>
+      <th>Percent</th>
+    </tr>
+  </table>
+  </div>
+</div>
+</template>

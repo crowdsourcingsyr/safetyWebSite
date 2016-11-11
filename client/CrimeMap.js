@@ -545,6 +545,7 @@ Template.map.rendered = function() {
     $('.datetimepicker').each(function() {
         $(this).datetimepicker();
     });
+    console.log(Session.get('university'));
      //Session.set('severity',10);
     L.Icon.Default.imagePath = '/public';
     var LeafIcon = L.Icon.extend({
@@ -558,7 +559,7 @@ Template.map.rendered = function() {
         }
     });
     highIcon = new LeafIcon({iconUrl: 'high.png'});
-     mediumIcon = new LeafIcon({iconUrl: 'medium.png'});
+    mediumIcon = new LeafIcon({iconUrl: 'medium.png'});
     lowIcon = new LeafIcon({iconUrl: 'low.png'});
      if(Session.get('university')==0)
     {
@@ -568,6 +569,7 @@ Template.map.rendered = function() {
     }
     else if(Session.get('university')==1)
     {
+         console.log("hello");
          map = L.map('map', {
                 doubleClickZoom: false
             }).setView([33.7925195,-84.3239989], 14);

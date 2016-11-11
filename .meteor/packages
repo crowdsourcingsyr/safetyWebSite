@@ -39,3 +39,5 @@ shell-server
 juliancwirko:postcss
 aslagle:reactive-table
 anbuselvan:meteor-toggle-switch
+iron:router
+d3js:d3

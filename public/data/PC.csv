@@ -1,0 +1,624 @@
+PoliceDepartment,UserID,SenderScreename,UserName,senderDescription,senderFollowers,senderFriends,senderTFF,UserLocation,senderLocationTag,sender.agency,sender.comention,sendTFF_range,PDLocation,UserRole
+SFPD,3936,allaboutgeorge,George Kelly,"Journalist (reporter, breaking news team for Bay Area News Group; gkelly at bayareanewsgroup dot-com or 408-859-5180), blogger, musician, fan",7144,2568,2.781931464,94606 or 94612 or 94804,Non-Local,0,1,>10,"San Francisco, CA",Media
+NYPDnews,686993,noneck,noel hidalgo,@BetaNYC's Co-founder & Executive Director / a #CfAbrigade; @GuardianProject consultant; #BikeNYC instigator; Formerly of @NYSenate @Davos @CodeForAmerica.,5787,2287,2.530389156,"Brooklyn, NYC",Local,0,1,2->10,New York City,Other Sectors
+SFPD,754485,matthewkeyslive,Matthew Keys,The internet's journalist. Former @Reuters social media editor. Tips: 415.857.2407 or matthew.keys@gmail.com | Contact info - http://bit.ly/MailMK,40196,6000,6.699333333,San Francisco,Local,0,1,2->10,"San Francisco, CA",Media
+SpokanePD,3934221,spokesmanreview,SpokesmanReview,The Spokesman-Review is the largest news and information provider in the Inland Northwest. We use this account to talk about what's happening in the community.,24045,1192,20.17197987,"Spokane, WA",Local,0,1,>10,"Spokane, WA",Not Identified
+NYPDnews,5770442,1010wins,1010 WINS,"All News. All The Time. You Give Us 22 Minutes, We'll Give You The World.",31081,806,38.56203474,"New York City, NY, USA",Local,0,1,>10,New York City,Not Identified
+StocktonPolice,6017542,breakingnews,Breaking News,"Get our free iOS or Android app to unlock more updates, see news near you and customize your own alerts...",7664064,535,14325.35327,Global,Non-Local,0,1,>10,"Stockton, CA, USA",Not Identified
+SLMPD,7074742,peterkinder,Peter Kinder,,8917,5005,1.781618382,,Missing,0,1,1->2,"St. Louis, MO",Not Provided
+SLMPD,7722022,beetkid,Mindy ,I'm REAL!!!,260,196,1.326530612,The city between CA & NY.,Non-Local,0,1,1->2,"St. Louis, MO",Not Identified
+boulderpolice,8731312,denverchannel,7NEWS Denver Channel,"Updating #BreakingNews, #cowx & Denver and Colorado news headlines from 7NEWS & http://t.co/PyqySYXBMD. Got a news tip? Tweet us or call us at 303-832-0200.",94777,12121,7.819239337,"Denver, Colorado",Non-Local,0,1,2->10,"Boulder, CO",Media
+SFPD,8891402,3030vision,Greg Schuler,"Interaction Designer at @Cooper, foodie, cyclist, cocktail enthusiast.",434,219,1.98173516,"San Francisco, CA",Local,0,1,1->2,"San Francisco, CA",Other Sectors
+BPDVT,9522502,asoga,asoga,"Editorial page editor, The Burlington (Vt.) Free Press.  Opinionated (It's my job). Also dabbles in picture-taking. @mojonews and @Kcollege grad.",2548,1966,1.296032553,"Burlington, Vermont",Local,0,1,1->2,"Burlington, Vermont",Media
+ScottsdalePD,10025982,azfamily,AZ Family,"Live from the newsroom of KTVK-3TV and http://azfamily.com in Phoenix, Arizona. Delivering local news, weather, sports & just interacting. Visit us online at",94176,8024,11.73678963,"Phoenix, Arizona",Non-Local,0,1,>10,"Scottsdale, Arizona",Media
+CLEpolice,11024852,kristin_volk,Kristin Volk,"Reporter for WEWS-TV in Cleveland. Storyteller, producer, shooter, editor, water skier, chocolate lover.",1912,1277,1.497259201,"Cleveland, OH",Local,0,1,1->2,"Cleveland, OH",Media
+SLMPD,11740172,charlesjaco1,Charles Jaco,"Journalist, author, recovering talk host and war correspondent, public speaker, occasional academic, newspaper columnist (how quaint).",4242,842,5.038004751,St. Louis,Local,0,1,2->10,"St. Louis, MO",Media
+SFPD,12579352,billycorben,Billy Corben,"Director 'Cocaine Cowboys,' ESPN 30 for 30s 'The U' and 'Broke,' and http://dawg-fight.com",38671,2290,16.88689956,Miami,Non-Local,0,1,>10,"San Francisco, CA",Other Sectors
+SLMPD,14090948,antoniofrench,Antonio French,"Dad, Husband, Alderman of the @21stWard in St. Louis, founder of @North_Campus, Auburn grad and devoted Auburn Football fan, @WUSTL MBA.",120104,1500,80.06933333,"St. Louis, MO, USA",Local,0,1,>10,"St. Louis, MO",Other Sectors
+CLEpolice,14267944,clevelanddotcom,clevelanddotcom,"Northeast Ohio Media Group's http://cleveland.com is your one stop shop for news, sports, entertainment, and more in Northeast Ohio.",58445,7145,8.179846046,"Cleveland, Ohio",Local,0,1,>10,"Cleveland, OH",Media
+BPDVT,14275430,ryanmercer1,ryanmercer1,Burlington Free Press Photo/Video/Multimedia Editor. Dad. Snowboarder. Geek. Rehabilitated flat lander. Chicken herder and god knows what else.,2418,1517,1.593935399,"Burlington, VT",Local,0,1,1->2,"Burlington, Vermont",Not Identified
+VBPD,14420135,cityofvabeach,Virginia Beach,"The City of Virginia Beach is the most populous city in Virginia, with more than 38 miles of beaches bordering the Chesapeake Bay and Atlantic Ocean.",23313,93,250.6774194,"Virginia Beach, VA",Local,0,1,>10,"Virginia Beach, VA",Not Identified
+boulderpolice,14504258,dailycamera,Daily Camera,"The Daily Camera newspaper in Boulder, Colo., covers local news, sports, lifestyles, entertainment, business, opinion and more throughout Boulder County.",35508,1256,28.27070064,"Boulder, Colo.",Local,0,1,>10,"Boulder, CO",Other Sectors
+CLEpolice,14590764,frangeladuo,Frangela,"Frances Callier and Angela V. Shelton are real life best friends, comedians, hosts of idiotoftheweek.tv and lovers of all things Pop Culture!",7250,2607,2.7809743,"Los Angeles, CA",Non-Local,0,1,2->10,"Cleveland, OH",Media
+PortlandPolice,14628391,kyouell,Kath Youell,"Car-free Bakfiets Babe. Wife of @built, SAHM to son w/Down syndrome & typical daughter. Knitter, fan of @twhiddleston, B Cumberbatch, @TheWho, & oxford commas.",1813,2001,0.906046977,"PDX, Oregon",Non-Local,0,1,<1,"Portland, Oregon",Not Identified
+VBPD,14946895,virginianpilot,The Virginian-Pilot,"Breaking News and Top Headlines from Hampton Roads' most trusted source for news, The Virginian-Pilot",33769,1481,22.80148548,"Norfolk, Va. ",Non-Local,0,1,>10,"Virginia Beach, VA",Media
+oaklandpoliceca,15199325,govloop,GovLoop,"GovLoop is the knowledge network for government connecting 200,000+ federal, state, and local government innovators. http://www.govloop.com/",20208,6607,3.058574239,"Washington, DC",Non-Local,0,1,>10,"Oakland, CA",Other Sectors
+NYPDnews,15222806,nytmetro,NYT Metro Desk ,"Breaking news and headlines from the New York Times Metro desk, including the City Room blog, the daily New York report and the Sunday Metropolitan section.",110024,316,348.1772152,New York City,Local,0,1,>10,New York City,Not Identified
+NYPDnews,15264675,azi,Azi,"I cover politics. CapitalNewYork[dot]com. RT's mean nothing. Azi@CapitalNewYork[dot]com / Tips, Complaints: 917-723-7962",15748,3213,4.901338313,New York City,Local,0,1,>10,New York City,Media
+SLMPD,15293169,jcoatar,Jack Coatar,Democratic Candidate for 7th Ward Alderman,1435,1161,1.236003445,"St. Louis, MO",Local,0,1,1->2,"St. Louis, MO",Polictician
+BPDVT,15313229,shaytotten,Shay Totten,"communications director for Chelsea Green Publishing (@chelseagreen), collector of manual typewriters, Bennington College alum, poetry geek, fence viewer.",6234,4821,1.293092719,"Burlington, VT",Local,0,1,1->2,"Burlington, Vermont",Other Sectors
+StocktonPolice,15392053,cbssacramento,CBS Sacramento CBS13,Official Twitter account of CBS13 in Sacramento. Follow us for breaking local and California news and discussion.,45291,5573,8.126861654,"West Sacramento, Calif.",Non-Local,0,1,2->10,"Stockton, CA, USA",Not Identified
+sppdPIO,15601504,denisempls,Denise Felder,Career Adviser and Writer | Encouraging individuals and challenging systems to close opportunity gaps | My tweets are my own,2412,1439,1.676164003,"Minneapolis, MN",Non-Local,0,1,1->2,"St. Paul, MN",Media
+detroitpolice,15601825,aspenspin,AspenSpin,Aspen Spin : #1 blog in Aspen Colorado. Livin' the Dream since 2003 (blogging since 06). Summer in Detroit. Tweets from Andrew M. Israel,6093,2181,2.793672627,"Aspen, Colorado",Non-Local,0,1,>10,"City of Detroit, MI",Other Sectors
+NYPDnews,15923226,cspanwj,Washington Journal,"C-SPAN's morning call-in program. Live every day from 7-10am ET with guests taking your calls, emails and tweets. Join the conversation.",42067,2872,14.64728412,"Washington, DC",Non-Local,0,1,>10,New York City,Media
+SFPD,16261627,kcbsnews,KCBS 740 AM/106.9 FM,"The Bay Area's only all news radio station. Local, national and world news 24/7, plus traffic and weather updates every 10 minutes 'on the eights.'",27358,6255,4.373780975,San Francisco Bay Area,Local,0,1,>10,"San Francisco, CA",Media
+NYPDnews,16296123,avifink,Avi Fink,"Dep. Dir. of Intergov for Mayor @BilldeBlasio. Mets, Jets, Knicks and Rangers. Democratic Party. Tweets/RT only my opinion.",1574,953,1.651626443,New York,Local,0,1,1->2,New York City,Polictician
+boulderpolice,16313592,cbsdenver,CBSDenver,"CBS4 is located in Denver, Colo. at 1044 Lincoln. In Denver, you can watch CBS4 on Channel 4, KCNC-TV.",75170,14909,5.041920987,"Denver, Colorado",Non-Local,0,1,2->10,"Boulder, CO",Media
+SFPD,16657699,cbssf,KPIX 5,CBS SF is powered by the Bay AreaŒ_í_ŒÈs KPIX 5 and KCBS All News 740 AM and FM 106.9.,37887,642,59.01401869,San Francisco Bay Area,Local,0,1,>10,"San Francisco, CA",Media
+SLMPD,16740234,urbanreviewstl,UrbanReviewSTL.com,"St Louis public policy, planning & politics.  Published by Steve Patterson since 10/31/2004",8891,758,11.72955145,"St. Louis, MO",Local,0,1,>10,"St. Louis, MO",Not Identified
+NYPDnews,16760131,wcbs880,wcbs880,The official twitter feed of WCBS Newsradio 880 in New York City.,13380,146,91.64383562,"New York, NY",Local,0,1,>10,New York City,Not Identified
+SLMPD,16834491,jonssonville,Greg Jonsson,Likes: My job as a breaking news editor at @stltoday / http://www.stltoday.com; #stlblues hockey; urbanity; #stl; music; nerdy stuff. Dislikes: Character limi,2858,970,2.946391753,"St. Louis, USA, Pale Blue Dot",Local,0,1,2->10,"St. Louis, MO",Media
+SLMPD,16874341,mcgrawmilhaven,McGraw Milhaven,http://WWW.KTRS.com http://www.STLTODAY.com/opinion KPLR-TV 6am-10am weekday mornings. ST LOUIS PROUD,6620,329,20.12158055,"St. Louis, Missouri",Local,0,1,>10,"St. Louis, MO",Media
+SLMPD,16936858,valeriehahn,Valerie Schremp Hahn,"St. Louis Post-Dispatch nightside public safety reporter. STL native, city dweller, info junkie, school volunteer, repurposer, mom of two. Usually tired.",5203,947,5.494192186,"St. Louis, MO, USA",Local,0,1,2->10,"St. Louis, MO",Media
+SFPD,16988803,getgln,Glenn Robinson,Œ_Œù_ Freedom of movement #BLACKLIVESMATTER #LatinosAreHuman RT Favianna's 'Migration is Beautiful' here Œ__íÅŒ´í_Œè https://twitter.com/getgln/status/470109908721860608,10891,11002,0.989910925,Beside you,Non-Local,0,1,<1,"San Francisco, CA",Not Identified
+SLMPD,17068692,pdpj,David Carson,"St. Louis Post-Dispatch photog, opinions & ideas are mine, RTs Œ_í_í_ endorsements, I talk a little trash about Boston sports, husband & dad, Pulitzer Prize winner",15447,1030,14.99708738,St. Louis,Local,0,1,>10,"St. Louis, MO",Media
+oaklandpoliceca,17090997,rasheed_shabazz,#BlackMuslimsMatter,"Œ_í‡ŒÇ New Afrikan Muslim Œ_í‡ŒÇ Son Brother Uncle Œ_í‡ŒÇ Journalist Photographer Historian Œ_í‡ŒÇ Then @blackhour @onyxexpress, Launching @TheABCMovement Œ_í‡ŒÇ mama approves my tweets",3487,1316,2.649696049,Oakland Œ_í‡ŒÇ Kemet Œ_í‡ŒÇ Califas,Local,0,1,2->10,"Oakland, CA",Media
+SpokanePD,17104123,melissakxly4,Melissa Luck #kxly,Executive Producer at @kxly4news. @marquetteu alum. Adopted @wsucougars fan. Lover of #wawine. Rower. Slow triathlete. My hips don't lie.,4825,3490,1.38252149,"Spokane, WA",Local,0,1,1->2,"Spokane, WA",Other Sectors
+SLMPD,17162143,pinkdogwood770,pinkdogwood770,"I'm a people person. sometimes sounds harsh but I'm a teacher first, student of life next.",186,417,0.446043165,,Missing,0,1,<1,"St. Louis, MO",Not Identified
+ScottsdalePD,17187236,12news,12 News,"Connecting #Arizona: #Breaking news in #Phoenix, #Scottsdale, #Mesa and more. 
+
+Call 602-444-1212 or email connect@12news.com with news and photos.",48409,4882,9.915813191,"Phoenix, AZ",Non-Local,0,1,2->10,"Scottsdale, Arizona",Media
+SFPD,17223014,veronicadlcruz,Veronica De La Cruz,TV journo (CBS SF: KPIX & CW) http://t.co/iefO2qJHwJ fighting 4 healthcare rights in memory of my brother #ERIC & following all wearing his banner. Hello SF!,23567,577,40.8440208,San Francisco,Local,0,1,>10,"San Francisco, CA",Not Identified
+CLEpolice,17322632,clecitycouncil,CleCityCouncil,"As Cleveland's legislative branch of government, Cleveland City Council strives to serve as the voice of the community & act in the best interests of residents.",11494,2287,5.025797989,"Cleveland, Ohio",Local,0,1,2->10,"Cleveland, OH",Not Identified
+NYPDnews,17354377,immortaltech,IG: TechImmortal,General Info: info@viperrecords.com // Bookings: PeterSchwartz@theagencygroup.com //    IG: techimmortal // FB: techimmortal,242564,4636,52.32182916,"Harlem, New York City",Local,0,1,>10,New York City,Not Identified
+SLMPD,17448965,riverfronttimes,Riverfront Times,St. Louis' only alternative newspaper covers what others won't. Follow @gutcheckstl for food and @rftmusic for tunes.,50494,3433,14.70841829,"St. Louis, Missouri",Local,0,1,>10,"St. Louis, MO",Not Identified
+NYPDnews,17491913,houstonsfirst,HoustonsFirst,"Houston's First Baptist Church: A relevant biblical community | The Loop, Cypress, Downtown, Sienna | Pastor @GreggMatte",2375,173,13.7283237,"Houston, Texas",Non-Local,0,1,>10,New York City,Other Sectors
+StocktonPolice,17515263,almendracarpizo,Almendra Carpizo,Reporter at @Recordnet.com | Dog mom at home. I appreciate a good beer. Send story tips to acarpizo@recordnet.com.,1189,478,2.487447699,"Stockton, CA",Local,0,1,2->10,"Stockton, CA, USA",Media
+SLMPD,17874169,stackizshort,MockingJay,"...because you sing, Baby. 
+
+
+
+Kicking over your sandcastle, cause I can. Don't cry, build better shit. 
+
+
+
+TipStackzOff@riseup.net",8660,1862,4.650912997,Wandering ,Non-Local,0,1,2->10,"St. Louis, MO",Not Identified
+PortlandPolice,17951583,cyclepdxtours,Cycle PDX,"Portland's Bike Culture shop - providing guided rides, rentals, repair and sales - with Oregon Microbrews on tap! Open daily from 9-6. 1-844-PDX-BIKE",1092,143,7.636363636,"Portland, Oregon",Local,0,1,>10,"Portland, Oregon",Other Sectors
+NYPDnews,18109709,nycdailypics,NYC Daily Pics,"Daily pictures of #NewYork, #NY. Tag @nycdailypics in your #NYC photos for RTs",15540,321,48.41121495,"New York, NY",Local,0,1,>10,New York City,Not Identified
+SFPD,18132494,sfweekly,SF Weekly,"S.F. news, events, and culture from SF Weekly. No feeds, please.",98927,358,276.3324022,San Francisco,Local,0,1,>10,"San Francisco, CA",Media
+NYPDnews,18134929,wmpolice,West Midlands Police,Official West Midlands Police account. Do NOT use Twitter to report crime. Contact us on 999 in an emergency or 101 for non-emergency calls.,184264,735,250.6993197,"West Midlands, England",Non-Local,0,1,>10,New York City,Not Identified
+PortlandPolice,18228178,koinnews,KOIN News,Watching Out For You,45273,950,47.65578947,"Portland, Oregon",Local,0,1,>10,"Portland, Oregon",Not Identified
+SpokanePD,18251414,urbaninstitute,Urban Institute,Elevating the debate on social and economic policy for nearly five decades. (Links/RTs/favorites/follows/etc. are not endorsements.),73003,2579,28.30670803,"Washington, DC",Non-Local,0,1,>10,"Spokane, WA",Not Identified
+SFPD,18273025,appfusions,AppFusions,"Pkg'd pain point integrations & managed hosting 4 Atlassian (JIRA, Confluence...), IBM, Microsoft, Jive, Dropbox, Google, Lingotek, Box, Egnyte, Alfresco...",2201,2096,1.05009542,"USA (SF, DC, CO, NY) - AU - UK",Local,0,1,1->2,"San Francisco, CA",Not Identified
+NYPDnews,18483886,pinnyringel,Pinny Ringel,Father. Husband. Neighbor. Involved in City politics. Enjoy campaigning. Opinions expressed are my own & RT are not an endorsement.,3323,729,4.55829904,Brooklyn NY,Local,0,1,>10,New York City,Other Sectors
+oaklandpoliceca,18494804,tyska,Tyska,"Photojournalist/videojournalist for The Oakland Tribune/Bay Area News Group. Musician, rodeo champion, sailor, world traveler. There when news breaks.",1489,1779,0.836987071,"Oakland, Calif.",Local,0,1,<1,"Oakland, CA",Media
+NYPDnews,18590012,galeabrewer,Gale A. Brewer,Manhattan Borough President,10311,699,14.75107296,"New York, NY",Local,0,1,>10,New York City,Not Identified
+SLMPD,18614130,markreardonkmox,Mark Reardon,"KMOX Talk Show Host/Movie Critic, Diet Coke addict, cyclist, music fanatic. I wear headphones for a living.",8458,855,9.892397661,"St. Louis, MO",Local,0,1,2->10,"St. Louis, MO",Other Sectors
+NYPDnews,18634578,wmsbg,Williamsburg News,"Williamsburg News and Updates, as it happens. Account managed by @WmsbgHq",4455,137,32.51824818,"Williamsburg, Brooklyn, NYC",Local,0,1,>10,New York City,Media
+StocktonPolice,18690498,modestopolice,Modesto Police Dept,The mission of the Modesto Police Department is to drive the crime rate down and improve the quality of life in the city of Modesto. | #insideMPD,16240,348,46.66666667,"Modesto, CA",Non-Local,0,1,>10,"Stockton, CA, USA",Not Identified
+CLEpolice,18733287,nicolemarie216,Nicole Stewart,interdimensional kicker of butt,176,310,0.567741935,Ohio,Non-Local,0,1,<1,"Cleveland, OH",Not Identified
+PortlandPolice,18818789,opbnews,OPB News,In-depth stories that affect individuals and communities in the Pacific Northwest. Tweets by @LizzyDuffy and @ksfreda.,14554,456,31.91666667,Oregon & SW Washington,Non-Local,0,1,>10,"Portland, Oregon",Not Identified
+NYPDnews,18922205,govtechnews,Govtech.com,Official Twitter page of Government Technology magazine. Solving problems in #stategov & #localgov through the smart use of technology.,12833,1015,12.64334975,,Missing,0,1,>10,New York City,Not Identified
+NYPDnews,18943141,bostonfire,Boston Fire Dept.,"Official Twitter. Grill safely. Charcoal grills on ground away from house. Propane grills 1st floor only, prefer ground. Never unattended. Never in high winds",85256,60,1420.933333,"Boston, Massachusetts",Non-Local,0,1,>10,New York City,Not Identified
+SLMPD,18993263,alexiszotos,Alexis Zotos,"Reporter at @KMOV in my hometown of St. Louis, #Cardinals fan, coffee addict, political junkie, country music lover, @USC Trojan. Opinions are my own.",3990,2173,1.836171192,St. Louis,Local,0,1,1->2,"St. Louis, MO",Media
+StocktonPolice,18993395,abc7newsbayarea,ABC7 News,"#1 source for breaking news, weather, sports and more around the Bay Area.",180494,25997,6.942878024,San Francisco Bay Area,Non-Local,0,1,2->10,"Stockton, CA, USA",Media
+NYPDnews,18995454,crainsnewyork,Crain's New York,"Crain's New York Business covers NYC's top industries, from Wall St, real estate, tech and retail to health, tourism, politics & arts. RTs are not endorsements.",39736,7180,5.534261838,"New York, NY",Local,0,1,>10,New York City,Not Identified
+NYPDnews,19086461,fractenberg,Ben Fractenberg,"I am a reporter/producer for DNAinfo.com covering breaking news, crime and features in New York City. Send your tips/angry missives to bfractenberg@dnainfo.com.",913,422,2.163507109,Brooklyn,Non-Local,0,1,>10,New York City,Media
+NYPDnews,19170880,bradlander,Brad Lander,"Deputy Leader for Policy @NYCCouncil. @NYCProgressives co-founder. Park Slope dad. City planning wonk. St. Louis native. Love baseball, public schools, @PB_NYC",11656,1237,9.42279709,"Brooklyn, NY",Local,0,1,2->10,New York City,Other Sectors
+SLMPD,19278423,ryandeanksdk,Ryan Dean,Morning reporter/anchor for @ksdknews in #STL. Married to reporter @danadeanksdk. @univMiami grad. Go to bed at 6 p.m. wakeup at 2 a.m. eat dinner at 3 p.m.,5260,832,6.322115385,St. Louis,Local,0,1,2->10,"St. Louis, MO",Media
+PortlandPolice,19452490,catchwmw,WA Most Wanted,Washington's Most Wanted: The TV show airing statewide that helps bring fugitives to justice and gives a voice to victims. Hosted by David Rose.,5947,1546,3.846701164,Seattle,Non-Local,0,1,>10,"Portland, Oregon",Not Identified
+NYPDnews,19759749,denverpolice,Denver Police Dept. ,"Mission: To operate a police agency with a focus on preventing crime in a respectful manner, demonstrating that everyone matters. *Not monitored 24/7",50798,570,89.11929825,"Denver, Colorado",Non-Local,0,1,>10,New York City,Police
+NYPDnews,19915329,redcrossny,NY Red Cross,"Official twitter stream of the American Red Cross Greater NY Region; serving NYC, Long Island, Lower Hudson Valley & Greenwich, Conn.",13393,1731,7.737146158,"520 W 49th St, New York, NY ",Local,0,1,>10,New York City,Not Identified
+CLEpolice,19997324,cassienist,Cassie Nist,Senior Assignment Editor at WEWS NewsChannel 5,874,622,1.405144695,"Cleveland, OH",Local,0,1,1->2,"Cleveland, OH",Media
+StocktonPolice,20097362,nbcbayarea,NBC Bay Area,"Thank you for stopping by @NBCBayArea - the place to go for exclusive local stories, the latest breaking news, weather updates and more.",80349,2213,36.30772707,San Francisco Bay Area,Non-Local,0,1,>10,"Stockton, CA, USA",Not Identified
+SFPD,20682289,bungerkcbs,Stan Bunger,"I co-anchor the KCBS Morning Newswatch. Tweeting from Studio A while on-air (740 AM & FM 106.9) 5:30-10 AM Pacific time weekdays
+
+https://t.co/GpMr6orEqb",3787,708,5.348870056,San Francisco,Local,0,1,2->10,"San Francisco, CA",Media
+NYPDnews,20707070,brennancenter,Brennan Center,Non-partisan public policy and law institute that focuses on fundamental issues of democracy and justice. RT's do not equal endorsements.,18394,2715,6.774953959,New York & Washington D.C.,Local,0,1,>10,New York City,Other Sectors
+SFPD,21021891,chevron,Chevron,Tweets from the Chevron communications team. Join us on http://Facebook.com/Chevron.,209253,357,586.1428571,"San Ramon, CA ",Local,0,1,>10,"San Francisco, CA",Not Identified
+PortlandPolice,21072250,hillarylake,"Hillary Lake, KATU","@KATUNews reporter. From San Diego & Southern OR. Fmrly at @KOBITV & @WBIR. Loves: photography, running & Ducks football. Send tips/ideas to hlake@katu.com",3590,1913,1.87663356,"Portland, OR",Local,0,1,1->2,"Portland, Oregon",Media
+SpokanePD,21453415,spokhumanesoc,SpokaneHumaneSociety,Providing Compassionate Care and Placement Since 1897! Adopted is our favorite breed! Follow us for great shelter updates and adoptable pet photos!,3075,397,7.74559194,"Spokane, WA",Local,0,1,2->10,"Spokane, WA",Not Identified
+NYPDnews,21534951,adamgoldmanwp,Adam Goldman,Reporter at The Washington Post covering national security and terrorism. Find me on Peerio.Same username. Done w/PGP,10777,837,12.87574671,DC,Non-Local,0,1,>10,New York City,Media
+PortlandPolice,22329930,teressa_raiford,Teressa Raiford,"Community organizer, Human Rights Activist.  Program consulting for Philanthropic Art, History and Education development S.T.E.A.M. Curriculum #DSP15",1342,2001,0.670664668,Oregon,Non-Local,0,1,<1,"Portland, Oregon",Other Sectors
+SFPD,22330739,benioff,Marc Benioff,Ceo@salesforce.com,157192,1305,120.4536398,Salesforce.com,Non-Local,0,1,>10,"San Francisco, CA",Other Sectors
+NYPDnews,22694251,apbweb,American Police Beat,Your Source for Law Enforcement News - Law Enforcement Magazine Publication for Cops,9799,146,67.11643836,USA,Non-Local,0,1,>10,New York City,Other Sectors
+NYPDnews,22763447,honolulupolice,Honolulu Police,"Account not monitored constantly, for police service, call 911.",10828,4622,2.342708784,City and County of Honolulu,Local,0,1,>10,New York City,Police
+CLEpolice,22903265,joe_schmucc,#BlackLivesMatter,Being a white man is like being a Lakers fan. You get used to winning a lot but everyone else hates you.,2666,425,6.272941176,El Pueblo de Nuestra SeíëŒ±ora ,Local,0,1,2->10,"Cleveland, OH",Not Identified
+oaklandpoliceca,22989686,bikeeastbay,Bike East Bay,"Bike East Bay works for safe, convenient and enjoyable bicycling for all people in the East Bay, California (formerly East Bay Bicycle Coalition)",6269,2063,3.038778478,"Oakland, CA",Local,0,1,>10,"Oakland, CA",Not Identified
+ScottsdalePD,23008510,officialtaser,@TASER,TASER International - TASERí«ŒÂ CEWs protect lives & AXONí«ŒÂ cameras & EVIDENCEcom protect truth. At Twitter helm is @ArizTri - founding TASER member since 1994.,8029,8827,0.909595559,"Scottsdale, AZ U.S.A.",Local,0,1,<1,"Scottsdale, Arizona",Not Identified
+oaklandpoliceca,23078191,mikeynoway,Mike Inouye,"NBC Bay Area traffic guy. Improv comedian. Voiceover actor. Live event host. Bay Area local, born and raised. Views, opinions & spelling errors are mine.",4099,1836,2.232570806,SF Bay Area,Non-Local,0,1,>10,"Oakland, CA",Other Sectors
+NYPDnews,23220889,helenrosenthal,Helen Rosenthal,"Councilmember for NYC's Council District 6. Upper West Side Community Leader, Mother, Wife, and Friend.",3552,1034,3.435203095,New York City,Local,0,1,>10,New York City,Polictician
+SFPD,23223071,shekeelajones,Shekeela Jones,"Let's Become a Universal Union of United Folks Yearning 4 Ubiquity. 
+
+
+
+Part reporter, part spindoctor, spare time doc #producer #KPFA 
+
+#AKA #HalfNigerian @WICRN",2160,2079,1.038961039," Nor. California, Baby!!!",Non-Local,0,1,1->2,"San Francisco, CA",Media
+VBPD,23517712,wtkr3,WTKR NewsChannel 3,"WTKR NewsChannel 3. Taking Action, Getting Results.",23646,1041,22.71469741,"Hampton Roads, Virginia",Local,0,1,>10,"Virginia Beach, VA",Not Identified
+NYPDnews,23812337,esquizzy,ESQUIRE,You gotta HATE to LOSE more than u LOVE to WIN...,1057,506,2.088932806,Uptown Baby,Non-Local,0,1,>10,New York City,Not Identified
+SLMPD,23958097,ksdkstone,Sean J. Stone,"Producer @KSDKNews. Proud Mizzou alum. Self-proclaimed expert on #StLCards & #StLRams. Tweeting breaking news, weather & traffic alerts in the AM.",356,59,6.033898305,"St. Louis, MO",Local,0,1,2->10,"St. Louis, MO",Media
+boulderpolice,24058116,aurorapd,Aurora Police Dept,The men & women of the APD are committed to a #SaferAurora. Site not monitored 24/7. In an Emergency Call 911. Non-emergency Call 303-627-3100.,12149,1079,11.25949954,"Aurora, Colorado",Non-Local,0,1,>10,"Boulder, CO",Not Identified
+SFPD,24077085,filmfinder,Jon Nash,"FilmFinder 
+
+Our focus is on dreamers, like you.",662,1999,0.331165583,,Missing,0,1,<1,"San Francisco, CA",Not Identified
+NYPDnews,24165761,michaelskolnik,Michael Skolnik,"President of GlobalGrind, founded by @UncleRush. Father to the champ, Mateo Ali. Board Member, Trayvon Martin Foundation. Contact: info@mskolnik.com",141968,110,1290.618182,,Missing,0,1,>10,New York City,Other Sectors
+NYPDnews,24274605,aidangardiner,Aidan Gardiner,"Breaking news for DNAinfo | Photos, music and other things to make the day a little more interesting | agardiner@dnainfo.com | IG: @aidangardiner",747,811,0.92108508,New York,Local,0,1,<1,New York City,Other Sectors
+NYPDnews,24295932,senmartygolden,Senator Marty Golden,"NYS Senator representing Bay Ridge, Dyker Heights, Bensonhurst, Marine Park, Gerritsen Beach, Gravesend, Manhattan Beach, Sheepshead Bay & Midwood",5932,3468,1.710495963,"Brooklyn, New York",Local,0,1,1->2,New York City,Not Identified
+NYPDnews,24797876,mayorsalliance,MayorsAllianceNYC,A 501(c)(3) non-profit charity working with over 150 partner pet rescue groups and shelters to transform New York City into a no-kill community.,8101,2227,3.637629097,"New York, NY",Local,0,1,>10,New York City,Not Identified
+oaklandpoliceca,25025055,daviddebolt,David DeBolt,"daily newspaperman, night crime news Oakland Tribune / @insidebayarea / civil unrest, 187s, vice / tips to ddebolt at bayareanewsgroup dot com",1876,780,2.405128205,"Oakland, CA",Local,0,1,2->10,"Oakland, CA",Media
+PortlandPolice,25081650,dirquez,Dirk VanderHart,"News Editor at the Portland Mercury. Every step tangoed.
+
+
+
+dirk@portlandmercury.com",994,491,2.024439919,"Portland, Ore.",Local,0,1,2->10,"Portland, Oregon",Media
+SFPD,25150468,hknightsf,Heather Knight,San Francisco Chronicle staff reporter covering the always amusing political scene at City Hall.,1871,346,5.407514451,San Francisco,Local,0,1,>10,"San Francisco, CA",Media
+SLMPD,25615035,newsformaggie,Maggie Crane,"Director of Communications for @MayorSlay, City of #STL. Former TV News Reporter. 15-year #cancersurvivor. #Music lover. #Travel junkie. Tweets are my own.",5240,827,6.336154776,"St. Louis, MO",Local,0,1,2->10,"St. Louis, MO",Media
+SLMPD,25719595,mepstl,Mary Ellen,Chief of Staff to @MayorSlay. Newlywed. Wannabe yogi. Voracious reader. Dog lover.  Former AmeriCorps Fellow.,1511,752,2.009308511,St. Louis City,Local,0,1,2->10,"St. Louis, MO",Not Identified
+SFPD,26703365,scott_wiener,Scott Wiener,"Member, San Francisco Board of Supervisors. Urbanist. Environmentalist. Advocate for transit, housing, parks, trees, healthcare, education, & animals. Democrat.",6714,184,36.48913043,"San Francisco, California",Local,0,1,>10,"San Francisco, CA",Other Sectors
+NYPDnews,26783343,downtownnyc,Downtown Alliance,"The Downtown Alliance provides service, advocacy, research & info. to advance Lower Manhattan as a global model of a 21st century Central Business District.",20627,2928,7.044740437,Downtown New York,Local,0,1,2->10,New York City,Polictician
+NYPDnews,26996018,nypd_cttf,Det. Martin Green,"NYPD Detective Specialist,(CTTF)Citywide Traffic Task Force Aux.Unit Coordinator/Instructor,Vision Zero St Team,Tough Mudder, USCG,MOTIVATED!DEDICATED!PROUD!",4926,4551,1.082399473,"New York, NY",Local,0,1,1->2,New York City,Not Identified
+NYPDnews,27048645,americanlegion,The American Legion ,"Supporting veterans, the military & their families since 1919. Join our efforts: http://www.legion.org/join. RTs do not imply endorsement.",47523,1455,32.66185567,"Indianapolis, IN",Non-Local,0,1,>10,New York City,Not Identified
+SLMPD,27172787,presreed,Lewis E. Reed,"Father of 4 great kids, husband, public servant, life long democrat, proud St. Louis City resident, President of the Board of Aldermen http://www.PresReed.com",8208,3074,2.67013663,"St. Louis, MO",Local,0,1,>10,"St. Louis, MO",Other Sectors
+NYPDnews,27487492,rorylancman,Rory Lancman,"New York City Councilman (Chair, Committee on Courts & Legal Services); former New York State Assemblyman (Chair, Subcommittee on Workplace Safety).",2728,151,18.06622517,New York,Local,0,1,>10,New York City,Not Identified
+CLEpolice,27776708,ida_in_cle,Ida L. H.,Covering Cuyahoga County Common Pleas Court for the @NEO_MediaGroup.,1285,1707,0.75278266,,Missing,0,1,<1,"Cleveland, OH",Other Sectors
+CLEpolice,27793335,colorofchange,ColorOfChange.org,Changing the color of democracy.,49312,2269,21.73292199,Oakland & New York City,Non-Local,0,1,>10,"Cleveland, OH",Not Identified
+NYPDnews,27995424,johncardillo,John Cardillo,Host of The John Cardillo Show on iheartmedia's 1290 WJNO The Palm Beaches. Debunking frauds & false narratives. Was NYPD. Opinions are mine. RT Œ_í_í_ endorsement.,5596,654,8.556574924,"Miami, FL",Non-Local,0,1,2->10,New York City,Media
+PortlandPolice,28057618,robbiedime,Robbie DiMesio,"Managing producer, Breaking News Team, The Oregonian/OregonLive",566,985,0.574619289,"Portland, Oregon",Local,0,1,<1,"Portland, Oregon",Media
+PortlandPolice,28179833,portlandcc,PCC,"Portland Community College is changing lives, strengthening our economy and creating a more vibrant community.",1986,402,4.940298507,"Portland, Oregon",Local,0,1,>10,"Portland, Oregon",Other Sectors
+CLEpolice,28289170,sarahbuduson,Sarah Buduson,"Searching for innovative investigative stories affecting people across Northeast Ohio
+
+Have a tip? E-mail buduson[at]http://newsnet5.com",2193,2004,1.094311377,"Cleveland, OH",Local,0,1,1->2,"Cleveland, OH",Not Identified
+NYPDnews,28502793,tishjames,Letitia James,"NYC Public Advocate, Fmr Council Member, Assistant AG, & Public Defender. Info charts, big ideas, & laughing like a #boss. Call (212) 669-7250 for assistance.",19447,2029,9.584524396,New York City,Local,0,1,2->10,New York City,Polictician
+SLMPD,29438864,jhuda,Jasmine Huda,"Anchor/Reporter, KMOV-TV",5023,619,8.114701131,St. Louis,Local,0,1,>10,"St. Louis, MO",Media
+CLEpolice,29731923,allaboardohio,All Aboard Ohio,"All Aboard Ohio is a non-profit, member-based organization dedicated to promoting improved public transportation and passenger rail service throughout the state",1424,684,2.081871345,Ohio,Non-Local,0,1,>10,"Cleveland, OH",Other Sectors
+detroitpolice,30150466,whutupdoe,Detroit Red,I own 21 Cuckaroo. You don't own one Cuckaroo. The Bill Laimbeer of Rap Commentary | #HailHydra | Music | Lifestyle | UNCENSORED | FB/IG: WHUTUPDOE,4435,1509,2.939032472,313 to 323/818,Non-Local,0,1,>10,"City of Detroit, MI",Not Identified
+SFPD,30318395,streetsblogsf,Streetsblog SF,Covering livable streets and sustainable transportation in San Francisco and the Bay Area,72312,1569,46.08795411,"San Francisco, California",Local,0,1,>10,"San Francisco, CA",Not Identified
+SFPD,30321204,sfpublicworks,SF Public Works,"...making San Francisco a beautiful, livable, vibrant, and sustainable city.",14174,2688,5.273065476,"San Francisco, CA",Local,0,1,2->10,"San Francisco, CA",Not Identified
+SFPD,30343716,sf_emergency,San Francisco DEM,The official profile for the San Francisco Department of Emergency Management for informational purposes only.,77316,152,508.6578947,San Francisco,Local,0,1,>10,"San Francisco, CA",Not Identified
+SFPD,30476655,brodiebrazilcsn,Brodie Brazil,"Host of A's, Sharks Pre & Postgame Live | Comcast SportsNet | NBC Bay Area | 95.7 The Game",37241,521,71.47984645,"San Francisco, CA",Local,0,1,>10,"San Francisco, CA",Media
+SFPD,30911833,edreiskin,Ed Reiskin,San Francisco Director of Transportation,2207,168,13.13690476,San Francisco,Local,0,1,>10,"San Francisco, CA",Other Sectors
+SLMPD,31005278,lawscomm,Lauri Stevens,#Socialmedia strategist 4 #LawEnforcement. Creator of SMILE Conferenceí«ŒÂ http://t.co/0NTNSIxjŒ_í£Œ¢ #poltwt & the COPPS Social Media MethodŒ_í£Œ¢ #smilecon #lesm #tacop,28297,25080,1.128269537,"Washington, DC",Non-Local,0,1,1->2,"St. Louis, MO",Not Identified
+SFPD,31083112,fillmoe4life,El Chapo Guzman Ho,I Sell Shit & Hoes Give Me Money!,2783,663,4.197586727,Undisclosed Location,Non-Local,0,1,>10,"San Francisco, CA",Not Identified
+SFPD,33662892,kqedforum,KQED Forum ,KQED's daily call-in show hosted by Michael Krasny. Tweets will be used on-air when appropriate. Moderated by Amanda Stupi.,6311,602,10.4833887,"KQED Public Media, SF CA",Local,0,1,>10,"San Francisco, CA",Not Identified
+SFPD,34700777,sfexaminer,SF Examiner,"San Francisco Examiner - Local, breaking news for San Francisco and the Bay Area",35147,332,105.8644578,"San Francisco, CA",Local,0,1,>10,"San Francisco, CA",Not Identified
+SLMPD,35326924,chriskingstl,Chris King,"Journalist by trade; writer, producer, musician, moviemaker by passion. Cofounder of Poetry Scores.",7605,1421,5.351864884,"St Louis, Missouri",Local,0,1,>10,"St. Louis, MO",Media
+SLMPD,36099830,chelseakmerta,"Chelsea Merta, Esq.",Attorney & Civil Rights Advocate | Community Activist in the #7thWard | STL City resident | SLU Law & IU Biochem grad | polyglot | gladiator,733,730,1.004109589,STL MO,Non-Local,0,1,1->2,"St. Louis, MO",Other Sectors
+SFPD,36183636,sfpd,San Francisco Police,Official Twitter of the San Francisco Police Department. Social Media Policy: http://t.co/Nnf4xnw3X3 Call 911 to report emergencies. Tweets not monitored 24/7.,38970,23,1694.347826,"San Francisco, CA",Local,0,1,>10,"San Francisco, CA",Police
+SLMPD,36217657,chriscarter3,Chris Carter,,2781,844,3.295023697,,Missing,0,1,2->10,"St. Louis, MO",Not Provided
+SFPD,36511031,sfgate,SFGate,Twitter home of http://www.sfgate.com. The authority on all things San Francisco and the Bay Area.,188318,650,289.72,San Francisco,Local,0,1,>10,"San Francisco, CA",Not Identified
+SLMPD,37255058,laurakhettiger,Laura Hettiger KMOV,@KMOV Reporter. #Fashion Lover. #Marathon Runner. Proud #Illini. #Dog mom. Little Sister. Tweets are my own. RTs are not endorsements.,4659,391,11.91560102,"St. Louis, MO",Local,0,1,>10,"St. Louis, MO",Media
+SFPD,37541274,alexsavidgektvu,Alex Savidge,"@KTVU Reporter-Got a story? 
+
+Alex.Savidge@foxtv.com",2615,1261,2.073750991,SF Bay Area,Local,0,1,>10,"San Francisco, CA",Media
+NYPDnews,38452560,bpericadams,Eric Adams,Borough President of Brooklyn,8988,1335,6.73258427,"Brooklyn, NY",Local,0,1,2->10,New York City,Polictician
+SFPD,38599743,fairfieldpolice,Fairfield Police,"Official Twitter of the Fairfield, Ca  Police Department",2805,30,93.5,"Fairfield, California",Non-Local,0,1,>10,"San Francisco, CA",Police
+NYPDnews,38769433,jpeterdonald,J. Peter Donald,"Director of Comms @NYPDNews. Fmr spox @NewYorkFBI. NYU PR grad student. Love news, baseball & Cape Cod. CUA, NMH alum. Views are mine only.",1552,1171,1.325362938,"New York, NY",Local,0,1,1->2,New York City,Other Sectors
+NYPDnews,39185354,cool_1ne,ANW Mahatma Brolton,"Dats why my pimp game so moist, I had that Durag and all. http://AwkwordNwords.com - 1/2 of @AwkwordNWords | #PizzaGawd",1733,1007,1.720953327,#BKlien ,Non-Local,0,1,1->2,New York City,Not Identified
+SLMPD,39246283,delo_taylor,D,African-in-America. Citizen Journalist. Advocate for Justice. Anti-Racist/Anti-Zionist. Capitalism is a crime. I unanonymously support Anonymous. #IntelGroup,3975,2531,1.570525484,"Baltimore, MD",Non-Local,0,1,1->2,"St. Louis, MO",Media
+SLMPD,39397159,kwrose,Keith Rose,Linguist and activist in the St. Louis area. Cosmopolitan farmboy. Queer Leftist veggie. On the ground in #Ferguson.,4735,1114,4.250448833,"Alton, IL",Non-Local,0,1,2->10,"St. Louis, MO",Not Identified
+BPDVT,39574847,liamgriffin,Liam Griffin,"Marketing professional, event guru, action sports personality & cycling fanatic. Chasing snow around the globe for over a decade in the name of snowboarding.",964,909,1.060506051,"Burlington, VT",Local,0,1,1->2,"Burlington, Vermont",Other Sectors
+SFPD,40343920,sf_chamber,SF Chamber ,"The San Francisco Chamber of Commerce is S.F.'s largest business membership network. Our mission is to attract, develop and support Your Business and Our City.",5446,817,6.665850673,San Francisco,Local,0,1,>10,"San Francisco, CA",Other Sectors
+detroitpolice,40770886,glewiswxyz,Glenda Lewis,"WXYZ TV Anchor/Reporter, Always from the heart, Always in the footsteps, Always in my own shoes",9787,2544,3.847091195,,Missing,0,1,2->10,"City of Detroit, MI",Media
+SLMPD,41231058,sdpoa,San Diego Police OA,"Founded in 1912, the San Diego Police Officers Association (#SDPOA) represents the more than 1,850 dedicated and professional sworn members of the #SDPD.",3141,499,6.294589178,"San Diego, CA",Non-Local,0,1,2->10,"St. Louis, MO",Police
+NYPDnews,42797629,danielleiat,Danielle Tcholakian,Reporter covering Greenwich Village & Soho for @DNAinfo. Previously crime & politics at @metronewyork. Tips please: dtcholakian@dnainfo.com / 917-843-5323,4032,1348,2.991097923,Bed-Stuy,Non-Local,0,1,>10,New York City,Media
+SLMPD,42921216,ksdknews,KSDK NewsChannel 5,"Where the News Comes First
+
+for breaking news, weather and 
+
+sports both on-air and online. Retweets are not endorsements. #STLTogether",89253,1522,58.64191853,"St. Louis, Missouri",Local,0,1,>10,"St. Louis, MO",Media
+NYPDnews,43763852,rubendiazjr,Ruben Diaz Jr.,Bronx Borough President,9883,3833,2.578398122,"Bronx, NY",Local,0,1,2->10,New York City,Not Identified
+CLEpolice,43966920,joecimperman,joecimperman,"Cleveland Councilman Ward 3. Born CLE, Jesuit educated. Relentless advocate of civic pride/progress and human rights. Advocate4positive deviance.",11988,11288,1.062012757,"Cleveland, OH",Local,0,1,1->2,"Cleveland, OH",Other Sectors
+VBPD,44145981,vbpd,Virginia Beach PD,"The VBPD is a CALEA Accredited Law Enforcement agency that serves a community of approximately 448,000 residents and 3 million annual tourists.",4858,60,80.96666667,"Virginia Beach, VA",Local,0,1,>10,"Virginia Beach, VA",Other Sectors
+NYPDnews,44282421,dominictv,Dominic Carter,"Dominic Carter is a Verizon FiOS News/RNN TV Political Commentator. Dominic Carter has strong conviction for helping young people,and on Foster Care/Child Abuse",736,557,1.321364452,"New York, N.Y",Local,0,1,1->2,New York City,Media
+SLMPD,44491920,hmoore013,Heidi Moore ,"MS in CJ,  STL Prison Re-Entry and work 2 abolish death penalty. Ph.D. student Public Policy Program at SLU.",414,408,1.014705882,"St. Louis, MO",Local,0,1,1->2,"St. Louis, MO",Other Sectors
+CLEpolice,46213956,jamilsmith,Jamil Smith,"Senior Editor, @tnr. Eclecticist.",41988,1121,37.455843,"Brooklyn, NY",Non-Local,0,1,>10,"Cleveland, OH",Media
+NYPDnews,46443333,answerthecall,Answer the Call,New York Police & Fire Widows' & Children's Benefit Fund,595,1128,0.52748227,New York City,Local,0,1,<1,New York City,Police
+SFPD,47862165,newsrevo,Revolution News,"Human Struggle for Freedom, in a World Divided by Nations",30315,1831,16.55652649,,Missing,0,1,>10,"San Francisco, CA",Not Identified
+sppdPIO,48372576,bolderoptions,Bolder Options,"Bolder Options is an innovative organization focused on healthy youth development through activity-based mentoring, tutoring and health & wellness.",783,810,0.966666667,"Minneapolis, MN",Non-Local,0,1,<1,"St. Paul, MN",Not Identified
+SLMPD,48924617,jenniferemccoy,Jennifer McCoy,Your inappropriate friend /  Right-on parent / Attorney activist / Autism enthusiast / Beyond breast cancer,1010,1253,0.806065443,"St. Louis, MO",Local,0,1,<1,"St. Louis, MO",Not Identified
+detroitpolice,49044325,ossimjones,The Darkest Timeline,Expanding my horizons until I'm standing on an island.,161,284,0.566901408,,Missing,0,1,<1,"City of Detroit, MI",Not Identified
+boulderpolice,57619896,7newsnow,7NewsNOW KMGH-TV,,3736,157,23.79617834,,Missing,0,1,>10,"Boulder, CO",Not Provided
+NYPDnews,57674145,njspba,New Jersey State PBA,Official twitter NJ State PBA,5127,22,233.0454545,Woodbridge NJ,Non-Local,0,1,>10,New York City,Not Identified
+PortlandPolice,59908549,pdxalerts,Portland OR Alerts,We post live alerts of current police & fire incidents in the Portland (OR) Metro area. We are NOT an official agency & tweets are unconfirmed.,15993,221,72.36651584,"Portland, OR",Local,0,1,>10,"Portland, Oregon",Police
+SFPD,62603645,morganicsf,Morgan Fitzgibbons,Resilient Community Organizing. The Wigg Party. [freespace]. Urban Eating League. USF Professor of Environmental Studies. The Revolution Will Be Organized.,945,1343,0.703648548,"The Wiggle, San Francisco",Local,0,1,<1,"San Francisco, CA",Not Identified
+NYPDnews,64054704,hyperallergic,hyperallergic,The World's Greatest Art Blogazine covering art and its discontents,59641,996,59.88052209,"Brooklyn, NY",Local,0,1,>10,New York City,Not Identified
+SFPD,64269958,thedapperdiner,Dapper Diner,"I eat. My 4 basic food groups are foie gras, sweetbread, truffle, & pork belly. All posts are solely the thoughts of my 5th personality. I am offensive.",5005,2477,2.020589423,CA,Non-Local,0,1,2->10,"San Francisco, CA",Not Identified
+NYPDnews,66858922,ydanis,Ydanis Rodriguez,Father Educator @NYCCouncil Transpo Comm Chair y luchador por las comunidades de Washington Heights Hudson Heights Ft George Inwood and Marble Hill #UNITEBlue,6400,1568,4.081632653,"Northern Manhattan, NY",Local,0,1,2->10,New York City,Other Sectors
+NYPDnews,67206566,jennfalk,Jennifer E. Falk,"Chief Exec @UnionSquareNY. Former @mikebloomberg's office. Married to @tonycorrao. Proud Twin Mom. Exec Bd Member @JCRC. Opinions are my own, except retweets.",297,473,0.627906977,"Brooklyn, NY",Local,0,1,<1,New York City,Other Sectors
+SLMPD,69011562,sgtbetsysmith,Betsy Brantner Smith,"#Police Trainer, Author, Consultant plus a #mom, grandma & wife who is passionate about officer safety, leadership, #guns & America! Follow @thebucksavage too!",4502,1376,3.271802326,USA,Non-Local,0,1,>10,"St. Louis, MO",Police
+SLMPD,69071652,mike_colombo,Mike Colombo,Award-winning journalist at KMOV.,3297,1360,2.424264706,"Saint Louis, MO",Local,0,1,2->10,"St. Louis, MO",Media
+oaklandpoliceca,69938125,terrylee__,15 Ws Left,#Texans. Pay Me In Gold.,1791,534,3.353932584,Dreamville.,Non-Local,0,1,>10,"Oakland, CA",Not Identified
+NYPDnews,70279712,katie_honan,katie honan,"Reporter for @dnainfo covering jackson heights, corona, elmhurst, rockaway. Aspiring drummer. @cunyjschool alum.  khonan@dnainfo.com / 917-504-7505",4488,2316,1.937823834,QUEENS,Non-Local,0,1,1->2,New York City,Media
+SpokanePD,73120259,pullmanpolice,PullmanPolice,"Call 911 to report emergencies. Site is not monitored 24/7. Comments & list of followers subject to public disclosure.
+
+260 SE Kamiaken St",1872,116,16.13793103,"Pullman, WA 99163",Non-Local,0,1,>10,"Spokane, WA",Police
+NYPDnews,75013475,nycrabbi,Rabbi @ Your Service,Police Chaplain & Hospital Liaison,522,165,3.163636364,Rapid Response Chaplain,Non-Local,0,1,2->10,New York City,Police
+NYPDnews,76260264,patgatien,Patrick Gatien,"IronMan Canada Finisher, Father of 3, @Hootsuite owl and I delivered my own baby son...not by choice!",482,734,0.656675749,Canada,Non-Local,0,1,<1,New York City,Not Identified
+PortlandPolice,77126235,koindesk,KOIN Assignment desk,News from the assignment desk of KOIN 6,6945,957,7.257053292,"Portland, OR",Local,0,1,2->10,"Portland, Oregon",Media
+NYPDnews,81897374,ufanyc,UFA,"Official Twitter Account of the Uniformed Firefighters Association.  We represent Firefighters, Fire Marshals, Marine Engineers, Pilots and Wipers of the FDNY.",2634,242,10.88429752,New York City,Local,0,1,>10,New York City,Not Identified
+NYPDnews,82437677,uptowncollectiv,Uptown Collective,The Uptown Collective is the voice of Uptown Online. Spread love itŒ_í_ŒÈs the Uptown Way! Curated by @Led_Black #WHIN #WashHts #Inwood #Harlem #NYC,4152,2116,1.962192817,"Washington Heights, NYC",Local,0,1,1->2,New York City,Not Identified
+NYPDnews,82943769,bklyneagle,Brooklyn Daily Eagle,Everything Brooklyn since 1841 | #Brooklyn's number 1 news stream,13617,2379,5.723833544,"Brooklyn, NY",Local,0,1,>10,New York City,Media
+SLMPD,83039463,mariachappellen,MariaChappelleNadal,"Member of the MO General Assembly. Owner of Bart, Hoppe & Pascal. Eclectic in style. Fly-at-the-mouth. http://www.senate.mo.gov/14info/members/mem14.htm",12164,883,13.77576444,"University City, MO",Non-Local,0,1,>10,"St. Louis, MO",Not Identified
+NYPDnews,84169171,ygaddie,A$AP ANT / ygAddieRO,"A$AP MOB MARINO GANG RECORDS YOUNG NIGGAS RUN EVERYTHING.
+
+
+
+for booking marinogangbookings@gmail.com",50015,2679,18.66927958,#BaltimoreUSA,Non-Local,0,1,>10,New York City,Other Sectors
+SFPD,86734122,mentalhealthcop,Insp Michael Brown,"National Mental Health Coordinator at the @CollegeofPolice - seconded from @WMPolice. A venn diagram of policing, mental health and criminal justice.",25705,999,25.73073073,United Kingdom,Non-Local,0,1,>10,"San Francisco, CA",Not Identified
+NYPDnews,90746809,chriswragge,Chris Wragge,"Chris Wragge's Official Twitter Page, CBS News Anchor, NYC, former anchor of The Early Show, fmr NBC Sports reporter, Correspondent for ET, always a QB! #GMEN",15966,3090,5.166990291,New York City,Local,0,1,>10,New York City,Media
+oaklandpoliceca,90895400,srobertskron4,Stanley Roberts,@KRON4News reporter and creator of the award winning People Behaving Badly Segment that airs daily #KRON4 #peoplebehavingbadly My Tweets are not an endorsement.,4584,803,5.708592777,San Francisco Bay Area ,Non-Local,0,1,>10,"Oakland, CA",Media
+SFPD,91176384,beyondchron,Beyond Chron,San Francisco's Alternative Online Daily,1914,110,17.4,"San Francisco, CA",Local,0,1,>10,"San Francisco, CA",Not Identified
+NYPDnews,92701441,artaid,ArtAID,Art in service of humanity. Art that inspires and elevates the human spirit in times of need. Art for charity. Art for change. Art engaging artists for society.,213,1431,0.14884696,"New York, USA",Local,0,1,<1,New York City,Not Identified
+SFPD,93256503,stolenbikessfo,BikeIndex SF,"Listing stolen bikes in and around San Francisco, CA.",1909,1741,1.096496267,"San Francisco, CA",Local,0,1,1->2,"San Francisco, CA",Not Identified
+NYPDnews,100030015,kshighwaypatrol,KS Highway Patrol,"Official Twitter of KHP. Service, Courtesy, Protection. Please call dispatch at *47 (*HP) if you need help on a KS highway, as our Twitter isn't monitored 24/7.",14950,125,119.6,"Kansas, USA",Non-Local,0,1,>10,New York City,Police
+SFPD,101638451,suzyloftus,Suzy Loftus,President of the San Francisco Police Commission.  Mother of 3.  Seeker of justice -- at home and at work.  Opinions are my own.,617,1398,0.441344778,"íëíèT: 37.78202,-122.426146",Non-Local,0,1,<1,"San Francisco, CA",Media
+SLMPD,102862980,alwaysactions,Worldwide Actions,"Advertise with AlwaysActions
+
+Contact us at 718-526-4760 or AlwaysActions@gmail.com",7483,208,35.97596154,New York City,Non-Local,0,1,>10,"St. Louis, MO",Not Identified
+NYPDnews,104589290,nycgreenfield,David G. Greenfield,Father. Husband. Neighbor. NYC Council Member. Land Use Chair.,8404,630,13.33968254,"Brooklyn, NY",Local,0,1,>10,New York City,Polictician
+PortlandPolice,105583426,bikephantom,Bike Phantom,I'm out there...   riding my bike,42,55,0.763636364,"Portland, Oregon",Local,0,1,<1,"Portland, Oregon",Not Identified
+CLEpolice,106239126,homabash,Homa Bash,"@WEWS NewsChannel 5 reporter. Arkansas & Northwestern grad. Oklahoma girl. Lover of books & animals, Dr. Pepper & sunsets. Opinions are my own ;)",2241,749,2.991989319,"Cleveland, OH",Local,0,1,2->10,"Cleveland, OH",Media
+SFPD,106433398,uppityfag,Patrick Connors,"Husband in one of CA FIRST 18,000 married same-sex couples!! I continue keeping track of the heteros as they transgress with impunity. Fun! Poop!",4253,4430,0.960045147,"San Francisco, CA",Local,0,1,<1,"San Francisco, CA",Not Identified
+SFPD,108449475,sfcta,SFCTA,The Transportation Authority spearheads long-range planning and allocates funding for transportation-related projects in San Francisco.,2199,250,8.796,"San Francisco, CA",Local,0,1,>10,"San Francisco, CA",Not Identified
+CLEpolice,108652732,provhousecle,Providence House,"Providence House fights to end child abuse & neglect by protecting at-risk children, empowering families in crisis & building safe communities for every child.",1698,594,2.858585859,"Cleveland, Ohio",Local,0,1,>10,"Cleveland, OH",Not Identified
+NYPDnews,109071031,senatorcardin,Senator Ben Cardin,Updates from the Office of U.S. Senator Ben Cardin - #Maryland,27783,276,100.6630435,"Maryland/Washington, DC",Non-Local,0,1,>10,New York City,Not Identified
+CLEpolice,109456108,acluohio,ACLU of Ohio,"Dedicated to maintaining and extending constitutional and other fundamental rights, liberties, privileges, and immunities.",3328,322,10.33540373,"Ohio, USA",Non-Local,0,1,>10,"Cleveland, OH",Other Sectors
+NYPDnews,112823255,felixwortiz,Felix W Ortiz,"Assistant Speaker of the New York State Assembly; representing 51st AD in Brooklyn; Co-Chair, NCSL International Relations Task Force",984,593,1.659359191,,Missing,0,1,1->2,New York City,Not Identified
+NYPDnews,115403449,nyrrt,NYRRT,Youtube Channel: http://www.youtube.com/nyrrt84,514,381,1.349081365,NY Rescue Response Team,Local,0,1,1->2,New York City,Not Identified
+sppdPIO,116972225,blacktwincities,Black Twin Cities,FREE Black-owned Business directory and event listings. Featuring the Minneapolis/St. Paul African-American community. Follow our owner @LaJuanaWhitmore,1663,502,3.312749004,"Minneapolis St. Paul, MN",Local,0,1,>10,"St. Paul, MN",Not Identified
+NYPDnews,117118416,fairfaxpolice,FairfaxCounty Police,"Official Fairfax County Police Dept. Do not use Twitter to report crimes. Call 911 for emergencies, 703-691-2131 for non-emergencies. RTs are not endorsements.",32363,60,539.3833333,"Fairfax County, VA",Non-Local,0,1,>10,New York City,Police
+NYPDnews,117445602,atlantic_live,AtlanticLIVE,"We bring journalism to life. Building on @TheAtlantic's editorial legacy, we gather top thinkers and leaders to engage audiences in person and online.",6587,1072,6.144589552,"Washington, DC",Non-Local,0,1,>10,New York City,Not Identified
+PortlandPolice,118190794,washcoscanner,Wash Co Scanner,"A mix of the serious & sometimes crazy stuff heard on the Washington County, OR scanner ~NOT CONFIRMED INFO ~",8350,3373,2.475541061,Washington County Oregon,Non-Local,0,1,2->10,"Portland, Oregon",Not Identified
+NYPDnews,120153772,womenintheworld,Women in the World,"In association with @NYTimes. Convening women leaders, activists & change-makers to share stories & offer solutions for a better life for women & girls. #WITW",149045,1552,96.03414948,"New York, NY",Local,0,1,>10,New York City,Not Identified
+SLMPD,121490598,yourmsd,MSD St Louis,"Updates from  the Metropolitan St Louis Sewer District (MSD). Feed is monitored M-F, 8a to 5p. After hours, call 314-768-6260.",1651,934,1.767665953,"St. Louis, Missouri",Local,0,1,1->2,"St. Louis, MO",Polictician
+StocktonPolice,121572025,thevikchick,Vicki Walden,MoGrammy with #WhitePrivilege standing in solidarity w/the #BlackLivesMatter movement. Flag stays in distress til it means the same for ALL!,2134,1985,1.075062972,#SGF,Non-Local,0,1,1->2,"Stockton, CA, USA",Not Identified
+SFPD,121597316,sfchronicle,The Chronicle,The Voice of the West. The Voice of San Francisco and the Bay Area.,49016,186,263.5268817,"San Francisco, CA",Local,0,1,>10,"San Francisco, CA",Not Identified
+StocktonPolice,123445116,bestofca,California Picks,"Discover great restaurants, cool bars and the very best local deals available right now in California!",3819,811,4.709001233,"Sacramento, CA",Non-Local,0,1,2->10,"Stockton, CA, USA",Not Identified
+boulderpolice,124596235,communitycycles,Community Cycles,Boulder's only non-profit bike shop. Join us in creating bike culture in Boulder!,802,485,1.653608247,"Boulder, Colorado",Local,0,1,1->2,"Boulder, CO",Other Sectors
+PortlandPolice,124814437,ptsantilli,Pete Santilli,"Proud 'Leave-Me-The-Heck-Alone-ist' Don't mess with me. Don't take my stuff.  Shining light on Conservatives, Liberals, Tea-Partiers, Communists & Socialists",15432,4736,3.258445946,Iceland,Non-Local,0,1,2->10,"Portland, Oregon",Not Identified
+SFPD,125462718,thesnitchsf,SF Weekly news blog,,7812,608,12.84868421,San Francisco,Local,0,1,>10,"San Francisco, CA",Not Provided
+BPDVT,126012801,philiptortora,Philip Tortora,"Audience Analyst at @bfp_news. Enjoy the outdoors, sports, craft beer & social media. Fan of NY Giants, Sun Devils & UConn. Awful skier. @asu grad.",2678,1471,1.820530252,"Burlington, Vermont",Local,0,1,1->2,"Burlington, Vermont",Other Sectors
+detroitpolice,126082864,detroitpolice,Detroit Police Dept.,Official Twitter Site of the Detroit Police Department. Follow us for up-to-the minute information about the City and the Department.,9418,306,30.77777778,"City of Detroit, MI",Local,0,1,>10,"City of Detroit, MI",Not Identified
+NYPDnews,128673641,nyc_oz,John A. Oswald,"Editor, Writer, Web Producer, Social Maven. Editor-at-large http://www.metro.us; Contributor http://jdforward.com. Full-time mensch. http://instagram.com/nyc.oz",868,1026,0.846003899,"New York, NY",Local,0,1,<1,New York City,Media
+SFPD,128750686,streetsblognyc,Streetsblog New York,"Covering livable streets and sustainable transportation in the five boroughs. Tweets by @BenFried, @BradAaron, and @miller_stephen",15757,598,26.34949833,New York City,Non-Local,0,1,>10,"San Francisco, CA",Not Identified
+SLMPD,129023268,cherokeestreet,Cherokee Street,,1092,640,1.70625,"Saint Louis, MO",Local,0,1,1->2,"St. Louis, MO",Not Provided
+VBPD,129928763,ayo80proof,Ya B.M. Side Nigga,Just Tryna Get These Tweets Off!! 215 Native 757 Resident.. Earthwide Asshole #Eagles #Buckeyes #BlueDevils #TeamNoPullout,1508,1286,1.172628305,Amongst the other assholes,Non-Local,0,1,1->2,"Virginia Beach, VA",Not Identified
+oaklandpoliceca,130254641,oaklandpoliceca,Oakland Police Dept.,Twitter not routinely monitored; tweets not substitute for emergency/non-emerg calls or other process. Administrated by OPD Media Unit.,19604,230,85.23478261,"Oakland, CA",Local,0,1,>10,"Oakland, CA",Not Identified
+SFPD,130513726,vivianho,Vivian Ho,"SF Chronicle reporter who covers, but is only sometimes covered in, crime and grime. @sfkale once called me Joan of Narrative Arc. vho@sfchronicle.com",8726,1492,5.848525469,San Francisco,Local,0,1,2->10,"San Francisco, CA",Media
+NYPDnews,132235973,nyscanner,NYC Scanner ,"Just keeping you posted that NYC Never sleeps always in for actionŒ_í‡Œ_ See Something Say SomethingŒ_í‡_
+
+
+
+Email us photos at: NYScanner@nybuff.org",62350,97,642.7835052, NYC,Local,0,1,>10,New York City,Not Identified
+NYPDnews,132496568,agschneiderman,Eric Schneiderman,Official Twitter account of New York State Attorney General Eric T. Schneiderman,15519,679,22.8556701,New York,Local,0,1,>10,New York City,Other Sectors
+NYPDnews,133022865,bluealertus,Blue Alert,"Helping families of fallen Law Enforcement Officers, killed in the line of duty and running the National Blue Alert System.   We are a 501(c)3 Public Charity",81815,38807,2.108253666,U.S.A.,Non-Local,0,1,>10,New York City,Other Sectors
+NYPDnews,133464702,nydnlocal,NYDN Local,All the latest updates in your five boroughs from @NYDailyNews.,5083,1041,4.882804995,New York City,Local,0,1,2->10,New York City,Not Identified
+NYPDnews,134362298,senatorperalta,Senator Jose Peralta,"Proudly serving Jackson Heights, Corona, Elmhurst, East Elmhurst, Woodside and Astoria Heights.",3634,1256,2.893312102,Queens,Non-Local,0,1,2->10,New York City,Not Identified
+VBPD,134857101,pilotvabeach,Virginia Beach,The latest news and information for Virginia Beach from The Virginian-Pilot.,8104,282,28.73758865,"Virginia Beach, Va.",Local,0,1,>10,"Virginia Beach, VA",Media
+CLEpolice,137526819,veronimac,Veronica McGraw,Assignment Editor at @WEWS NewsChannel5 Cleveland.  @notredameohio grad..,232,306,0.758169935,"Cleveland,Ohio",Local,0,1,<1,"Cleveland, OH",Media
+SFPD,138517584,wiggparty,The Wigg Party,We are an organization working to make the community that rides the Wiggle a leader in the transformation to sustainability. And we wear wigs.,947,1474,0.642469471,"The Wiggle, San Francisco",Local,0,1,<1,"San Francisco, CA",Other Sectors
+oaklandpoliceca,139602763,citrusheightspd,Citrus Heights PD,Official Twitter account of the Citrus Heights Police Department. Tweets not monitored 24/7. Please call 911 to report an emergency. RTs are not endorsements.,2707,185,14.63243243,"Citrus Heights, CA",Non-Local,0,1,>10,"Oakland, CA",Police
+NYPDnews,141376562,prupaine,Prudence Paine,Conservative libertarian. Libertarian conservative. Southern gentility somewhat abraded by NY grit. Part serious/part silly #politix #media #music #film #books,4484,2057,2.179873602,Land of Sweet Tea,Non-Local,0,1,2->10,New York City,Not Identified
+NYPDnews,143132365,nycemswebsite,NYC EMS Website,"Webmaster of The FDNY EMS Website. A look at the life of FDNY EMS EMTs and Paramedics, EMS in general and NYC politics. As always unofficial, satirical and wry.",8433,204,41.33823529,NYC,Local,0,1,>10,New York City,Not Identified
+NYPDnews,143525311,hcsosheriff,HCSO,"Our mission ~ to serve, protect, and defend the community while preserving the rights and dignity of all. This account is not monitored 24/7.",12771,3995,3.196745932,"Tampa, FL, USA",Non-Local,0,1,2->10,New York City,Not Identified
+CLEpolice,144608937,37crookshankave,#TeamBlatt,"My bathtub lifts up, my walls do a 360. La Familia.",671,511,1.313111546,Cleveland,Local,0,1,1->2,"Cleveland, OH",Not Identified
+oaklandpoliceca,148197182,mz__chaz,Chaz Garcia,Live as if you were to die tomorrow. Learn as if you were to live forever. MG,200,369,0.54200542,,Missing,0,1,<1,"Oakland, CA",Not Identified
+SFPD,148517828,un_spokesperson,UN Spokesperson,Official Twitter account of the Office of the Spokesperson for United Nations Secretary-General Ban Ki-moon.,246719,563,438.2220249,"New York, USA",Non-Local,0,1,>10,"San Francisco, CA",Not Identified
+NYPDnews,148752535,unitedjewish,UJO of Williamsburg,The United Jewish Organizations of Williamsburg and North Brooklyn is the premier social service provider in the area since 1966.,1347,29,46.44827586,"Brooklyn, New York",Local,0,1,>10,New York City,Not Identified
+CLEpolice,151973986,wrlconservancy,LandConservancy,"Making our region a more vibrant place to live, work and play.",663,569,1.165202109,,Missing,0,1,1->2,"Cleveland, OH",Not Identified
+NYPDnews,152408142,sinycliving,Staten Island NYC ,"Keeping up on whats good, fun and hip on Staten Island New York City  http://www.statenislandnycliving.com",7159,1124,6.369217082,"Staten Island, New York City",Local,0,1,2->10,New York City,Not Identified
+SFPD,156342363,evansernoffsky,Evan Sernoffsky,"SF Chronicle reporter. Raised in Oregon. Writer, photographer, massive grammar geek. esernoffsky@sfchronicle.com",2269,1598,1.419899875,San Francisco ,Local,0,1,1->2,"San Francisco, CA",Media
+NYPDnews,157078744,mdfop34,MDFOP34 MDTA POLICE,We are the union that represents the men & women who wear the Maryland Transportation Authority Police Uniform.,1702,898,1.89532294,"Maryland, USA",Non-Local,0,1,1->2,New York City,Police
+NYPDnews,166286545,ypgoldfeder,Phil Goldfeder,"New York State Assemblyman, 23rd District",3037,1344,2.259672619,"Rockaway, NY",Local,0,1,>10,New York City,Polictician
+SFPD,167792994,hyphy_republic,Jaime Omar Yassin,With love's light wings did I o'er-perch these walls; For stony limits cannot hold love out: Oakland/Palestine/Biblioteca Popular/#BlocktheBoat,2187,973,2.247687564,Colombistine,Non-Local,0,1,2->10,"San Francisco, CA",Not Identified
+NYPDnews,171792633,stpatsparadenyc,St Pat's Parade NYC,Preparing for the 2015 parade. - Since 1762 - 501(c)(3) http://facebook.com/NYCStPatricksDayParade,1332,2001,0.665667166,"New York, New York",Local,0,1,<1,New York City,Not Identified
+CLEpolice,172209120,tweetcamisado,awesome,,322,454,0.709251101, ,Missing,0,1,<1,"Cleveland, OH",Not Provided
+NYPDnews,172244796,ny_places,New York Places,"Real-time local buzz for places, events and local deals being tweeted about right now in New York!",17156,6538,2.62404405,New York,Local,0,1,>10,New York City,Not Identified
+SFPD,174887592,nataliealund,Natalie Neysa Alund,"Bay Area News Group breaking news reporter, @insidebayarea @mercnews #SF resident, @Steelers fanatic, fluent in #Pittsburghese Tips: nalund@bayareanewsgroup.com",2906,1953,1.48796723,"San Francisco, CA",Local,0,1,1->2,"San Francisco, CA",Media
+NYPDnews,177612278,nycha_designer,keith hernandez,"The personal work and opinions of a devoted humanitarian and creative visionary elevating consciousness and helping others, and many great photos of my family!",59,493,0.119675456,"New York, NY",Local,0,1,<1,New York City,Not Identified
+CLEpolice,180117260,mattwrighttv,Matt Wright,#Reporter with WJW #Fox8News in #Cleveland. Cleveland's Own. Opinions are my own. Story idea or tip? DM or email: matt.wright@fox8.com,755,565,1.336283186,"Cleveland, OH",Local,0,1,1->2,"Cleveland, OH",Media
+SFPD,180186789,sfcrimeink,Crime Ink,"Criminal justice news from San Francisco written by @sfexaminer reporters @jonahowenlamb, @SFEX_RobNagle and @MDBarba",516,130,3.969230769,San Francisco,Local,0,1,2->10,"San Francisco, CA",Media
+PortlandPolice,182463189,glennwaco,ig WacoKenobi,NorthBound W.A.C.O. Booking/Press: glennwaco101@gmail.com,1031,734,1.404632153,"St Johns North Portland, OR",Local,0,1,1->2,"Portland, Oregon",Not Identified
+boulderpolice,183445484,coachmikemac,Coach Mike MacIntyre,Head Football Coach of the Colorado Buffaloes giving you updates from within the program.,8169,399,20.47368421,"Boulder, Colo.",Local,0,1,>10,"Boulder, CO",Other Sectors
+SpokanePD,188979926,spokanehealth,SRHD,The Spokane Regional Health District serves as the region's public health leader and partner to protect and improve the community's health.,1475,756,1.951058201,"Spokane, WA",Local,0,1,1->2,"Spokane, WA",Other Sectors
+SFPD,190640054,kentuckyviews,Marjorie Sloan,"I will creep your tl 4 protest pics. when I hit rt limit, I fave.  #BlackLivesMatter #HandsUpKY  Œ_ŒÈŒÇ  i follow eyewitnesses.welcome to the revolution. #ShutItDown",1288,2000,0.644,"Lexington, KY",Non-Local,0,1,<1,"San Francisco, CA",Not Identified
+NYPDnews,190856579,vokarondon,Klubba Lang ,http://FwahRadio.com,3364,987,3.408308004,Making a sucker uncomfortable,Non-Local,0,1,2->10,New York City,Not Identified
+NYPDnews,192871890,dash_30_dash,Stephanie M-S,"Strategic Communications for a Canadian police service. #lesm #socialmedia #marketing #corpcomms #PR. Redhead, klutz, coffee addict, kitchen dancer.",1638,1993,0.821876568,,Missing,0,1,<1,New York City,Other Sectors
+detroitpolice,194575920,tarynasherfox2,Taryn Asher,Emmy Award Winning Reporter/Anchor/CoHost Let it Rip Weekend - Love my job and telling your stories!,8499,356,23.87359551,,Missing,0,1,>10,"City of Detroit, MI",Media
+SLMPD,198430298,missjupiter1957,Heather Œ_ŒÈíó,#Ferguson/#STL Ustream channel: http://ustream.tv/channel/heatheŒ_í__ #StopAbleism2015 #BlackLivesMatter #DisabilitySolidarity #EhlersDanlosSyndrome,4704,4021,1.169858244,Show Me Misery,Non-Local,0,1,1->2,"St. Louis, MO",Not Identified
+CLEpolice,199606534,trueblacknews,TrueBlackNews,#BLACKLIVESMATTER  Dr. Kwame Nkrumah Says to all black people. All over the world: The secret of life is to have no fear #BlackLivesMatter #WeWillShootBack,15183,9734,1.559790425,United States,Non-Local,0,1,1->2,"Cleveland, OH",Not Identified
+PortlandPolice,204984248,htcrelay,HTC/PTC Relays,"The largest relay race in the world with 1,050 teams covering 200 miles from Mt. Hood to the Pacific.  August 28th-29th, 2015! #HTC15",4431,1923,2.304212168,"Portland, Oregon",Local,0,1,2->10,"Portland, Oregon",Not Identified
+oaklandpoliceca,205531045,blakedontcrack,BLyfe,Black Power-UC Berkeley-Poli Sci and Black Studies-Poet and Writer-Opinions my own. @CalBSU @TheAbcMovement,1922,315,6.101587302,Home of Huey P ,Non-Local,0,1,2->10,"Oakland, CA",Media
+SFPD,207684836,sfgovtv,SFGovTV,"SFGovTV & SFGovTV2, San Francisco's Cable Channels 26 and 78, provide the City & County of San Francisco access to quality government television programming.",1423,369,3.856368564,San Francisco City Hall,Local,0,1,2->10,"San Francisco, CA",Not Identified
+NYPDnews,209814743,brooklynspoke,Brooklyn Spoke,"I'm Doug Gordon. Documentary TV producer, writer, livable streets advocate, father. It's not about the bike.",7706,672,11.4672619,"Brooklyn, NY",Local,0,1,>10,New York City,Other Sectors
+NYPDnews,210486078,randicecilia,Randi C. Gray,"Saturday. May 16, 2015. 3:00 pm.",374,229,1.633187773,"memphis, tn",Non-Local,0,1,1->2,New York City,Not Identified
+SpokanePD,212479621,grantb911,T. Grant,"Husband, Father, Hot Chicken Connoisseur... News Junkie -- (RT's Always Equal Endorsement)",569,683,0.833089312,"Nashville, Tennessee",Non-Local,0,1,<1,"Spokane, WA",Media
+CLEpolice,213685662,fearlessnfree,Magical Mermaid ,Black Girl Magic Saved My Life Œ_íèŒå #BLACKLivesMatter #LoverOfBlackPeople #BlackAcademic #Organizer Love and Support is Always Welcomed.,959,1274,0.752747253,BIFC ,Non-Local,0,1,<1,"Cleveland, OH",Not Identified
+NYPDnews,214085948,misaskim,Misaskim ,Understanding tragedy with compassion. Coordinating crisis with expertise.,2011,111,18.11711712,"Brooklyn, NY ",Local,0,1,>10,New York City,Not Identified
+NYPDnews,214976391,mayorscau,NYC Mayor's CAU,The Mayor's Community Affairs Unit connects NYC neighborhoods & New Yorkers to City Hall. http://www1.nyc.gov/home/social-media-privacy-policy.page,6133,1701,3.605526161,"New York, NY",Local,0,1,2->10,New York City,Polictician
+NYPDnews,218230671,britpolicerugby,British Police Rugby,The British Police Rugby Union Section. https://www.facebook.com/pages/British-Police-Rugby/178916362122723,721,82,8.792682927,United Kingdom,Non-Local,0,1,>10,New York City,Police
+SpokanePD,223565574,myfoxspokane,FOX 28 ,Spokane's Television and Entertainment source - Everybody's watching! http://goo.gl/9xFzU,2269,1486,1.5269179,"Spokane, WA",Local,0,1,1->2,"Spokane, WA",Not Identified
+PortlandPolice,223587964,maxoregonian,Maxine Bernstein,Covers law enforcement for @Oregonian.,2496,409,6.102689487,"Portland, OR",Local,0,1,2->10,"Portland, Oregon",Other Sectors
+SpokanePD,224312817,inbachamber,INBA,"The INBA is the region's LGBT Chamber of Commerce, serving Eastern Washington & North Idaho. [Commenting: http://bit.ly/INBApolicy]",362,224,1.616071429,"Spokane, Washington",Local,0,1,1->2,"Spokane, WA",Not Identified
+NYPDnews,225239283,hcpolice,Harvey Cedars Police,"This is the official Twitter account for the Harvey Cedars Police Department. We are located on LBI, NJ. Local news and info shared. RT's are not endoresmemts.",3657,507,7.213017751,"Harvey Cedars, NJ",Non-Local,0,1,2->10,New York City,Police
+SLMPD,227572613,cjm_stl,CJM StLouis,"Since 1979, Criminal Justice Ministry  has served prisoners,  families, ex-offenders, & other involved in the system.   Affiliated with the Archdiocese STL.",328,819,0.4004884,"St. Louis, MO",Local,0,1,<1,"St. Louis, MO",Other Sectors
+VBPD,231158370,yea_im_jamaican,Œ_íèŒåYardcore YazŒ_íèŒå ,The shit you hear about me COULD  be true OR it could be as FAKE as the BITCH that told you... ZEEN? IG:yea_im_jamaican #RavensNation,2524,864,2.921296296,probably at work |Virginia|,Local,0,1,>10,"Virginia Beach, VA",Not Identified
+PortlandPolice,231929934,ulpdx,Urban League of PDX,"Our mission is to empower African Americans and other Oregonians to achieve equality in education, employment and economic opportunity. Join today.",1269,516,2.459302326,"Portland, OR",Local,0,1,2->10,"Portland, Oregon",Other Sectors
+SpokanePD,233290047,khqcjohnson,Cynthia Johnson,"Reporter for @KHQLocalNews. WA by way of ND, MN and IL. Sweet home Chicago. Email me at cynthia.johnson@khq.com.",853,624,1.366987179,"Spokane, WA",Local,0,1,1->2,"Spokane, WA",Media
+SFPD,234451553,texastoasted13,Candice ,,17,78,0.217948718,,Missing,0,1,<1,"San Francisco, CA",Not Provided
+SLMPD,235188934,ward24stl,Scott Ogilvie,"24th Ward Alderman, St. Louis City. Serving the neighborhoods south of Forest Park. Vote April 7th, 2015!",3240,251,12.90836653,"24th Ward, St. Louis, MO ",Local,0,1,>10,"St. Louis, MO",Not Identified
+CLEpolice,238133619,clevideos,CLEvideos,"Videographer at Northeast Ohio Media Group and http://cleveland.com covering sports, news and features in Cleveland, Ohio.",1303,609,2.139573071,"Cleveland, Ohio",Local,0,1,>10,"Cleveland, OH",Media
+SLMPD,239509917,mspackyetti,Miss Packnett,Exec. Dir. of @TFASTL. Students named me MsPackyetti. Justice always. Family always. Faith always. And good things sprinkled between. Thoughts = MINE ONLY.,8592,1685,5.099109792,STL. DC. #Ferguson. ,Non-Local,0,1,2->10,"St. Louis, MO",Not Identified
+NYPDnews,241158245,nycprogressives,Progressive Caucus,"working toward a more equal, more just New York City",2707,287,9.432055749,NYC,Local,0,1,>10,New York City,Not Identified
+NYPDnews,242925135,publicpolicylab,Public Policy Lab,We help Americans build better lives by improving the design and delivery of public services.,1909,588,3.246598639,New York City,Local,0,1,>10,New York City,Other Sectors
+CLEpolice,247399925,danderoos19,Dan DeRoos ,"19 Action News Reporter/Anchor, Northeast Ohio-Iowa Alum President. Hawk fan, Beer fan, golf fan, life fan.",1743,954,1.827044025,Cleveland,Local,0,1,1->2,"Cleveland, OH",Media
+SLMPD,250397073,anoncopwatch,Anon Cop Watch,,27304,940,29.04680851,Everywhere,Non-Local,0,1,>10,"St. Louis, MO",Not Provided
+NYPDnews,250884927,nycgov,City of New York,"Official New York City government Twitter.  Keep up with NYC news, services, programs, free events and emergency notifications
+
+http://nyc.gov/socialmediapolicy",329646,183,1801.344262,New York City,Local,0,1,>10,New York City,Not Identified
+NYPDnews,251634768,stojkovic_alex,Alex Stojkovic,"I am a Œ_í_íèforty-somethingŒ_í_Œù communication evangelist who eats, sleeps and breathes everything marketing - call me borderline obsessive. Founder of @followrocket_TO",28791,25318,1.137175132,"Toronto, Canada",Non-Local,0,1,1->2,New York City,Other Sectors
+NYPDnews,251892709,massstatepolice,Mass State Police,"Official Twitter account of the Massachusetts State Police.
+
+
+
+This Twitter account is not monitored 24/7.  To report a crime dial 9-1-1.
+
+
+
+https://t.co/cQvSJsTHuR",186542,486,383.8312757,Massachusetts,Non-Local,0,1,>10,New York City,Police
+NYPDnews,253563556,miamidadepd,Miami-Dade Police ,"Welcome to the official Twitter page of the MDPD. EMERGENCIES - DIAL 911.         Non-Emergencies, call 305-4-POLICE (765423).",10085,206,48.95631068,"Miami-Dade County, Florida",Non-Local,0,1,>10,New York City,Police
+oaklandpoliceca,254172719,sonnylebythebay,Sonny LíëŒé,"A communications strategist who's ready for new challenges | Prone to tweet about fado, reggae, African & Brazilian music, cooking, gardening, dog & cats.",2854,1496,1.907754011,"Oakland, California",Local,0,1,1->2,"Oakland, CA",Not Identified
+detroitpolice,256563453,detlistener,Leland K. Bassett,Chairman & CEO of Bassett & Bassett Communication Managers and Counselors. LinkedIn:http://www.linkedin.com/in/lelandbassett Opinions my own,951,351,2.709401709,"Detroit, MI USA",Local,0,1,>10,"City of Detroit, MI",Other Sectors
+NYPDnews,258113996,daveevansabc7,Dave Evans,"Dave Evans is the political reporter for WABC-TV in New York City. an avid runner, swimmer, cook, geek about history",4659,463,10.06263499,New York City,Local,0,1,>10,New York City,Media
+detroitpolice,258784821,tv20detroit,TV20 Detroit,Like us on Facebook: http://www.facebook.com/pages/My-TV20-Detroit/186367169354?fref=ts,1061,69,15.37681159,Detroit,Local,0,1,>10,"City of Detroit, MI",Not Identified
+NYPDnews,259817328,vtstatepolice,Vermont State Police,"We are leaders in law enforcement & strive to make Vermont the safest state in the nation.  Twitter not monitored 24/7.  For emergencies, please call 911.",15252,369,41.33333333,Vermont,Non-Local,0,1,>10,New York City,Other Sectors
+SFPD,259990980,sfcity_hall,SF City Hall ,"The ONLY official twitter account for San Francisco City Hall, run by the San Francisco General Services Agency. Just a majestic building in the Civic Center.",3203,129,24.82945736,1 Dr Carlton B Goodlett Place,Local,0,1,>10,"San Francisco, CA",Not Identified
+NYPDnews,260124136,nypdmuslim,NYPDMOS,NYPD Muslim Officers Society - The NationŒ_í_ŒÈs first fraternal organization proudly representing Muslim American Law Enforcement Members,744,122,6.098360656,New York,Local,0,1,>10,New York City,Not Identified
+NYPDnews,263484216,yonkersoem40,YONKERS   OEM 40,"Emergency Communication Coordinator City of Yonkers 
+
+Office of Emergency Management
+
+Skywarn Deputy for Westchester County",2322,802,2.895261845,28 Wells Ave Yonkers NY 10701,Local,0,1,>10,New York City,Police
+ScottsdalePD,263805261,nsindependent,NS Independent,"Welcome to the OFFICIAL Twitter page for the Scottsdale Independent! The Independent is distributed to 15,000 homes every Wednesday.",923,1678,0.550059595,"Scottsdale, Arizona",Local,0,1,<1,"Scottsdale, Arizona",Not Identified
+NYPDnews,268950193,gersonborrero,I can't breathe!,"Political Commentator @NY1 @NY1Noticias, Editor-at-Large @CityAndStateNY and Columnist, Host @HITN-TV and Former EIC @eldiariony",6061,710,8.536619718,,Missing,0,1,2->10,New York City,Media
+NYPDnews,270716871,gang_greene,KING E,,1879,882,2.130385488,,Missing,0,1,2->10,New York City,Not Provided
+boulderpolice,271582522,colleenferreira,Colleen Ferreira,"Reporter, NBC @9News | Chicago native, deep dish pizza addict | #GoIrish #LoveTheeNotreDame",3236,1349,2.398813936,"Denver, Colorado",Non-Local,0,1,2->10,"Boulder, CO",Media
+SFPD,274580947,colevalleysf,colevalleysf,http://ColeValleySF.com is a website dedicated to the Cole Valley neighborhood and its residents. Tweets by @elles_88,1330,754,1.763925729,"Cole Valley, San Francisco, CA",Local,0,1,1->2,"San Francisco, CA",Not Identified
+oaklandpoliceca,277306492,lynettegm,L.Gibson McElhaney,"Oakland City Councilmember, District 3",1788,1263,1.41567696,"Oakland, CA",Local,0,1,1->2,"Oakland, CA",Polictician
+CLEpolice,278088173,ohio_ohs,OhioHomelandSecurity,,2954,382,7.732984293,,Missing,0,1,>10,"Cleveland, OH",Not Provided
+NYPDnews,278144816,fios1news_li,FiOS1 Long Island,"Verizon FiOS1 Long Island Œ_í_íÍ your source for up to the minute hyper-local news, traffic weather, sports and community programming on FiOS TV channels 501 & 1.",4671,606,7.707920792,"Long Island, New York",Local,0,1,2->10,New York City,Media
+oaklandpoliceca,279390084,youranonnews,Anonymous,"Signal boost for Anonymous operations, resistance movements, & journalism.
+
+
+
+Who is #RobertDoggart?",1464789,958,1529.007307,Right behind you.,Non-Local,0,1,>10,"Oakland, CA",Not Identified
+NYPDnews,283830150,marktreyger718,Mark Treyger,NYC Council Member - 47th District - proud former NYC public school teacher and devoted Brooklynite,2006,1590,1.26163522,,Missing,0,1,1->2,New York City,Polictician
+VBPD,285717433,jasonmarkswavy,Jason Marks ,Emmy/Murrow Award Winning Reporter for WAVY-TV/Fox43 News..  Life long Atlanta Braves lover!!!,1112,90,12.35555556,,Missing,0,1,>10,"Virginia Beach, VA",Media
+SpokanePD,288153991,m_feeney,Matthew Feeney,@CatoInstitute policy analyst. Liberal (of the classical variety). Opinions are mine. RTs =/= endorsements. Fan of proper tea rites.,1479,1853,0.798165138,"Arlington, VA",Non-Local,0,1,<1,"Spokane, WA",Other Sectors
+SFPD,295951367,nlgsf,NLG SF,The San Francisco Bay Area Chapter of the National Lawyers Guild. Human rights trump property interests.,1122,127,8.834645669,,Missing,0,1,2->10,"San Francisco, CA",Not Identified
+NYPDnews,306923120,melissaelstein,GoodEnergyYogaReiki ,"Certified yoga, pilates-mat, ballet teacher, Reiki practitioner,Tai Chi Easy/ Qigong facilitator, co-founder W. 80s Neighborhood Assoc., eco-activist",439,2001,0.219390305,NYC,Local,0,1,<1,New York City,Other Sectors
+CLEpolice,314063063,barkfu,Heel Ryan,#Atheist #photographer #cleveland #wwe #asshole. Dean Ambrose is my spirit animal. BOMBS AWAY BITCHES!,550,476,1.155462185,CLEVELAND,Local,0,1,1->2,"Cleveland, OH",Other Sectors
+detroitpolice,314670546,movementdetroit,Movement Detroit,#MovementDetroit has become the ultimate stage for the city that founded #Techno music to showcase its electronic #music muscle. May 23-25/2015/#HartPlaza/#DET,23732,5287,4.488745981,"Detroit, MI",Local,0,1,2->10,"City of Detroit, MI",Other Sectors
+NYPDnews,314957232,kevinvesey,Kevin Vesey,"Award Winning Multimedia Journalist, Globe-trotter, Proud Mets/Rangers Fan. All tweets are my own.",159,126,1.261904762,"Long Island, NY",Local,0,1,1->2,New York City,Media
+StocktonPolice,317399128,tia_ewing,Tia A. Ewing,@Fox40 Weekend Anchor|Reporter with a big heart. Chicago Born. #OhioState|#PointParkUniversity grad. Known as the dancing anchor!,3017,3146,0.95899555,"Sacramento, California",Non-Local,0,1,<1,"Stockton, CA, USA",Media
+NYPDnews,319785911,sengianaris,Sen. Mike Gianaris,"NY State Senator representing Astoria, LIC, Sunnyside, Woodside, Ridgewood and Woodhaven. Deputy Democratic Leader",3360,402,8.358208955,New York,Local,0,1,2->10,New York City,Polictician
+detroitpolice,321796839,bigar__,Unknown,Staying lowkey,816,623,1.309791332,,Missing,0,1,1->2,"City of Detroit, MI",Not Identified
+SFPD,322937211,georgegascon,George Gascíë_n,Honored to serve as the elected District Attorney for the City & County of San Francisco. I'm working to make SF the safest large city in America.,2020,1703,1.186142102,San Francisco,Local,0,1,1->2,"San Francisco, CA",Polictician
+SLMPD,323602481,kadelopa,Karen,"Over-thinker, over-empathizer, guilted way too easily. Prone to moments of blondeness, klutziness and stunningly bad dressing.",194,213,0.910798122,Colorado,Non-Local,0,1,<1,"St. Louis, MO",Not Identified
+NYPDnews,326399268,rabbiafriedman,Rabbi Abe Friedman,Inter-Goverment Affairs / Community Leader - Community and Law Enforcement working together for a better tomorrow and a safer community,4717,1031,4.575169738,,Missing,0,1,>10,New York City,Other Sectors
+NYPDnews,329709377,bspitzer,Barry Spitzer,District Manager of Brooklyn Community Board 12. Tweets are my own and reflect my views only. RTs are not an endorsement.,666,265,2.513207547,,Missing,0,1,>10,New York City,Other Sectors
+SLMPD,335699476,caraspencerstl,Cara Spencer,Alderman of the 20th Ward; a unique and diverse part of this great city.,905,885,1.02259887,Saint Louis,Local,0,1,1->2,"St. Louis, MO",Not Identified
+SLMPD,341465962,cassfm,Cassidy Moody,"Musings on news, sports & beer from South St. Louis - @ksdknews producer - Tweets are my own",1077,593,1.81618887,St. Louis,Local,0,1,1->2,"St. Louis, MO",Media
+SFPD,342868710,sfdbi,sfdbi,The official Twitter page for the San Francisco Department of Building Inspection. Like us on Facebook! http://www.facebook.com/sfdbi,346,305,1.13442623,1660 Mission Street | 558-6088,Non-Local,0,1,1->2,"San Francisco, CA",Not Identified
+NYPDnews,343655288,yourstrulyas,march 16th,3.4.15 Œ_íèŒå,21044,15412,1.365429535,taken by @FresH_BoY_Will Œ_Œù_Œ´í_Œè,Non-Local,0,1,1->2,New York City,Not Identified
+StocktonPolice,346707432,calchiefs,CalChiefs,We aim to be an effective and respected voice for all California Police Chiefs.,2880,406,7.093596059,,Missing,0,1,2->10,"Stockton, CA, USA",Not Identified
+SLMPD,347451363,andybankertv,Andy Banker,"News Anchor/Reporter, Stadium Announcer-St. Louis Rams, Proud #Illini & Althoff Crusader",5901,553,10.67088608,"St. Louis, MO",Local,0,1,>10,"St. Louis, MO",Media
+SFPD,351548938,pastormykmac,Michael McBride,"I love God...love my family...and am committed to serve the people!!! Husband, Father, Son, Brother, Pastor, Social Justice, 49ers, Lakers, Love The Bay Area!",3448,1469,2.347174949,www.thewayberkeley.org,Non-Local,0,1,2->10,"San Francisco, CA",Not Identified
+NYPDnews,351895654,thewavenews,The Wave Newspaper,,3008,607,4.955518946,Rockaway Beach NY,Local,0,1,>10,New York City,Not Provided
+NYPDnews,357092583,jumaanewilliams,Jumaane D. Williams,"I represent the 45th NYC Council District, covering East Flatbush, Flatbush, Flatlands, and Midwood. Deputy Leader & Chair, Committee on Housing and Buildings.",10807,1010,10.7,"Brooklyn, NY",Local,0,1,>10,New York City,Polictician
+SLMPD,362050559,dreadhead_46,Derk Brown,Ferguson Front Line Activist,1435,258,5.562015504,"St Louis, MO",Local,0,1,2->10,"St. Louis, MO",Not Identified
+NYPDnews,372811943,wspushomrim,Williamsburg Shomrim,Keeping the Williamsburg community safe,999,24,41.625,Williamsburg,Non-Local,0,1,>10,New York City,Other Sectors
+NYPDnews,375289365,joe_lozito,Joe Lozito,Proud family man! Author of The New York Subway Hero:My Battle with Evil...and a Spree-Killer!! @BellmoreKBMMA @GLORY_WS @ufc @NYIslanders @Braves @buffalobills,6527,6486,1.006321307,That guy from the subway,Non-Local,0,1,1->2,New York City,Not Identified
+CLEpolice,377071661,occupycleveland,Occupy Cleveland,Free Speech and Free Assembly on Public Square. We are the 99%,12136,1087,11.16467341,"Cleveland, Ohio",Local,0,1,>10,"Cleveland, OH",Other Sectors
+NYPDnews,380319978,jenniferciaccia,Jennifer Ciaccia,Detective and Public Information Officer for Cleveland Division of Police. Tweets are my own.,718,461,1.557483731,"Cleveland, Ohio",Non-Local,0,1,1->2,New York City,Police
+SFPD,381470791,taramoriarty1,taramoriarty,"KTVU Reporter, UCLA Bachelor's Degree, University of Missouri-Columbia Master's Degree, Married Mother of Three",4250,1046,4.063097514,,Missing,0,1,2->10,"San Francisco, CA",Media
+oaklandpoliceca,383558512,occupyoakland,Occupy Oakland,News of resistance in Oakland and across the Earth. No love for capitalism.,45422,1375,33.03418182,"Oakland, CA",Local,0,1,>10,"Oakland, CA",Media
+StocktonPolice,385429543,repmcnerney,Jerry McNerney,Proudly representing California's 9th Congressional District. Learn more about my work in Congress at http://www.facebook.com/jerrymcnerney,5320,503,10.57654076,"Stockton, CA",Local,0,1,>10,"Stockton, CA, USA",Polictician
+SFPD,386424543,occupyfr,Occupy France,"Info on Occupy Movements in France and in the world
+
+http://forum.occupyfrance.org
+
+IRC: http://occupyfrance.org/chat-irc",4395,787,5.584498094,Paris,Non-Local,0,1,>10,"San Francisco, CA",Not Identified
+NYPDnews,389812363,lucyyang7,Lucy Yang,Lucy Yang is a reporter for Eyewitness News on Channel 7 WABC-TV in New York City.,6276,307,20.44299674,New York City,Local,0,1,>10,New York City,Media
+NYPDnews,393722421,heynowjo,Jimmy Oddo,"I am the Borough President of Staten Island. Expect updates on the community & pithy rants on news, government, politics & sports. Proud member of #mongonation",3677,262,14.03435115,"Staten Island, NY",Local,0,1,>10,New York City,Media
+oaklandpoliceca,396949974,wiseoldsnail,wiseoldsnail,lifting the veil,465,883,0.526613817,earth,Non-Local,0,1,<1,"Oakland, CA",Not Identified
+SLMPD,399224799,rebelutionary_z,Rebelutionary Z,"Citizen Journalist/Livestreamer ~ From Chicago to StLouis to New York to Oakland to Baltimore 
+
+#WorldWatchesFerguson
+
+FUNDRAZR: http://fnd.us/c/d11eX0/sh/f42xNd",15095,624,24.19070513,Back in Ferguson,Local,0,1,>10,"St. Louis, MO",Not Identified
+NYPDnews,407432006,edjsandoval,Edgar Sandoval,"Edgar Sandoval: @PSUPress author & staff reporter @NYDailyNews (Retweets aren't endorsements, but mere pats on the back ) Œ_íèŒèŒ´í_Œèesandoval@nydailynews.com Œ_íèí_Œ´í_Œè",1612,468,3.444444444,"New York, New York",Local,0,1,2->10,New York City,Media
+SFPD,407440890,fitzthereporter,Joe Fitz Rodriguez,"An #SF native and journo at the SF Examiner, reporting the hell out of my dear, foggy City. Associate Editor at SF Evergreen, contributor at SF Weekly. Hi mom!",4010,3117,1.286493423,"San Francisco, CA",Local,0,1,1->2,"San Francisco, CA",Media
+SFPD,414106728,okcouncil,OK Council,Tweets mostly about Oakland & Bay Area politics. Moderated by Joshua Daniels (@HarryElephante). Account is not affiliated with the City of @Oakland. || #oakmtg,2201,1872,1.175747863,"Oakland, California",Non-Local,0,1,1->2,"San Francisco, CA",Not Identified
+detroitpolice,419719338,shinola,Shinola ,We are an American company dedicated to making things in America.,19712,2711,7.271117669,Detroit ,Local,0,1,2->10,"City of Detroit, MI",Other Sectors
+CLEpolice,430895088,cleprogress,NeighborhoodProgress,"Our mission is to foster communities of choice and opportunity throughout #Cleveland.
+
+https://www.facebook.com/NeighborhoodProgress",2045,457,4.474835886,"Cleveland, OH",Local,0,1,>10,"Cleveland, OH",Other Sectors
+SFPD,430992540,sfkale,Kale Williams ,"Reporter covering mostly crime, catastrophes and cats. Opinions, mine. Puns, intended. Not named Kate. Tip me at kwilliams@sfchronicle.com",3757,965,3.893264249,San Francisco,Local,0,1,2->10,"San Francisco, CA",Media
+NYPDnews,432858816,nypdgfc,NYPD Gaelic Football,Keeping The Heritage Alive. Most of our matches are played for charity.,812,87,9.333333333,New York City,Local,0,1,2->10,New York City,Not Identified
+CLEpolice,433645820,ohthemaryd,Miss Ann Dri,I am so perfect so divine so ethereal so surreal I cannot be comprehended except by my permission - Nikki Giovanni. Personal account,2377,1158,2.052677029,#ATX via #HTX via #CLE,Local,0,1,2->10,"Cleveland, OH",Not Identified
+NYPDnews,435094186,stephenlevin33,Stephen Levin,"NYC Council Member representing Brooklyn Heights, DUMBO, Williamsburg, Greenpoint, Boerum Hill and BedfordŒ_í_íÍStuyvesant. Chair, Committee on General Welfare.",6526,920,7.093478261,Brooklyn ,Non-Local,0,1,2->10,New York City,Polictician
+NYPDnews,437691294,trans1110,#TeamTrans1110 333KŒ_íèŒå,Stu Kolinsky @Vaguilar1443 @TheCinemaFan @TwiterHero @ssscoop475 @TwitWhizz @Tashaeva @Dollhouse @babfari @Sherehaan #TeamRT2EAT #CinemaFan #65CONNECTED #TFBJP,333454,335113,0.995049431,F4F @SolidCaoru @Marc1TT 08003,Non-Local,0,1,<1,New York City,Not Identified
+SFPD,460628422,sfciti,sfciti,Supporting San Francisco as the innovation capital of the world by partnering the top technology companies in SF with City leadership and needs.,4139,1464,2.827185792,"San Francisco, CA",Local,0,1,2->10,"San Francisco, CA",Not Identified
+CLEpolice,483212957,cevanscleveland,Christopher Evans,"Editorial writer & columnist for Northeast Ohio Media Group. Toronto Maple Leafs, Montreal Canadiens, NOFX, Ani DiFranco, St. Vincent, Edward Abbey.",404,192,2.104166667,"Cleveland, Ohio",Local,0,1,>10,"Cleveland, OH",Media
+NYPDnews,486845331,meriwetherk,Kristen Meriwether,"Reporter who's covered sports, NYC politics, military veterans, & tech. Pen for hire.",1636,1339,1.221807319,Colorado,Non-Local,0,1,1->2,New York City,Media
+NYPDnews,487198119,nycityalerts,New York City Alerts,"Reporter team tweeting incidents, news and photos in NYC as it happens. We're not official. Email NYCityAlerts@gmail.com - Instagram/nycityalerts",45241,3,15080.33333,New York City,Local,0,1,>10,New York City,Media
+NYPDnews,497282770,dpcornerblog,Ditmas Park Corner,"Local news about Ditmas Park, Brooklyn. Got a news tip, question, story idea? Email editor@ditmasparkcorner.com",2487,1443,1.723492723,"Ditmas Park, Brooklyn",Non-Local,0,1,1->2,New York City,Media
+NYPDnews,507624664,elizcrowleynyc,Elizabeth Crowley,"NYC Council Member - Chair, Fire and Criminal Justice Services Committee - 30th District - Glendale, Maspeth, Middle Village, Woodside,  Ridgewood and Woodhaven",3624,1166,3.10806175,"Queens, NY",Local,0,1,>10,New York City,Polictician
+NYPDnews,512068997,tomhoffman121,Tom Hoffman,"Journalist, husband, dad, customer experience advocate, analytics & marketing enthusiast.",1335,1956,0.682515337,,Missing,0,1,<1,New York City,Other Sectors
+NYPDnews,515655160,hikinddov,Dov Hikind,This is the OFFICIAL Twitter account of NY State Assemblyman Dov Hikind.,3724,308,12.09090909,,Missing,0,1,>10,New York City,Not Identified
+SFPD,516809717,ccsroc,CCSRO Collaborative,The Central City SRO Collaborative organizes Single Room Occupancy tenants to fight for quality housing in San Francisco's Tenderloin and South of Market areas.,515,804,0.640547264,"San Francisco, CA",Local,0,1,<1,"San Francisco, CA",Not Identified
+NYPDnews,517093576,nyvost,NY VOST,"New York Virtual Operations Support Team. Supporting official emergency response agencies, including @SuffolkCoFRES #VOST #SMEM",693,297,2.333333333,"New York, Suffolk County",Local,0,1,>10,New York City,Not Identified
+CLEpolice,518646310,sugarcubedog,MB,"Background in art, have an adopted dog named Sugar, average person w/occasionally strong opinions. I rotate different artists for my avi.",792,661,1.198184569,,Missing,0,1,1->2,"Cleveland, OH",Not Identified
+SFPD,525945247,nicksmithnews,Nick Smith,"Veteran, Engaged Voter, Dad, Chicago Native, @UCBerkeley @EmersonCollege alum http://www.imdb.com/name/nm1777158/?ref_=tt_ov_st Tweets & RTs Œ_í_í_ endorsements.",18300,889,20.58492688,San Francisco,Local,0,1,>10,"San Francisco, CA",Not Identified
+SpokanePD,531672180,caseylundkxly,Casey Lund KXLY,"Idaho, crossfitter kid happy to be back in the mountains reporting for #KXLY Good Morning NW. Re-tweets, favorites, follows Œ_í_í_ endorsements.",1662,707,2.350777935,"Spokane, WA",Local,0,1,2->10,"Spokane, WA",Media
+NYPDnews,538418266,geofeedia,Geofeedia,Search & analyze real-time social media content coming from any location in the world. Helping 100s of organizations gather a new set of actionable social data.,4065,2060,1.973300971,"Chicago, IL",Non-Local,0,1,1->2,New York City,Not Identified
+NYPDnews,546072625,ufoa854,UFOA 854,"New York City Fire Officers
+
+Local 854
+
+AFL/CIO",739,181,4.082872928,"New York, NY",Local,0,1,>10,New York City,Not Identified
+NYPDnews,549587666,thecoffeecop,Laurie McCann,Community Safety Command Headquarters social media officer and #Runner Non-Emerg 416-808-2222/Emergency call 911. This is NOT monitored 24/7,5896,3692,1.596966414,"Toronto, ON Canada",Non-Local,0,1,1->2,New York City,Police
+NYPDnews,563211356,sheetalveee,sheetal,1996. |  Œ_ŒÇŒê |   R.I.P N.T Œ_Œù_,771,579,1.331606218,gta,Non-Local,0,1,1->2,New York City,Not Identified
+SLMPD,564667441,suziq2opn,suziq2,,1086,1222,0.888707038,New York,Non-Local,0,1,<1,"St. Louis, MO",Not Provided
+NYPDnews,571200736,fortworthpd,Fort Worth Police ,"The Fort Worth Police Department official Twitter account. Emergency? Call 911. Non-emergencies or non-local, call 817-335-4222. Site not monitored 24/7.",36976,115,321.5304348,"Fort Worth, TX",Non-Local,0,1,>10,New York City,Police
+oaklandpoliceca,571851042,newubia,New U.B.I.A.,"Universal Black Improvement Association. ONE GOD, ONE AIM, ONE DESTINY. Rebirth of the (UNIA)",2735,1556,1.757712082,where the body fell,Non-Local,0,1,1->2,"Oakland, CA",Not Identified
+CLEpolice,574133325,leilaatassi,Leila Atassi,Cleveland City Hall reporter at the Northeast Ohio Media Group.,1296,519,2.497109827,"Cleveland, Ohio",Local,0,1,>10,"Cleveland, OH",Media
+SpokanePD,575803846,dmcc222,Dave McClure,"PhD in Criminology, Law & Society - @UrbanInstitute Researcher focused on Justice System Science & Technology - Fan of #SocEnt #Data & Creative Problem Solving.",672,927,0.724919094,"Washington, D.C. / Virginia",Non-Local,0,1,<1,"Spokane, WA",Other Sectors
+SFPD,586061055,srcbean,Sheila Bean,"P.O.J.: H2Omatters: Health and Wellness Coach (RD, RN) Would love to visit Israel!",1194,1999,0.597298649,,Missing,0,1,<1,"San Francisco, CA",Other Sectors
+detroitpolice,587676806,mcmuckraker,Motor City Muckraker,"Independent journalism dedicated to improving life in Detroit.
+
+
+
+tips@motorcitymuckraker.com",5562,767,7.251629726,"Detroit, MI",Local,0,1,2->10,"City of Detroit, MI",Not Identified
+CLEpolice,594522638,rachology216,Rachelle Smith,"#organizeCLE. mother, lover, student, activist, feminist, and general pain in the rear.",843,612,1.37745098,"cleveland, ohio",Local,0,1,1->2,"Cleveland, OH",Not Identified
+oaklandpoliceca,606135759,victorlicata1,Victor Licata,Anyone involved with cloning mammoths is encouraged to contact me immediately.,723,1998,0.361861862,breathing down your neck,Non-Local,0,1,<1,"Oakland, CA",Not Identified
+SLMPD,611775513,darveron,Dar,,206,315,0.653968254,,Missing,0,1,<1,"St. Louis, MO",Not Provided
+sppdPIO,626009030,team_vos,Calista Vos,"Raised a cheesehead, now trapped in a MN hockey life I LOVE! Addicted to creating the perfect music show for FHS boys hockey!",197,577,0.341421144,"Faribault, MN",Non-Local,0,1,<1,"St. Paul, MN",Not Identified
+SLMPD,701512801,dongallowayksdk,Don Galloway,"Photojournalist, KSDK NewsChannel 5",889,646,1.376160991,"St. Louis, Missouri
+
+",Local,0,1,1->2,"St. Louis, MO",Not Identified
+SLMPD,704069096,chieftimfitch,Tim Fitch,"Tim Fitch, Chief of Police, St. Louis County PD (Ret.) & 
+
+Principal Consultant at The Fitch Group, LLC",2546,119,21.39495798,"St. Louis, Missouri USA",Local,0,1,>10,"St. Louis, MO",Police
+NYPDnews,709045724,marcsantia4ny,Marc Santia,From the D to NYC. Life-long Detroiter appreciating the warm welcome in NY. Reporter at WNBC.,1817,541,3.358595194,new york,Local,0,1,>10,New York City,Media
+oaklandpoliceca,712885679,nylolive,olive,Tea Time with Olive,550,2005,0.274314214,San Francisco ,Non-Local,0,1,<1,"Oakland, CA",Not Identified
+CLEpolice,716802919,ndohnews,NDOHnews,DOJ does not collect comments or messages through this account. Learn more at http://justice.gov/privacy-file.htm,700,335,2.089552239,Ohio,Non-Local,0,1,>10,"Cleveland, OH",Not Identified
+NYPDnews,743699910,lschmidtfox5,Linda Schmidt,Reporter Fox 5 News | INSTAGRAM: @Lschmidtfox5 | Winner of 6 Emmys. Nominated for 19.,1636,229,7.144104803,,Missing,0,1,2->10,New York City,Media
+SLMPD,771805741,greatriversstl,GreatRivers Greenway,Making the St. Louis region a better place to live. Explore 170 miles of on&off-street trails in the #STL region with GreatRiversSTL & @BikeStLouis. #ConnectSTL,5491,1100,4.991818182,"St. Louis, Missouri",Local,0,1,2->10,"St. Louis, MO",Not Identified
+CLEpolice,778895864,racheldissell,Rachel Dissell,"Cleveland Plain Dealer enterprise/watchdog reporter, mom and Tremont resident.  My job is to question authority.  Send tips to rdissell@plaind.com",2689,991,2.713420787,"Cleveland, Oh",Local,0,1,2->10,"Cleveland, OH",Media
+SLMPD,801116630,rebeccarsheehan,Rebecca Roberts,Reporter for @FOX2now in STL. @DukeU grad. Animal lover. Future Mrs. @SheehanCBS.,4782,720,6.641666667,,Missing,0,1,2->10,"St. Louis, MO",Media
+SpokanePD,849478171,khqkjerstin,Kjerstin Bell ,Emmy award winning Anchor Good Day Spokane on KAYU FOX28. Love the outdoors! Triathlete. Obsessed with our Pudelpointer. Huntress. Pregnant.,1713,1750,0.978857143,"Spokane, WA",Local,0,1,<1,"Spokane, WA",Media
+NYPDnews,859793215,fios1newsnj,FiOS1 New Jersey,"Verizon FiOS1 New Jersey Œ_í_íÍ your source for up to the minute hyper-local news, traffic, weather, sports and community programming on FiOS Channels 501 & 1.",1717,823,2.086269745,New Jersey,Local,0,1,2->10,New York City,Media
+NYPDnews,862980936,chaskelbennett,Chaskel Bennett,Activist-Optimist-Realist:  Standing Up-Speaking Up,1949,929,2.09795479,NYŒ_íêŒéAlbanyŒ_íêŒéWashingtonŒ_íêŒéJerusalem,Local,0,1,>10,New York City,Not Identified
+NYPDnews,902200087,cassandrarules,Cassandra,"Reasons not rules make us strong. Writer at @tftproject & @SputnikNewsUS
+
+
+
+http://fb.com/cassandrafairbanksrules",63106,1327,47.55538809,DC,Non-Local,0,1,>10,New York City,Media
+PortlandPolice,915932240,amartintully,Amanda MT,Cider Lover. Kitty Fighter. Account Man.,442,1954,0.226202661,"Portland, Oregon",Local,0,1,<1,"Portland, Oregon",Not Identified
+PortlandPolice,919475023,911boec,Portland 911,Official Twitter account for the Bureau of Emergency Communications. 911 dispatchers DO NOT Monitor this account. If you have an emergency please dial 9-1-1.,541,191,2.832460733,"Portland, Oregon",Local,0,1,>10,"Portland, Oregon",Not Identified
+NYPDnews,921330710,abimarbet,Abi M'Arbet,"Working hard, trying to make a living.
+
+In my spare time I cycle. When I'm bored I tweet.",55,93,0.591397849,,Missing,0,1,<1,New York City,Not Identified
+NYPDnews,940368062,rednationrising,RedNationRising,"Welcome to Official Red Nation Rising Twitter page! Grassroots organization for Education, Constitution and Civics. #RedNationRising",50273,23633,2.127237338,"Everywhere, USA",Non-Local,0,1,2->10,New York City,Not Identified
+CLEpolice,948979430,zachreed12,Zack Reed,,1274,706,1.804532578,,Missing,0,1,1->2,"Cleveland, OH",Not Provided
+SFPD,953213815,nashellytweets,Nashelly,Managing Editor at Golden Gate Xpress. I'm a journalism major / Women and Gender Studies minor at SFSU. Se habla espaíëŒ±ol. I'm probably nosier than you.,159,414,0.384057971,San Francisco,Local,0,1,<1,"San Francisco, CA",Media
+SpokanePD,954240361,mikeyyevtuck,Mickey yevtuck ,"Watch Chuck Zito Chicken out of fighting Mike Yevtuck
+
+Time for Chuck Zito to fight or admit he is a fake",42561,527,80.76091082,World presently in NJ,Non-Local,0,1,>10,"Spokane, WA",Not Identified
+NYPDnews,993300516,anaheimpd,Anaheim PD,This non-emergency communications tool is designed to expand access to Anaheim Police Department resources and enhance our delivery of professional services.,6874,730,9.416438356,"Anaheim, CA",Non-Local,0,1,2->10,New York City,Not Identified
+oaklandpoliceca,1011743929,fruitvalelocal,Fruitvale Local,"Notes about community, art, jazz and politics.",461,383,1.203655352,"Oakland, CA",Local,0,1,1->2,"Oakland, CA",Not Identified
+oaklandpoliceca,1020058453,buzzfeednews,BuzzFeed News,"A news wire for the social web. Reporting by @AustinHunt, @sts10, @weeddude, and the @BuzzFeedNews team.",285421,4770,59.83668763,,Missing,0,1,>10,"Oakland, CA",Media
+SpokanePD,1038481676,newsthissecond,News This Second,The world isn't nine to five and neither are we. Our service is available around the clock so expect quality real time news around the clock.,4122,3428,1.202450408,Real Time Live Updates ,Non-Local,0,1,1->2,"Spokane, WA",Not Identified
+oaklandpoliceca,1061669604,arasmusktvu,Allie Rasmus KTVU,"KTVU News Reporter. Mom, wife, sister. Bay Area Native. NU Grad. My job = part sales, part therapist, part anthropologist w/some writing & speaking in between.",2572,759,3.388669302,"Oakland, CA",Local,0,1,2->10,"Oakland, CA",Media
+CLEpolice,1063076700,semanticearth,semanticearth.com,Semantic Earth Community promoting the best content. Great #retweets and #followback in a variety of #world #topics. Connecting #people to the Global Community,13995,11303,1.238166858,,Missing,0,1,1->2,"Cleveland, OH",Other Sectors
+detroitpolice,1076209057,detroit300,DETROIT 300 ,"sole focus is to help communities organize to eradicate crime by policing targeted areas & collectively pursuing individuals who wreak havoc, mayhem & terror.",1214,1919,0.632621157,"Detroit, Michigan USA",Local,0,1,<1,"City of Detroit, MI",Other Sectors
+NYPDnews,1089594517,los_sures,SouthsideUnitedHDFC,A community-based non-profit organization which has served as an integral part in rebuilding the south side of Williamsburg for over 40 years.,254,301,0.843853821,"Williamsburg, Brooklyn, Ny",Local,0,1,<1,New York City,Not Identified
+SFPD,1138908511,jasonyzhao,Jason Yang Zhao,Software Engineer at Twitter,72,171,0.421052632,,Missing,0,1,<1,"San Francisco, CA",Other Sectors
+NYPDnews,1151251177,losaltospd,Los Altos Police,Official Twitter account for the Los Altos Police Department. Tweets are not monitored 24/7. Dial 911 to report an emergency. RTs are not endorsements.,3976,501,7.936127745,"Los Altos, CA",Non-Local,0,1,2->10,New York City,Police
+NYPDnews,1177746079,idaneekmiller,I. Daneek Miller,I. Daneek Miller is the NYC Council Member for the 27th district in Southeast Queens and chair of the Committee on Civil Service & Labor.,1796,267,6.72659176,,Missing,0,1,>10,New York City,Polictician
+SLMPD,1283943962,d_towski,Danny Wicentowski,"Writer, storyteller, multimedia journalist and frequent pizza eater. Staff writer at Riverfront Times.   danny.wicentowski[at]http://riverfronttimes.com",3065,1143,2.681539808,"St. Louis, MO",Local,0,1,2->10,"St. Louis, MO",Media
+NYPDnews,1284078584,johnjaypresjt,Jeremy Travis,"President of John Jay College of Criminal Justice, City University of New York",2048,490,4.179591837,"New York, New York ",Local,0,1,2->10,New York City,Polictician
+SLMPD,1291770157,nettaaaaaaaa,ShordeeDooWhop,"I am the stone that the builder refused...the promise of what's to come. And I'mma remain a soldier till the war is won.
+
+
+
+netta@thisisthemovement.org",46663,1016,45.92814961,STL,Non-Local,0,1,>10,"St. Louis, MO",Not Identified
+SFPD,1335112818,sfgiantsfan2013,Stephanie Hammond,,17,275,0.061818182,,Missing,0,1,<1,"San Francisco, CA",Not Provided
+NYPDnews,1336724534,ywashhts,YMHA of Wash Heights,The Y is a multi-service community center that is well known for its nurturing environment and non-judgmental philosophy.,138,139,0.992805755,"Washington Heights, NY",Local,0,1,<1,New York City,Not Identified
+detroitpolice,1339840286,sdaviswwj,Stephanie Davis,Stephanie Davis is a reporter and anchor at WWJ Newsradio in Detroit.,472,354,1.333333333,"Detroit, MI",Local,0,1,1->2,"City of Detroit, MI",Media
+NYPDnews,1360891520,swalterstv,Sarah Walters,"CBS2 News Executive Producer, Mom, Wife, Always A Midwestern Girl @GrandViewUniv Alum",2506,2259,1.109340416,NYC,Local,0,1,1->2,New York City,Media
+NYPDnews,1363127011,limapolice,Lima Police,Official Twitter feed for the Lima Ohio Police Department. For emergencies dial 911. Non-emergencies dial 419-227-4444. Don't report crimes in progress here.,5496,1419,3.873150106,"Lima, Ohio",Non-Local,0,1,2->10,New York City,Police
+CLEpolice,1363155882,denagreer8,Dena Greer,"Assignment Editor at @WEWS 
+
+#Cleveland #Ohio #news",420,822,0.510948905,"Cleveland, Ohio",Local,0,1,<1,"Cleveland, OH",Media
+NYPDnews,1368509196,clearwater_pd,CLW PD Special Ops,"Clearwater Police Department
+
+Special Investigations Section",944,587,1.608177172,"Clearwater, Florida",Non-Local,0,1,1->2,New York City,Police
+SFPD,1373186335,deboraktvu,Debora Villalon,KTVU Channel 2 News Reporter.  Follow me for updates and breaking news.,1222,275,4.443636364,,Missing,0,1,>10,"San Francisco, CA",Media
+SFPD,1375629084,matierandross,Matier and Ross,"Phil Matier and Andy Ross have raked muck & scooped scoops for more than two decades about the always fascinating Bay Area. Column appears in SFChronicle M,W,Su",2496,602,4.146179402,"San Francisco, CA",Local,0,1,>10,"San Francisco, CA",Not Identified
+SFPD,1376781518,paulchamberstv,Paul Chambers,Reporter at KTVU. Ohio State alum bleed Scarlet & Grey. Want to share your story or have a news tip? Contact me here or paul.chambers@foxtv.com,990,232,4.267241379,Oakland Ca,Non-Local,0,1,2->10,"San Francisco, CA",Media
+PortlandPolice,1397012582,roxinsoxfest,Rox in Sox,"Children's music and literary festival in Lake Oswego, OR on August 3rd. Stop on by! #roxinsoxfest",131,112,1.169642857,"Portland, OR",Local,0,1,1->2,"Portland, Oregon",Other Sectors
+NYPDnews,1410980774,flatbushjcc,FJCC,FJCC- Flatbush Jewish Community Coalition- Uniting the Broader Flatbush Jewish Community. Email: flatbushjcc@gmail.com,285,1,285,"Flatbush,Brooklyn",Non-Local,0,1,>10,New York City,Other Sectors
+NYPDnews,1476107702,lpdiamante69,Œ_í‡í_ Pio lll,universo-digital-wallpaper-318428 Œ_í‡í_ Screen_shot_2011-09-19_at_1.53.54_PM @cnnbrk galaxia-0 @UN 8B4C588910E9C254BFDEC3CE4A2AD_h498_w598_m2 @NASA @CNN,174,1067,0.163074039,Moon6sixEs,Non-Local,0,1,<1,New York City,Not Identified
+SFPD,1480883856,sf_dcyf,DCYF,Mission: ensure that families with children are a prominent & valued segment of San Francisco's social fabric by supporting programs in every neighborhood.,694,976,0.711065574,"San Francisco, CA",Local,0,1,<1,"San Francisco, CA",Other Sectors
+NYPDnews,1486452914,schaumburgnebl,John Nebl,Public Information Officer for DuPage Co (IL) Emergency Management and retired Sgt/PIO-Schaumburg (IL) police. Opinions are my own. Retweets not endorsements.,433,216,2.00462963,"Chicago, IL",Non-Local,0,1,>10,New York City,Police
+SFPD,1537052504,bob_gunderson,Bob Gunderson,"Fighting for wider streets, faster speeds and more parking, everywhere.  Battling the radical all-powerful bike lobby. Views are my own, but should be yours.",2469,2001,1.233883058,District 5 - SF,Local,0,1,1->2,"San Francisco, CA",Not Identified
+NYPDnews,1586892079,dnainfoqns,DNAinfo Queens,"All the neighborhood news you need about Queens, 140 characters at a time. Breaking, features, photos, videos.",1959,151,12.97350993,"Queens, New York City",Local,0,1,>10,New York City,Media
+NYPDnews,1603630243,ppddavidburns,PPDDavidBurns,"@phillypolice, Police Officer Assigned to 35th Police District",638,790,0.807594937,,Missing,0,1,<1,New York City,Police
+StocktonPolice,1713463369,forensicsed,Forensics Colleges,An educational site dedicated to enlighten and inspire those interested in pursuing a career in Forensic Science            #forensicscience,292,505,0.578217822,,Missing,0,1,<1,"Stockton, CA, USA",Not Identified
+NYPDnews,1851383168,kminstercops,Kidderminster SNTs,Police Safer Neighbourhood Teams for Kidderminster.  Please do not report crime via Twitter - call 101 or 999 in an emergency.,750,96,7.8125,Kidderminster,Non-Local,0,1,>10,New York City,Not Identified
+PortlandPolice,1904665818,katherinekisiel,katherine kisiel,"KATU reporter, Texas transplant, Proud AZ Wildcat, having fun exploring the Northwest with my two boys!",484,300,1.613333333,"portland, oregon",Local,0,1,1->2,"Portland, Oregon",Media
+NYPDnews,1907931691,nycagainstabuse,Office to Combat DV,The Mayor's Office to Combat Domestic Violence aims to make it simple for domestic violence victims to get the help they need. 1.800.621.4673 or 311,2665,920,2.89673913,New York City,Local,0,1,>10,New York City,Polictician
+NYPDnews,1926977407,chelseamauldin,Chelsea Mauldin,"Director of @publicpolicylab, a nonprofit dedicated to creating better public services for all Americans. Following PPL board, fellows, staff & partners.",209,22,9.5,"Brooklyn, NY",Local,0,1,>10,New York City,Other Sectors
+NYPDnews,1934914172,copsinbikelanes,Cops in Bike Lanes,I live in NYC and I bike a decent amount.  I post pictures of police vehicles parked in bike lanes.  User submissions welcome: copsinbikelanes@gmail.com,511,65,7.861538462,New York City,Local,0,1,2->10,New York City,Other Sectors
+detroitpolice,1946944188,dearbornpolice,Dearborn Police,Official Twitter account of the Dearborn Police Department. Tip line: 313-943-3030. Call 911 in emergencies. Account not monitored 24/7,1010,275,3.672727273,"16099 Michigan Ave., Dearborn",Non-Local,0,1,2->10,"City of Detroit, MI",Police
+NYPDnews,1967991931,kjohnsontv,Kristine Johnson,5 & 11pm News Anchor @CBSNewYork. Mom. Yoga. Music. Marathon. Cooking. Instagram: kjohnsoncbs_,7580,1349,5.61897702,"New York, NY ",Local,0,1,>10,New York City,Media
+PortlandPolice,2151778339,stephenkatu,Stephen Mayer,"Reporter for KATU News. Oregon transplant, California native. Always looking for good story ideas, smayer@katu.com.",862,380,2.268421053,,Missing,0,1,2->10,"Portland, Oregon",Media
+SLMPD,2155543074,btstl,Better Together STL,Better Together compiles & publicizes data to assess whether reunification of St. Louis City & County should occur & doesnŒ_í_ŒÈt advocate for any single plan.,3758,1102,3.410163339,St Louis Region,Local,0,1,2->10,"St. Louis, MO",Other Sectors
+SFPD,2177074008,musicnegrito,Fantastic Negrito,Black roots music for all people. See website for Tour and NEW MUSIC -- OUT NOW!!!,121059,35466,3.41338183,"Oakland, CA",Non-Local,0,1,2->10,"San Francisco, CA",Other Sectors
+NYPDnews,2188813291,impromptuimages,ImpromptuImages,PIctures Tell the Story. Visit us at http://impromptuimages.com for all your high school athletic photos.,15,126,0.119047619,"Chicago, IL",Non-Local,0,1,<1,New York City,Other Sectors
+NYPDnews,2190685427,nypd911dispatch,NYPD 911 Dispatch,Team of reporters Reporting incidents of the New York City Police Department If you have an Emergency Dial 911 at any time Report tips Anonymously 1877-577-TIPS,2718,141,19.27659574,Not Affiliated with the NYPD,Non-Local,0,1,>10,New York City,Police
+oaklandpoliceca,2204214774,domainawareness,Domain Awareness,Œ_í_íèHow about a Digital Blackwater?Œ_í_Œù Œ_í_íÍ Former NSA Director Michael Hayden,1100,824,1.334951456,"Oakland, CA",Local,0,1,1->2,"Oakland, CA",Other Sectors
+SFPD,2208168866,sfgardenproject,The Garden Project,"We don't just grow plants, we grow people, too.",74,53,1.396226415,San Francisco,Local,0,1,1->2,"San Francisco, CA",Not Identified
+NYPDnews,2216041938,marshallproj,The Marshall Project,"The Marshall Project is a nonprofit, nonpartisan newsroom covering America's criminal justice system. Tweets usually from @amandablair.",17887,235,76.11489362,"New York, NY",Local,0,1,>10,New York City,Not Identified
+StocktonPolice,2242439771,gabomataguzman,Gabriel,"#News from my RSS reader. #Venezuela, #Caricaturas, #PoliticalCartoon, #Photography, #Music, #Tech, #Art & #Design.",318,3,106,"Maracay y Nirgua, Venezuela",Non-Local,0,1,>10,"Stockton, CA, USA",Other Sectors
+NYPDnews,2256991388,makequeenssafer,Make Queens Safer,"Safer Streets for Queens, NY #VisionZero",548,414,1.323671498,,Missing,0,1,1->2,New York City,Other Sectors
+PortlandPolice,2279670090,itsmikebivins,Mike Bivins,I've been featured in @pdxobserver & @thebafflermag blog| I only represent myself| RT Œ_í_í_ endorsement | Generally tweets about civil unrest & conflicts,1171,402,2.912935323,Portland,Local,0,1,2->10,"Portland, Oregon",Not Identified
+SLMPD,2292018487,dronefreestl,Drone Free StL,We are a coalition that opposes the use of police drones in St. Louis.,316,225,1.404444444,,Missing,0,1,1->2,"St. Louis, MO",Police
+NYPDnews,2296225874,benkallos,Ben Kallos,"New York Council Member for Upper East Side, Midtown, El Barrio and Roosevelt Island. This is my official account, and you can tweet me here for help.",2114,998,2.118236473,244 E. 93rd St. - 212-860-1950,Local,0,1,2->10,New York City,Polictician
+StocktonPolice,2303977776,stocktonupdates,"City of Stockton, CA","Official City of Stockton, California, page.",477,11,43.36363636,"Stockton, CA",Local,0,1,>10,"Stockton, CA, USA",Not Identified
+NYPDnews,2319193123,nypddca,Commissioner Perez,"Deputy Commissioner of Administration. The official Twitter of the Office of Deputy Commissioner, Administration. User policy: http://bit.ly/gGmduQ",1643,250,6.572,,Missing,0,1,>10,New York City,Police
+NYPDnews,2320987874,nypdcops3100,COPS,Offical Twitter of the Committee Of Police Societies (COPS). Mentions & RT Œ_í_í_ endorsements.,1744,521,3.347408829,NYC,Local,0,1,2->10,New York City,Police
+NYPDnews,2326644771,nypdstpauls,NYPD Saint Paul's,"Formed in 1958, the Saint Paul's Society is an NYPD fraternal organization that brings together officers of the Eastern Orthodox Christian Faith.",519,174,2.982758621,"New York, NY",Local,0,1,>10,New York City,Not Identified
+NYPDnews,2332046212,emeraldnypd,NYPD Emerald Society,,714,94,7.595744681,,Missing,0,1,>10,New York City,Not Provided
+SFPD,2333934739,stolenbikesoak,BikeIndex Oakland,"Listing stolen bikes in and around Oakland, CA. Death to bike thieves!",134,91,1.472527473,"Oakland, CA",Non-Local,0,1,1->2,"San Francisco, CA",Other Sectors
+NYPDnews,2383848030,nypdpsa5,NYPD Housing PSA 5,"Captain Peter Fortune, Commanding Officer of Police Service Area 5.",1019,284,3.588028169,"221 E. 123rd Street, New York",Local,0,1,>10,New York City,Police
+SFPD,2462147214,markmatthewsnbc,Mark Matthews,Reporter for @NBCBayArea. Always looking for stories. Mark.Matthews@nbcuni.com,320,168,1.904761905,"San Francisco, CA",Local,0,1,1->2,"San Francisco, CA",Media
+SFPD,2493330224,ltrobl,Lt. Rob Lenke,"Lieutenant Rob Lenke / Fairfield, Ca Police Department - @FairfieldPolice",177,90,1.966666667,"Fairfield, Ca",Non-Local,0,1,1->2,"San Francisco, CA",Police
+SFPD,2546470542,sheriffsf,SF SHERIFF - SFSD,This SF Sheriff Twitter account is not monitored 24/7 to report a crime call 9-1-1 in an emergency. Follow Sheriff @ross_mirkarimi,790,300,2.633333333,,Missing,0,1,>10,"San Francisco, CA",Police
+NYPDnews,2572612077,aberosenberg1,Abraham Rosenberg,Community and NYPD Liaison,300,249,1.204819277,"Brooklyn, NY",Local,0,1,1->2,New York City,Police
+oaklandpoliceca,2587701936,khouston4mayor,Ken Houston EOBC,"Contractor and Community Advocate, ran for 2014 Oakland Mayor, running on Local Jobs, Changing the Image of Oakland, and Community Policing and con",354,1056,0.335227273,Oakland,Local,0,1,<1,"Oakland, CA",Other Sectors
+NYPDnews,2606556046,roysmithpolice,Chief Insp Roy Smith,"Serving the people of #Lambeth as part of the @lambethMPS Senior Leadership Team, Metropolitan Police, London. Dont report crime here call 101 or 999",1343,570,2.356140351,Metropolitan Police Service,Non-Local,0,1,2->10,New York City,Not Identified
+NYPDnews,2614038818,nycnavy,NAVINFO East,"Official account of the Navy Office of Information East, the @USNavy liaison in #NYC. RT Œ_í_í_ endorsement.",118,185,0.637837838,"New York, NY",Local,0,1,<1,New York City,Polictician
+NYPDnews,2616172722,haverfordpd,Haverford Police,This account is not followed 24/7 so if you have an emergency please call 911 immediately. Non-emergency can call (610)853-1298.,1248,519,2.404624277,Haverford Pa ,Non-Local,0,1,2->10,New York City,Not Identified
+SLMPD,2650823504,lambityann,Lamb,~~ IMAGINE~~  John Lennon,300,561,0.534759358,,Missing,0,1,<1,"St. Louis, MO",Not Identified
+SLMPD,2657503075,sherracane,She Rry,,281,246,1.142276423,,Missing,0,1,1->2,"St. Louis, MO",Not Provided
+SFPD,2659894350,philmatier,Phil Matier,"Political insider and columnist, San Francisco Chronicle (M,W,SUN), KCBS Radio 740am/106.9fm (750am & 550pm), Appears weekdays on KPIX5- Sunday morning anchor.",1446,807,1.791821561,"San Francisco, CA",Local,0,1,1->2,"San Francisco, CA",Media
+SFPD,2670627170,sfcityhall,San Fran City Hall,"Tweet us your questions, comments, concerns, and lunch suggestions. -Powered by kombucha.",28,31,0.903225806,San Francisco,Local,0,1,<1,"San Francisco, CA",Not Identified
+SFPD,2687943469,sfpdcio,CIO Susan Merritt,"Official Twitter of the San Francisco Police Department CIO Susan Merritt 
+
+Social Media Policy: http://t.co/Nnf4xnw3X3 Call 911 to report emergencies.",415,36,11.52777778,"San Francisco, CA",Local,0,1,>10,"San Francisco, CA",Police
+VBPD,2690842873,ricobushwavy,Rico Bush,WAVY-TV 10 NBC/FOX 43 Reporter. Mizzou Grad; STL native. Retweets are not endorsements. Opinions are my own. Story ideas? Send to Rico.bush@wavy.com,516,573,0.90052356,"Hampton Roads, VA",Non-Local,0,1,<1,"Virginia Beach, VA",Media
+NYPDnews,2704334640,nypdfalcon,67th Pct Youth,"67th Pct bridging the gap between Cops, Community & Youths through numerous sports and arts program. While partnering with numerous community organization",270,618,0.436893204,67 th precinct,Non-Local,0,1,<1,New York City,Other Sectors
+NYPDnews,2730181223,kalleob16karl,KARL-HEINZ MíëíèLLER,,572,2020,0.283168317,,Missing,0,1,<1,New York City,Not Provided
+SLMPD,2734647354,bassem_masri,Bassem Masri,"As Glenn Beck so eloquently stated the sinister Palestinian,Axis of Evil,Ferguson Livestreamer,White Genocide is a MYTH.I love all humans,STL born and bred",25043,3153,7.942594355,Ferguson MO,Non-Local,0,1,2->10,"St. Louis, MO",Not Identified
+detroitpolice,2735086795,detroitcitygov,City of Detroit,Official page for the City of Detroit. Follow for news and information about city government in Detroit.,741,24,30.875,Detroit,Local,0,1,>10,"City of Detroit, MI",Not Identified
+StocktonPolice,2738397743,majornews911,G.Alexander(BRKNEWS),"Breaking News Reporter. Police, Crime Reporter.",12518,13187,0.949268219,,Missing,0,1,<1,"Stockton, CA, USA",Media
+NYPDnews,2742356767,brooklyncb12,Community Board 12,"Proudly serving the neighborhoods of Borough Park, Dahill, Kensington and Midwood. Call us at 718-851-0800 or email us at bk12@cb.nyc.gov",326,122,2.672131148,,Missing,0,1,>10,New York City,Not Identified
+NYPDnews,2756053812,joeesponyc,Joe Esposito,"Commissioner, NYC Emergency Management",2333,56,41.66071429,,Missing,0,1,>10,New York City,Not Identified
+SLMPD,2757927614,handsupunited_,Support #Fightfor15 ,"In the push for justice for #MikeBrown, we're speaking together with one voice, so that the greater St. Louis area can become a model for justice everywhere.",9918,463,21.42116631,"Ferguson, MO",Non-Local,0,1,>10,"St. Louis, MO",Not Identified
+detroitpolice,2764767721,aoaindetroit,AcademyoftheAmericas,"Founded in 1991, the Academy of the Americas is a PK-9th grade dual language Spanish/English immersion Detroit Public School  located in southwest Detroit.",37,123,0.300813008,"5680 Konkel Detroit, MI 48210",Local,0,1,<1,"City of Detroit, MI",Other Sectors
+SLMPD,2801118366,rationalbassist,G,Rationally related to a legitimate protest movement.,294,78,3.769230769,"Saint Louis, MO, USA",Local,0,1,>10,"St. Louis, MO",Not Identified
+SLMPD,2803068985,chicanapoet1,elizabeth vega,"Chicana poet, mother, grandmother community artist, activist and poet. Ripe in my own center full of juice and joy.",1513,169,8.952662722,"St. Louis, MO ",Local,0,1,2->10,"St. Louis, MO",Other Sectors
+SFPD,2813606018,ibnadullah2016,M.K. ibn Abdullah,"Political Action Committee to elect Muhammad-Khalil ibn Abdullah For 2015 as Mayor of San Francisco, CA Democratic Party Candidate.",324,2170,0.149308756,San Francisco,Local,0,1,<1,"San Francisco, CA",Polictician
+SpokanePD,2831833862,vpdcanine,VPD Canine Unit,Official Twitter account of the @VancouverPD Canine Unit. Not monitored 24/7. *Call 9-1-1 for emergencies* or 604-717-3321 for non-emergency police response,1849,347,5.328530259,,Missing,0,1,>10,"Spokane, WA",Police
+NYPDnews,2835082269,kingscountypols,KingsCounty Politics,Kings County Politics covers the elected officials and government that serve the 2.5 million residents of Brooklyn.,296,1204,0.245847176,"Brooklyn, NY",Local,0,1,<1,New York City,Other Sectors
+SLMPD,2841693095,janeqcitizen16,Jane Citizen ,Hover around the center. Pro-choice; Pro 2A; Pro death penalty; Equal rights for ALL. NO special rights,996,536,1.858208955,St Louis MO,Local,0,1,1->2,"St. Louis, MO",Not Identified
+SFPD,2849403020,twu250a,TWU250A,Official tweets followed by TH. Retweets not endorsements. Social/Political event/info sharing. Promoting Unions to increase social & economic justice.,319,1306,0.244257274,San Francisco ,Local,0,1,<1,"San Francisco, CA",Not Identified
+CLEpolice,2864640226,boycourt93,Lowkey,22. Cleveland.,395,499,0.791583166,,Missing,0,1,<1,"Cleveland, OH",Not Identified
+NYPDnews,2877209271,k9timoshenko,Benny Colecchia,K9,143,116,1.232758621,,Missing,0,1,1->2,New York City,Not Identified
+SLMPD,2895856418,fergusonstream1,@stackizshort,"A lollipop licking, activism centered media person, LiveStreamer & Counter Narration Specialist",5180,795,6.51572327,"Ferguson, and beyond",Non-Local,0,1,2->10,"St. Louis, MO",Not Identified
+SFPD,2906066566,aucshutitdown,#AUCShutItDown,"A movement mobilizing AUC(Spelman,Morehouse,Clark Atlanta,ITC) students for justice. aucshutitdown@gmail.com",857,1150,0.745217391,"Atlanta, Georgia",Non-Local,0,1,<1,"San Francisco, CA",Not Identified
+SLMPD,2912461124,heyylt,Hey LT,"I STAND WITH THE PROTECTORS, NOT THE PROTESTERS!",785,479,1.638830898,USA,Non-Local,0,1,1->2,"St. Louis, MO",Not Identified
+SFPD,2918876204,truthcasterstv,TruthCastersTV,"Exposing Corruption, Police Brutality and Govermental Abuse Since 2011",1925,2054,0.937195716,"Oakland, CA",Non-Local,0,1,<1,"San Francisco, CA",Police
+SFPD,2927379996,londonbreed,London Breed,"President, San Francisco Board of Supervisors
+
+5th District",420,197,2.131979695,,Missing,0,1,2->10,"San Francisco, CA",Polictician
+oaklandpoliceca,2936928627,jackglaserphd,Jack Glaser,Author of just published SUSPECT RACE: Causes and Consequences of Racial Profiling (Oxford University Press) http://amzn.to/1vgwTFC #racialprofiling,76,80,0.95,"Berkeley, CA",Non-Local,0,1,<1,"Oakland, CA",Not Identified
+oaklandpoliceca,2939672682,waywardstreamer,Wayward Streamer,"#Denver based live stream for events for police brutality, environment, and many social justice causes. #DoItLiveCrew",583,401,1.453865337,1P2mHyBy1p36LxtLgpNXPXAZqo8ZGE,Non-Local,0,1,1->2,"Oakland, CA",Police
+NYPDnews,2951149210,dionedarren,Darren Dione Aquino,Actor TV & Movies also a national advocate for disabled police firemen and veterans for 28 years have made changes in state  local government and federal,376,2001,0.187906047,,Missing,0,1,<1,New York City,Other Sectors
+NYPDnews,2974124704,bluelivesnyc,Blue Lives Matter NY,As a member of Law Enforcement our goal is to raise awareness and money for the families of Officers struck by tragedy through bracelets symbolizing Unity.,126,166,0.759036145,NY,Local,0,1,<1,New York City,Other Sectors
+StocktonPolice,2980450110,stocktonfirst,Stockton First,"Grassroots organization in support of new, responsible leadership in city of Stockton. News as it happens. Thank you for your interest!",294,887,0.33145434,"Stockton, CA",Local,0,1,<1,"Stockton, CA, USA",Not Identified
+SpokanePD,2983157936,khqkatiechen,Katie Chen,"Reporter/MMJ with @KHQLocalNews. Formerly of @KULR in Billings, MT. @NorthwesternU grad. CA native. Story idea? katie.chen@khq.com",134,173,0.774566474,,Missing,0,1,<1,"Spokane, WA",Media
+CLEpolice,2992839005,acsneo,ACS Northeast Ohio,The American Constitution Society for Law and Policy Northeast Ohio Chapter. Follow for developments in law & policy and upcoming events in Northeast Ohio.,51,230,0.22173913,"Cleveland, Ohio",Local,0,1,<1,"Cleveland, OH",Other Sectors
+SFPD,3020260357,798sffd,SFFD LOCAL 798,,87,103,0.844660194,,Missing,0,1,<1,"San Francisco, CA",Not Provided
+ScottsdalePD,3040505095,az_vdrs,AZ-VDRS,The AZ-VDRS aims to provide Arizona and itŒ_í_ŒÈs communities with a better understanding of violent deaths.,3,37,0.081081081,Arizona,Non-Local,0,1,<1,"Scottsdale, Arizona",Not Identified
+NYPDnews,3041543943,dandonovan_ny,Dan Donovan,,447,234,1.91025641,,Missing,0,1,1->2,New York City,Not Provided
+BPDVT,3044715749,zachdespart,Zach Despart,Reporter at @bfp_news. Formerly at @addyindy and @VermontCynic Give a shout at 651-4826,289,348,0.83045977,"Burlington, Vt.",Local,0,1,<1,"Burlington, Vermont",Media
+NYPDnews,3153683889,nycidles,nycidles,,2,90,0.022222222,,Missing,0,1,<1,New York City,Not Provided
+NYPDnews,3170700092,copunblock,Cop Unblock,"Staying on top of the mis-information about law enforcement and bringing truth to the matter. Unblocking the facts behind anti Police claims. For cops, by cops.",1261,1073,1.175209692,United States,Non-Local,0,1,1->2,New York City,Police
+SFPD,3335457856,bftfnyc,Brotherhood NYC,Non-profit made of NYC police officers of all ranks. We will send uniformed officers to every confrontational LODD funeral in the US and donate to the family.,23,61,0.37704918,"New York, USA",Non-Local,0,1,<1,"San Francisco, CA",Police
+NYPDnews,3338142208,bravest_finest,Bravest & Finest,"Bravest and Finest honors firefighters, police officers and ALL members of uniformed services who put their lives on the line for our safety. Please follow.",36,214,0.168224299,"New York, NY",Local,0,1,<1,New York City,Not Identified
