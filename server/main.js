@@ -56,5 +56,27 @@ if (Meteor.isServer) {
     });
     Meteor.publish('safetytips',function(){
       return SafetyTips.find({});
-    })
+    });
+    Meteor.publish('Aonly',function(){
+      return Aonly.find({});
+    });
+    Meteor.publish('Ponly',function(){
+      return Ponly.find({});
+    });
+    Meteor.publish('Conly',function(){
+      return Conly.find({});
+    });
+    Meteor.publish('AP',function(){
+      return Ap.find({});
+    });
+    Meteor.publish('AC',function(){
+      return Ac.find({});
+    });
+    Meteor.publish('PC',function(){
+      return Pc.find({});
+    });
+    Meteor.publish('APC',function(){
+      return Apc.find({});
+    });
+
 }

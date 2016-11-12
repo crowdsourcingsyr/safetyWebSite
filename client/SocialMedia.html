@@ -14,8 +14,12 @@
               </div>
             </div>
           </div>
-
     </div>
+  </div>
+  <div class="row">
+    {{#if showTheMainTable}}
+      {{> SocialMediaMainTable}}
+    {{/if}}
   </div>
 
 </template>
@@ -24,18 +28,71 @@
   <div>
   <div class="dropdown form-group">
     <label for="sel1">Set Filter for Police Department Location:</label>
-    <select class="form-control" id="select">
+    <select class="form-control" id="MediaSelect">
       <option value="Choose a value"></option>
+      {{#each getPDLoptions}}
+        <option value="{{PDLocation}}">{{PDLocation}}</option>
+      {{/each}}
     </select>
   <br><br>
-  <button type="button" id="button" class="btn btn-primary">Reset</button>
+  <button type="button" id="ResetButton" class="btn btn-primary">Reset</button>
   <table id="stat" class="table stat">
   <tr>
       <th>UserRole</th>
       <th>Number</th>
       <th>Percent</th>
     </tr>
+    <tbody>
+      {{#if Template.subscriptionsReady}}
+        {{#each getStateData}}
+          {{> StateDataRows}}
+        {{/each}}
+      {{/if}}
+    </tbody>
   </table>
   </div>
 </div>
+</template>
+
+<template name="SocialMediaMainTable">
+  <div id="SocialMediaMainTable">
+    <table class="table table-hover table-striped SocialMediaMainTable">
+      <thead>
+        <tr>
+          <th>PoliceDepartment</th>
+          <th>UserID</th>
+          <th>UserName</th>
+          <th>PDLocation</th>
+          <th>UserLocation</th>
+          <th>UserRole</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#if Template.subscriptionsReady}}
+  			{{#each getMediaData}}
+  						{{> MediaDataRows}}
+  					{{/each}}
+        {{/if}}
+    </tbody>
+    </table>
+  </div>
+</template>
+
+<template name="MediaDataRows">
+  <tr>
+    <td>{{PoliceDepartment}}</td>
+    <td>{{UserID}}</td>
+    <td>{{UserName}}</td>
+    <td>{{PDLocation}}</td>
+    <td>{{UserLocation}}</td>
+    <td>{{UserRole}}</td>
+  </tr>
+</template>
+
+<template name="StateDataRows">
+  <tr>
+    <td>{{UserRole}}</td>
+    <td>{{Number}}</td>
+    <td>{{Percent}}</td>
+  </tr>
 </template>

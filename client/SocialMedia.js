@@ -1,3 +1,118 @@
+  Meteor.subscribe('Aonly', {
+      onReady: function(){
+      }
+  });
+
+  Meteor.subscribe('Ponly',{
+    onReady: function(){
+    }
+  });
+
+  Meteor.subscribe('Conly',{
+    onReady: function(){
+    }
+  });
+
+  Meteor.subscribe('AP',{
+    onReady: function(){
+    }
+  });
+
+  Meteor.subscribe('AC',{
+    onReady: function(){
+    }
+  });
+
+  Meteor.subscribe('PC',{
+    onReady: function(){
+    }
+  });
+
+  Meteor.subscribe('APC',{
+    onReady: function(){
+    }
+  });
+
+//reactive data
+DataforMainTable = [];
+DataforMainTableDep = new Tracker.Dependency();
+getDataforMainTable = function(){
+  DataforMainTableDep.depend();
+  return DataforMainTable;
+};
+setDataforMainTable = function(data){
+  DataforMainTable = data;
+  DataforMainTableDep.changed();
+};
+modDataforMainTable = function(data){
+  for(var i = 0; i < DataforMainTable.length;i++){
+    if(data != DataforMainTable[i].PDLocation){
+      DataforMainTable.splice(i,1);
+      i--;
+    }
+  }
+  DataforMainTableDep.changed();
+};
+
+DataforSelect = [];
+DataforSelectDep = new Tracker.Dependency();
+getDataforSelect = function(){
+  DataforSelectDep.depend();
+  return DataforSelect;
+};
+setDataforSelect = function(data){
+  DataforSelect = [];
+  $.each(data,function(i,item){
+    var nitem = new Object();
+    nitem.PDLocation = item;
+    DataforSelect.push(nitem);
+  });
+  DataforSelectDep.changed();
+};
+rmDataforSelect = function(){
+  DataforSelect = [];
+  DataforSelectDep.changed();
+};
+
+DataforStateTable = [];
+DataforStateTableDep = new Tracker.Dependency();
+getDataforStateTable = function(){
+  DataforStateTableDep.depend();
+  return DataforStateTable;
+};
+setDataforStateTable = function(dataFromTable){
+  DataforStateTable = [];
+  var field1 = [];
+  var field2 = [];
+  var total = 0;
+  $.each(dataFromTable,function(i,item){
+    var flag = 1;
+    $.each(field1,function(i,item2){
+      if(item2 == item['UserRole']){
+        flag = 0;
+        field2[i]=field2[i]+1;
+      }
+    });
+    if(flag == 1){
+      field1.push(item['UserRole']);
+      field2.push(1);
+    }
+  });
+  $.each(field2,function(i,item){
+    total+=item;
+  });
+  field1.push('ALL');
+  field2.push(total);
+  $.each(field1,function(i,item){
+    var row = new Object();
+    row.UserRole = item;
+    row.Number = field2[i];
+    row.Percent = ((field2[i]/total)*100).toFixed(2) + "%";
+    DataforStateTable.push(row);
+  });
+  DataforStateTableDep.changed();
+};
+
 r = 110;
 CircleColors = {
   a: "#b9f6df",
@@ -96,7 +211,8 @@ tooltipABC = d3.select("body")
     .text("Agency + Public + Co-mentioned");
 
 
-
+Template.SocialMedia.onCreated(function(){
+});
 
 Template.SocialMedia.onRendered(function(){
   var w = 3 * r;
@@ -163,15 +279,23 @@ Template.SocialMedia.onRendered(function(){
 
 });
 
+Template.SocialMedia.helpers({
+  showTheMainTable:function(){
+    return Session.get('showTheMainTable');
+  }
+});
+
 Template.SocialMedia.events({
   'mouseover #polygonA': function(e){
     var counter = 0;
-    d3.csv("data/Ponly.csv", function(csv) {
+    counter = Ponly.find().count();
+    $("#p1").html(counter);
+    /*d3.csv("data/Ponly.csv", function(csv) {
         csv.map(function(d) {
             counter++;
         })
         $("#p1").html(counter);
-    })
+    })*/
     return tooltipA.style("visibility", "visible").style("color", "yellow");
   },
 
@@ -184,14 +308,40 @@ Template.SocialMedia.events({
     return tooltipA.style("visibility","hidden");
   },
 
+  'click #polygonA': function(e){
+    rmDataforSelect();
+    Session.set('resetFLag','P');
+    Session.set('showTheMainTable',true);
+    DataforMainTable = Ponly.find().fetch();
+    DataforMainTableDep.changed();
+    var field1 = [];
+    $.each(DataforMainTable,function(i,item){
+      var flag = 1;
+      for(var j = 0; j <= field1.length;j++){
+        if(field1[j] == item.PDLocation){
+          flag = 0;
+        }
+      }
+      if(flag == 1){
+        field1.push(item.PDLocation);
+      }
+    });
+    setDataforSelect(field1);
+    setDataforStateTable(DataforMainTable);
+
+
+  },
+
   'mouseover #polygonB': function(e){
     var counter = 0;
-    d3.csv("data/Conly.csv", function(csv) {
+    counter = Conly.find().count();
+    $("#p1").html(counter);
+    /*d3.csv("data/Conly.csv", function(csv) {
         csv.map(function(d) {
             counter++;
         })
         $("#p1").html(counter);
-    })
+    })*/
     return tooltipB.style("visibility", "visible").style("color", "yellow");
   },
 
@@ -204,14 +354,38 @@ Template.SocialMedia.events({
     return tooltipB.style("visibility","hidden");
   },
 
+  'click #polygonB': function(e){
+    rmDataforSelect();
+    Session.set('resetFLag','C');
+    Session.set('showTheMainTable',true);
+    DataforMainTable = Conly.find().fetch();
+    DataforMainTableDep.changed();
+    var field1 = [];
+    $.each(DataforMainTable,function(i,item){
+      var flag = 1;
+      for(var j = 0; j <= field1.length;j++){
+        if(field1[j] == item.PDLocation){
+          flag = 0;
+        }
+      }
+      if(flag == 1){
+        field1.push(item.PDLocation);
+      }
+    });
+    setDataforSelect(field1);
+    setDataforStateTable(DataforMainTable);
+  },
+
   'mouseover #polygonC': function(e){
     var counter = 0;
-    d3.csv("data/Aonly.csv", function(csv) {
+    counter = Aonly.find().count();
+    $("#p1").html(counter);
+    /*d3.csv("data/Aonly.csv", function(csv) {
         csv.map(function(d) {
             counter++;
         })
         $("#p1").html(counter);
-    })
+    })*/
     return tooltipC.style("visibility", "visible").style("color", "yellow");
   },
 
@@ -224,14 +398,38 @@ Template.SocialMedia.events({
     return tooltipC.style("visibility","hidden");
   },
 
+  'click #polygonC': function(e){
+    rmDataforSelect();
+    Session.set('resetFLag','A');
+    Session.set('showTheMainTable',true);
+    DataforMainTable = Aonly.find().fetch();
+    DataforMainTableDep.changed();
+    var field1 = [];
+    $.each(DataforMainTable,function(i,item){
+      var flag = 1;
+      for(var j = 0; j <= field1.length;j++){
+        if(field1[j] == item.PDLocation){
+          flag = 0;
+        }
+      }
+      if(flag == 1){
+        field1.push(item.PDLocation);
+      }
+    });
+    setDataforSelect(field1);
+    setDataforStateTable(DataforMainTable);
+  },
+
   'mouseover #polygonAB': function(e){
     var counter = 0;
-    d3.csv("data/PC.csv", function(csv) {
+    counter = Pc.find().count();
+    $("#p1").html(counter);
+    /*d3.csv("data/PC.csv", function(csv) {
         csv.map(function(d) {
             counter++;
         })
         $("#p1").html(counter);
-    })
+    })*/
     return tooltipAB.style("visibility", "visible").style("color", "yellow");
   },
 
@@ -244,14 +442,38 @@ Template.SocialMedia.events({
     return tooltipAB.style("visibility","hidden");
   },
 
+  'click #polygonAB': function(e){
+    rmDataforSelect();
+    Session.set('resetFLag','PC');
+    Session.set('showTheMainTable',true);
+    DataforMainTable = Pc.find().fetch();
+    DataforMainTableDep.changed();
+    var field1 = [];
+    $.each(DataforMainTable,function(i,item){
+      var flag = 1;
+      for(var j = 0; j <= field1.length;j++){
+        if(field1[j] == item.PDLocation){
+          flag = 0;
+        }
+      }
+      if(flag == 1){
+        field1.push(item.PDLocation);
+      }
+    });
+    setDataforSelect(field1);
+    setDataforStateTable(DataforMainTable);
+  },
+
   'mouseover #polygonBC': function(e){
     var counter = 0;
-    d3.csv("data/AC.csv", function(csv) {
+    counter = Ac.find().count();
+    $("#p1").html(counter);
+    /*d3.csv("data/AC.csv", function(csv) {
         csv.map(function(d) {
             counter++;
         })
         $("#p1").html(counter);
-    })
+    })*/
     return tooltipBC.style("visibility", "visible").style("color", "yellow");
   },
 
@@ -264,14 +486,38 @@ Template.SocialMedia.events({
     return tooltipBC.style("visibility","hidden");
   },
 
+  'click #polygonBC': function(e){
+    rmDataforSelect();
+    Session.set('resetFLag','AC');
+    Session.set('showTheMainTable',true);
+    DataforMainTable = Ac.find().fetch();
+    DataforMainTableDep.changed();
+    var field1 = [];
+    $.each(DataforMainTable,function(i,item){
+      var flag = 1;
+      for(var j = 0; j <= field1.length;j++){
+        if(field1[j] == item.PDLocation){
+          flag = 0;
+        }
+      }
+      if(flag == 1){
+        field1.push(item.PDLocation);
+      }
+    });
+    setDataforSelect(field1);
+    setDataforStateTable(DataforMainTable);
+  },
+
   'mouseover #polygonCA': function(e){
     var counter = 0;
-    d3.csv("data/AP.csv", function(csv) {
+    counter = Ap.find().count();
+    $("#p1").html(counter);
+    /*d3.csv("data/AP.csv", function(csv) {
         csv.map(function(d) {
             counter++;
         })
         $("#p1").html(counter);
-    })
+    })*/
     return tooltipCA.style("visibility", "visible").style("color", "yellow");
   },
 
@@ -284,14 +530,38 @@ Template.SocialMedia.events({
     return tooltipCA.style("visibility","hidden");
   },
 
+  'click #polygonCA': function(e){
+    rmDataforSelect();
+    Session.set('resetFLag','AP');
+    Session.set('showTheMainTable',true);
+    DataforMainTable = Pc.find().fetch();
+    DataforMainTableDep.changed();
+    var field1 = [];
+    $.each(DataforMainTable,function(i,item){
+      var flag = 1;
+      for(var j = 0; j <= field1.length;j++){
+        if(field1[j] == item.PDLocation){
+          flag = 0;
+        }
+      }
+      if(flag == 1){
+        field1.push(item.PDLocation);
+      }
+    });
+    setDataforSelect(field1);
+    setDataforStateTable(DataforMainTable);
+  },
+
   'mouseover #polygonABC': function(e){
     var counter = 0;
-    d3.csv("data/APC.csv", function(csv) {
+    counter = Apc.find().count();
+    $("#p1").html(counter);
+    /*d3.csv("data/APC.csv", function(csv) {
         csv.map(function(d) {
             counter++;
         })
         $("#p1").html(counter);
-    })
+    })*/
     return tooltipABC.style("visibility", "visible").style("color", "yellow");
   },
 
@@ -304,5 +574,89 @@ Template.SocialMedia.events({
     return tooltipABC.style("visibility","hidden");
   },
 
+  'click #polygonABC': function(e){
+    rmDataforSelect();
+    Session.set('resetFLag','APC');
+    Session.set('showTheMainTable',true);
+    DataforMainTable = Apc.find().fetch();
+    DataforMainTableDep.changed();
+    var field1 = [];
+    $.each(DataforMainTable,function(i,item){
+      var flag = 1;
+      for(var j = 0; j <= field1.length;j++){
+        if(field1[j] == item.PDLocation){
+          flag = 0;
+        }
+      }
+      if(flag == 1){
+        field1.push(item.PDLocation);
+      }
+    });
+    setDataforSelect(field1);
+    setDataforStateTable(DataforMainTable);
+  },
 
+
+});
+
+Template.SocialMediaForm.events({
+  'change #MediaSelect': function(e){
+    modDataforMainTable($(e.target).val());
+  },
+  'click #ResetButton': function(e){
+    switch(Session.get('resetFLag')){
+      case 'P':
+        DataforMainTable = Ponly.find().fetch();
+        DataforMainTableDep.changed();
+        break;
+      case 'C':
+        DataforMainTable = Conly.find().fetch();
+        DataforMainTableDep.changed();
+        break;
+      case 'A':
+        DataforMainTable = Aonly.find().fetch();
+        DataforMainTableDep.changed();
+        break;
+      case 'PC':
+        DataforMainTable = Pc.find().fetch();
+        DataforMainTableDep.changed();
+        break;
+      case 'AC':
+        DataforMainTable = Ac.find().fetch();
+        DataforMainTableDep.changed();
+        break;
+      case 'AP':
+        DataforMainTable = Pc.find().fetch();
+        DataforMainTableDep.changed();
+        break;
+      case 'APC':
+        DataforMainTable = Apc.find().fetch();
+        DataforMainTableDep.changed();
+        break;
+      default:
+        break;
+    }
+  }
+});
+
+Template.SocialMediaForm.helpers({
+  getPDLoptions:function(){
+    return getDataforSelect();
+  },
+  getStateData:function(){
+    return getDataforStateTable();
+  }
+});
+
+Template.SocialMediaMainTable.helpers({
+  getMediaData: function(){
+    return getDataforMainTable();
+  }
+});
+
+Template.MediaDataRows.events({
+  'click':function(e){
+    console.log(this.UserID);
+    window.open("https://twitter.com/intent/user?user_id=" + this.UserID);
+  }
 });

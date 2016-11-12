@@ -1,3 +1,7 @@
+#MediaSelect{
+  text-transform: capitalize;
+}
+
 .tips {
   line-height: 1;
   font-weight: bold;
@@ -30,6 +34,74 @@
   overflow: hidden;
 }
 
+.bar{
+  top:400px;
+  background: white;
+  margin-left: 0px;
+  font-size: 20px;
+}
+
 :hover {
   fill: #F9E79F;
 }
+
+table.SocialMediaMainTable {
+  border-collapse: collapse;
+  /*border: 2px black solid;*/
+  font: 12px sans-serif;
+  margin-top: 10px;
+  margin-left: 0.7px;
+  margin-right: 0.7px;
+  position: relative;
+}
+
+table.SocialMediaMainTable tr {display: block; }
+
+table.SocialMediaMainTable th{
+  overflow: hidden;
+  width: 200px !important ;
+  text-transform: capitalize;
+}
+
+table.SocialMediaMainTable td {
+ overflow: hidden;
+ width: 200px !important ;
+ text-transform: capitalize;
+}
+
+table.SocialMediaMainTable tbody { display: block; height: 120px; overflow: auto;}
+
+table.SocialMediaMainTable td {
+  /*border: 1px black solid;*/
+  padding: 5px;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #F9E79F;
+}
+
+table.stat {
+  border-collapse: collapse;
+  /*border: 2px black solid;*/
+  font: 12px sans-serif;
+  margin-top: 10px;
+  margin-left: 0.7px;
+  margin-right: 0.7px;
+  padding-left: 0px;
+  position: relative;
+}
+
+table.stat tr {display: block;  }
+table.stat th{
+  overflow: hidden;
+  width: 100px !important ;
+  text-transform: capitalize;
+}
+table.stat td {
+ overflow: hidden;
+ width: 100px !important ;
+ text-transform: capitalize;
+}
+/*
+table.stat thead { overflow: auto; }*/
+table.stat tbody { display: block; height: 179px !important; overflow: auto;} 

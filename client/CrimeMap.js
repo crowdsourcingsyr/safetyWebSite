@@ -63,6 +63,7 @@ if (Meteor.isClient) {
     };
     Meteor.subscribe('markers', {
         onReady: function(){
+          console.log(Markers);
         }
     });
     Meteor.subscribe('eventcomments', {
@@ -174,8 +175,8 @@ Template.eventtable.helpers({
     settings: function(){
       return {
         showFilter:false,
+        showNavigation:'auto',
         fields:[
-          {key:'Case_Number',label:'Index'},
           {key:'Date_Time_Reported',label:'Date'},
           {key:'General_Location', label:'Location'},
           {key:'Nature_Classification', label:'description'}]
@@ -268,7 +269,6 @@ Template.toggle_button.events({
 
 Template.toggle_button.helpers({
   CityChecked: function() {
-    console.log(Session.get('isCity'));
     return (Session.get('isCity') == 1) ? 'checked' : '';
   },
   CampusChecked: function() {
