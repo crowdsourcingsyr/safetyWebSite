@@ -13,6 +13,17 @@
   margin-left: 1px;
 }
 
+svg {
+  margin-left: 50px;
+  margin-right: 50px;
+  /*width: 30%;*/
+  float:left;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+
 .dropdown{
   visibility: visible;
   background: transparent;
@@ -21,23 +32,25 @@
   float:left;
   overflow: hidden;
   height: auto;
+  margin-left: 10px;
 }
 
 .sendercount{
   margin-top: 90px;
-  margin-left: 20px;
+  margin-left: 20%;
   visibility: visible;
   background: transparent;
   float:left;
   color:black;
-  font-size: 80px;
+  font-size: 110px;
   overflow: hidden;
+  /*font-weight: bold;*/
 }
 
 .bar{
-  top:400px;
+  top:450px;
   background: white;
-  margin-left: 0px;
+  margin-left: 10px;
   font-size: 20px;
 }
 
@@ -48,9 +61,9 @@
 table.SocialMediaMainTable {
   border-collapse: collapse;
   /*border: 2px black solid;*/
-  font: 12px sans-serif;
+  font: 14px sans-serif;
   margin-top: 10px;
-  margin-left: 0.7px;
+  margin-left: 1px;
   margin-right: 0.7px;
   position: relative;
 }
@@ -59,17 +72,17 @@ table.SocialMediaMainTable tr {display: block; }
 
 table.SocialMediaMainTable th{
   overflow: hidden;
-  width: 200px !important ;
+  width: 300px !important ;
   text-transform: capitalize;
 }
 
 table.SocialMediaMainTable td {
- overflow: hidden;
- width: 200px !important ;
+ overflow-y: scroll; ;
+ width: 300px !important ;
  text-transform: capitalize;
 }
 
-table.SocialMediaMainTable tbody { display: block; height: 120px; overflow: auto;}
+table.SocialMediaMainTable tbody { display: block; overflow: scroll;}
 
 table.SocialMediaMainTable td {
   /*border: 1px black solid;*/
@@ -83,12 +96,14 @@ table.SocialMediaMainTable td {
 table.stat {
   border-collapse: collapse;
   /*border: 2px black solid;*/
-  font: 12px sans-serif;
+  font: 14px sans-serif;
   margin-top: 10px;
   margin-left: 0.7px;
   margin-right: 0.7px;
   padding-left: 0px;
   position: relative;
+  overflow: auto;
+  /*width: 50px;*/
 }
 
 table.stat tr {display: block;  }
@@ -104,4 +119,4 @@ table.stat td {
 }
 /*
 table.stat thead { overflow: auto; }*/
-table.stat tbody { display: block; height: 179px !important; overflow: auto;} 
+table.stat tbody { display: block; height: 179px !important; overflow: auto;}

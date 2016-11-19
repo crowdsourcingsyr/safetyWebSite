@@ -17,8 +17,13 @@
     </div>
   </div>
   <div class="row">
+    <div class="bar text-primary" style="position:absolute; z-index:50; visibility:visible; color:#5DADE2">{{getTitleText}}</div>
+  </div>
+  <div class="row">
     {{#if showTheMainTable}}
-      {{> SocialMediaMainTable}}
+      {{#if Template.subscriptionsReady}}
+      {{> reactiveTable class="table table-hover table-striped SocialMediaMainTable" collection=getMediaData settings=settings}}
+      {{/if}}
     {{/if}}
   </div>
 
@@ -27,21 +32,24 @@
 <template name="SocialMediaForm">
   <div>
   <div class="dropdown form-group">
-    <label for="sel1">Set Filter for Police Department Location:</label>
+    <label style="padding-bottom: 3px" for="sel1">Set Filter for Police Department Location:</label>
     <select class="form-control" id="MediaSelect">
-      <option value="Choose a value"></option>
+      <option value="Choose a value">All</option>
       {{#each getPDLoptions}}
         <option value="{{PDLocation}}">{{PDLocation}}</option>
       {{/each}}
     </select>
-  <br><br>
+  <br>
   <button type="button" id="ResetButton" class="btn btn-primary">Reset</button>
+  <br><br>
   <table id="stat" class="table stat">
+    <thead>
   <tr>
       <th>UserRole</th>
       <th>Number</th>
       <th>Percent</th>
     </tr>
+  </thead>
     <tbody>
       {{#if Template.subscriptionsReady}}
         {{#each getStateData}}

@@ -282,6 +282,24 @@ Template.SocialMedia.onRendered(function(){
 Template.SocialMedia.helpers({
   showTheMainTable:function(){
     return Session.get('showTheMainTable');
+  },
+  getTitleText:function(){
+    return Session.get('resetFLag');
+  },
+  getMediaData: function(){
+    return getDataforMainTable();
+  },
+  settings: function(){
+    return {
+      showFilter:false,
+      showNavigation:'auto',
+      fields:[
+        {key:'PoliceDepartment',label:'PoliceDepartment'},
+        {key:'UserName', label:'UserName'},
+        {key:'PDLocation', label:'PDLocation'},
+        {key:'UserLocation',label:'UserLocation'},
+        {key:'UserRole',label:'UserRole'}]
+    };
   }
 });
 
@@ -310,7 +328,7 @@ Template.SocialMedia.events({
 
   'click #polygonA': function(e){
     rmDataforSelect();
-    Session.set('resetFLag','P');
+    Session.set('resetFLag','Public Only');
     Session.set('showTheMainTable',true);
     DataforMainTable = Ponly.find().fetch();
     DataforMainTableDep.changed();
@@ -356,7 +374,7 @@ Template.SocialMedia.events({
 
   'click #polygonB': function(e){
     rmDataforSelect();
-    Session.set('resetFLag','C');
+    Session.set('resetFLag','Co-mentioned Only');
     Session.set('showTheMainTable',true);
     DataforMainTable = Conly.find().fetch();
     DataforMainTableDep.changed();
@@ -400,7 +418,7 @@ Template.SocialMedia.events({
 
   'click #polygonC': function(e){
     rmDataforSelect();
-    Session.set('resetFLag','A');
+    Session.set('resetFLag','Agency Only');
     Session.set('showTheMainTable',true);
     DataforMainTable = Aonly.find().fetch();
     DataforMainTableDep.changed();
@@ -444,7 +462,7 @@ Template.SocialMedia.events({
 
   'click #polygonAB': function(e){
     rmDataforSelect();
-    Session.set('resetFLag','PC');
+    Session.set('resetFLag','Public + Co-mentioned');
     Session.set('showTheMainTable',true);
     DataforMainTable = Pc.find().fetch();
     DataforMainTableDep.changed();
@@ -488,7 +506,7 @@ Template.SocialMedia.events({
 
   'click #polygonBC': function(e){
     rmDataforSelect();
-    Session.set('resetFLag','AC');
+    Session.set('resetFLag','Agency + Co-mentioned');
     Session.set('showTheMainTable',true);
     DataforMainTable = Ac.find().fetch();
     DataforMainTableDep.changed();
@@ -532,7 +550,7 @@ Template.SocialMedia.events({
 
   'click #polygonCA': function(e){
     rmDataforSelect();
-    Session.set('resetFLag','AP');
+    Session.set('resetFLag','Agency + Public');
     Session.set('showTheMainTable',true);
     DataforMainTable = Pc.find().fetch();
     DataforMainTableDep.changed();
@@ -576,7 +594,7 @@ Template.SocialMedia.events({
 
   'click #polygonABC': function(e){
     rmDataforSelect();
-    Session.set('resetFLag','APC');
+    Session.set('resetFLag','Agency + Public + Co-mentioned');
     Session.set('showTheMainTable',true);
     DataforMainTable = Apc.find().fetch();
     DataforMainTableDep.changed();
@@ -604,32 +622,33 @@ Template.SocialMediaForm.events({
     modDataforMainTable($(e.target).val());
   },
   'click #ResetButton': function(e){
+    rmDataforSelect();
     switch(Session.get('resetFLag')){
-      case 'P':
+      case 'Public Only':
         DataforMainTable = Ponly.find().fetch();
         DataforMainTableDep.changed();
         break;
-      case 'C':
+      case 'Co-mentioned Only':
         DataforMainTable = Conly.find().fetch();
         DataforMainTableDep.changed();
         break;
-      case 'A':
+      case 'Agency Only':
         DataforMainTable = Aonly.find().fetch();
         DataforMainTableDep.changed();
         break;
-      case 'PC':
+      case 'Public + Co-mentioned':
         DataforMainTable = Pc.find().fetch();
         DataforMainTableDep.changed();
         break;
-      case 'AC':
+      case 'Agency + Co-mentioned':
         DataforMainTable = Ac.find().fetch();
         DataforMainTableDep.changed();
         break;
-      case 'AP':
+      case 'Agency + Public':
         DataforMainTable = Pc.find().fetch();
         DataforMainTableDep.changed();
         break;
-      case 'APC':
+      case 'Agency + Public + Co-mentioned':
         DataforMainTable = Apc.find().fetch();
         DataforMainTableDep.changed();
         break;
@@ -649,9 +668,6 @@ Template.SocialMediaForm.helpers({
 });
 
 Template.SocialMediaMainTable.helpers({
-  getMediaData: function(){
-    return getDataforMainTable();
-  }
 });
 
 Template.MediaDataRows.events({

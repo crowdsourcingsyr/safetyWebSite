@@ -1,4 +1,8 @@
 if (Meteor.isClient) {
+  Session.set('university',0);
+  Session.set('crimeCategory','Any');
+  Session.set('severity',10);
+  Session.set('isCity',1);
     //The universities information for select
     PlaceInfo = [
       {"_id": 0, "placeIndex": 0,"placeCategory": 'Syracuse University'},
@@ -61,9 +65,29 @@ if (Meteor.isClient) {
         });
         PlaceInfoDep.changed();
     };
+
+    CrimeOptions = [];
+    CrimeOptionsDep = new Tracker.Dependency();
+    getDataforCrimeOptions = function(){
+      CrimeOptionsDep.depend();
+      return CrimeOptions;
+    };
+    setDataforCrimeOptions = function(tips){
+      CrimeOptions = [];
+      var any = new Object();
+      any.crimeCategory="Any";
+      CrimeOptions.push(any);
+      for(var i in tips){
+        var option = new Object();
+        option.crimeCategory = tips[i].DescriptionCategory;
+        CrimeOptions.push(option);
+      }
+      CrimeOptionsDep.changed();
+    };
+
+
     Meteor.subscribe('markers', {
         onReady: function(){
-          console.log(Markers);
         }
     });
     Meteor.subscribe('eventcomments', {
@@ -84,6 +108,7 @@ if (Meteor.isClient) {
         onReady: function() {
             //console.log("demo.js");
             //console.log(map._layers);
+            console.log("ready");
             var data_array = [0, 0, 0];
             Session.set('fromDate', "'"+moment().subtract(6, "months").format("L")+"'");
             Session.set('toDate', "'"+moment().format("L")+"'");
@@ -210,11 +235,8 @@ Template.eventtable.events({
     var baseRow = $("#tipsTable").find("th").filter(function(){
       return $(this).text().trim() == "Category";
     }).closest("tr");
-    console.log(tableRow);
     tableRow.css({"font-weight": "bold"});
     var rowpos = tableRow.position().top-baseRow.position().top;
-
-    console.log(rowpos);
     $("#tipsTable").animate({scrollTop:rowpos},1000);
 
   }
@@ -258,17 +280,20 @@ Template.eventRow.events({
 
 Template.toggle_button.events({
   'click #toggle_switch input': function(e){
+    console.log("hello");
     var newValue = $(e.target).val();
     var oldValue = Session.get("isCity");
     if(newValue != oldValue){
-      Session.setPersistent('isCity', newValue);
+      Session.set('isCity', newValue);
       setPlaceInfo(newValue);
+    //  renderEventsOnMap();
     }
   }
 });
 
 Template.toggle_button.helpers({
   CityChecked: function() {
+    console.log(Session.get('isCity'));
     return (Session.get('isCity') == 1) ? 'checked' : '';
   },
   CampusChecked: function() {
@@ -290,7 +315,8 @@ Template.form.events({ //filter map data on form submit
       if (newValue != oldValue) {
         // value changed
        Session.setPersistent('university', newValue);
-       location.reload();
+       //location.reload();
+       renderEventsOnMap();
       }
     },
      /*"change #isCity": function(evt) {
@@ -310,7 +336,8 @@ Template.form.events({ //filter map data on form submit
          if (newValue != oldValue) {
              // value changed, let's do something
              Session.setPersistent('severity', newValue);
-             location.reload();
+             //location.reload();
+             renderEventsOnMap();
          }
      },
      "change #crimeCategory": function(evt) {
@@ -318,15 +345,18 @@ Template.form.events({ //filter map data on form submit
        var oldValue = Session.get("crimeCategory");
        if(newValue != oldValue) {
          Session.setPersistent('crimeCategory',newValue);
-         location.reload();
+         //location.reload();
+         renderEventsOnMap();
        }
      },
-    'click .reset': function (e) {
-            Markers.find({"userid": Meteor.userId()}).forEach(function(doc){
-            Markers.remove({_id:doc._id });
-        });
-        location.reload();
-}
+    'click #resetbtn': function (e) {
+            console.log("hello");
+            Markers.find({}).forEach(function(doc){
+              Markers.remove({_id:doc._id });
+            });
+        //location.reload();
+        renderEventsOnMap();
+      }
 
 });
 
@@ -339,149 +369,11 @@ Template.form.events({ //filter map data on form submit
     from: +moment().subtract(6, "months").format("X"),
     to:+moment().format("X"),
     onFinish: function (data) {//fired when the date range slider is moved to a new position
-    var fromDate="'"+moment.unix(data.from).format("MM/DD/YYYY")+"'";
-     var toDate="'"+moment.unix(data.to).format("MM/DD/YYYY")+"'";
-     Session.set('fromDate', fromDate);
-     Session.set('toDate', toDate);
-     //console.log(Session.get("isCity"));
-     var severity=Session.get('severity');
-     var crimeCategory=Session.get('crimeCategory');
-     if(crimeCategory != "Any"){
-            if (severity== 10){
-              var results = SafetyEvents.find({
-                  "Date_Time_Reported": {
-                      $gte: new Date(fromDate),
-                      $lte: new Date(toDate)
-                    },
-                    "Is_City":+(Session.get('isCity')),
-                    "Nature_Classification": {
-                      $regex: crimeCategory
-                    }
-                  });
-                }
-              else{
-                  var results = SafetyEvents.find({
-                    "Date_Time_Reported": {
-                      $gte: new Date(fromDate),
-                      $lte: new Date(toDate)
-                    },
-                    "Is_City":+(Session.get('isCity')),
-                    "Severity": +severity,
-                    "Nature_Classification": {
-                      $regex: crimeCategory
-                    }
-                  });
-                }
-      }else{
-        if (severity== 10){
-          var results = SafetyEvents.find({
-              "Date_Time_Reported": {
-                  $gte: new Date(fromDate),
-                  $lte: new Date(toDate)
-                },
-                "Is_City":+(Session.get('isCity'))
-              });
-            }
-          else{
-              var results = SafetyEvents.find({
-                "Date_Time_Reported": {
-                  $gte: new Date(fromDate),
-                  $lte: new Date(toDate)
-                },
-                "Is_City":+(Session.get('isCity')),
-                "Severity": +severity
-              });
-            }
-      }
-        if (typeof eventMarker == 'undefined') {
-            eventMarker=[];
-            triggeredEvents=[];
-        }
-
-
-        /*for(i=0;i<eventMarker.length;i++){
-            map.removeLayer(eventMarker[i]);
-        }*/
-        if(map.hasLayer(markerClusters)){
-          map.removeLayer(markerClusters);
-        }
-        triggeredEvents=[];
-        triggeredTips=[];
-        var tipsset = [];
-        i=0;
-        results.forEach(function(obj) { //add markers to map for each result
-            //break if events not within marker area
-            var withinSubscription=0;
-            var eventmarkers = Markers.find({"userid": Meteor.userId()});
-            //console.log(obj.Nature_Classification);
-            eventmarkers.forEach(function(doc) {
-            if (doc.layerType =='circle'){
-                if (getDistanceFromLatLonInKm(obj.Lat,obj.Lon,doc.latlng.lat,doc.latlng.lng) < doc.radius/1000) //check if the point is within each of the markers
-                   withinSubscription=1;
-            }
-            else
-            {
-                if(isInPolygon(obj.Lat,obj.Lon,doc.latlngs))
-                    withinSubscription =1;
-            }
-            })
-            if(withinSubscription==1)
-            {
-                triggeredEvents.push(obj);
-                var tipsCategory = obj.Nature_Classification.split(" ");
-                if(tipsCategory[0].indexOf(',') > 0){
-                  tipsCategory = obj.Nature_Classification.split(",");
-                }
-                var tips = SafetyTips.find({
-                  "DescriptionCategory": {
-                    $regex: tipsCategory[0]
-                  }
-                });
-                tips.forEach(function(tipItem){
-                  if($.inArray(tipItem.DescriptionCategory,tipsset) == -1){
-                    triggeredTips.push(tipItem);
-                    tipsset.push(tipItem.DescriptionCategory);
-                  }
-                  /*console.log($.inArray(tipItem,triggeredTips));
-                  if($.inArray(tipItem,triggeredTips) == -1){
-                    triggeredTips.push(tipItem);
-                  }
-                  console.log(triggeredTips);*/
-                })
-                if(obj.Severity==2)
-                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: highIcon,riseOnHover:true,opacity:0.8});
-                else if(obj.Severity==1)
-                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: mediumIcon,riseOnHover:true,opacity:0.8});
-                else if(obj.Severity==0)
-                        eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: lowIcon,riseOnHover:true,opacity:0.8});
-
-                eventMarker[i].eventId = obj.ReportID;//pass the event id
-                markerClusters.addLayer(eventMarker[i]);
-                map.addLayer(markerClusters);
-                //map.addLayer(eventMarker[i]);
-
-                markerClusters.on('clustermouseover', function (a) {
-                                // a.layer is actually a cluster
-                               // console.log('cluster ' + a.layer.getAllChildMarkers());
-                              //  markers = a.layer.getAllChildMarkers();
-                              //  console.log(markers.length);
-                                  var popup = L.popup()
-                                      .setLatLng(a.layer.getLatLng())
-                                      .setContent(a.layer._childCount +' Locations(click to Zoom)')
-                                      .openOn(map);
-
-
-                            });
-
-
-
-
-
-                    i++;
-                }
-        })
-        triggeredEventsDep.changed();
-        triggeredTipsDep.changed();
+       var fromDate="'"+moment.unix(data.from).format("MM/DD/YYYY")+"'";
+       var toDate="'"+moment.unix(data.to).format("MM/DD/YYYY")+"'";
+       Session.set('fromDate', fromDate);
+       Session.set('toDate', toDate);
+      renderEventsOnMap();
     },
     prettify: function (num) {
           return moment(num, "X").format("MMM Do YYYY");
@@ -516,17 +408,10 @@ Template.form.helpers({
      return triggeredTips;
    },
    getoptions: function () {
-     var options = [];
+
      var tips = SafetyTips.find().fetch();
-     var anyoption = new Array();
-     anyoption["crimeCategory"] = "Any";
-     options.push(anyoption);
-     for(var i in tips){
-       var option = new Array();
-       option["crimeCategory"] = tips[i].DescriptionCategory;
-       options.push(option);
-     }
-     return options;
+     setDataforCrimeOptions(tips);
+     return getDataforCrimeOptions();
    },
    animateselected:function (){
      return (Session.get('crimeCategory') == this.crimeCategory)? 'selected' : '';
@@ -545,7 +430,7 @@ Template.map.rendered = function() {
     $('.datetimepicker').each(function() {
         $(this).datetimepicker();
     });
-    console.log(Session.get('university'));
+     var universityMessage = Session.get('university');
      //Session.set('severity',10);
     L.Icon.Default.imagePath = '/public';
     var LeafIcon = L.Icon.extend({
@@ -561,45 +446,49 @@ Template.map.rendered = function() {
     highIcon = new LeafIcon({iconUrl: 'high.png'});
     mediumIcon = new LeafIcon({iconUrl: 'medium.png'});
     lowIcon = new LeafIcon({iconUrl: 'low.png'});
-     if(Session.get('university')==0)
-    {
-            map = L.map('map', {
-                doubleClickZoom: false
-            }).setView([43.0391534, -76.1351158], 14);
-    }
-    else if(Session.get('university')==1)
-    {
-         console.log("hello");
-         map = L.map('map', {
-                doubleClickZoom: false
-            }).setView([33.7925195,-84.3239989], 14);
 
-    }
-    else if(Session.get('university')==2)
-    {
-         map = L.map('map', {
-                doubleClickZoom: false
-            }).setView([29.7173941,-95.4018312], 14);
+    if(universityMessage==0)
+   {
+           map = L.map('map', {
+               doubleClickZoom: false
+           }).setView([43.0391534, -76.1351158], 14);
+   }
+   else if(universityMessage==1)
+   {
+        map = L.map('map', {
+               doubleClickZoom: false
+           }).setView([33.7925195,-84.3239989], 14);
 
-    }
-     else if(Session.get('university')==3)
-    {
-            map = L.map('map', {
-                doubleClickZoom: false
-            }).setView([33.7756178,-84.396285], 14);
-    }
-     else if(Session.get('university')==4)
-    {
-            map = L.map('map', {
-                doubleClickZoom: false
-            }).setView([43.0008093,-78.7889697], 14);
-    }
-      else if(Session.get('university')==5)
-    {
-            map = L.map('map', {
-                doubleClickZoom: false
-            }).setView([40.7686793,-73.9647192], 14);
-    }
+   }
+   else if(universityMessage==2)
+   {
+        map = L.map('map', {
+               doubleClickZoom: false
+           }).setView([29.7173941,-95.4018312], 14);
+
+   }
+    else if(universityMessage==3)
+   {
+           map = L.map('map', {
+               doubleClickZoom: false
+           }).setView([33.7756178,-84.396285], 14);
+   }
+    else if(universityMessage==4)
+   {
+           map = L.map('map', {
+               doubleClickZoom: false
+           }).setView([43.0008093,-78.7889697], 14);
+   }
+     else if(universityMessage==5)
+   {
+           map = L.map('map', {
+               doubleClickZoom: false
+           }).setView([40.7686793,-73.9647192], 14);
+   } else{
+          map = L.map('map', {
+            doubleClickZoom: false
+          }).setView([43.0391534, -76.1351158], 14);
+   }
 
     var tiles = L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map);
 
@@ -624,7 +513,7 @@ Template.map.rendered = function() {
         //console.log(event.layer);
         //console.log(event.layerType);
         var feature = {
-            userid: Meteor.userId(),
+            //userid: Meteor.userId(),
             options: event.layer.options,
             layerType: event.layerType
         };
@@ -649,11 +538,7 @@ Template.map.rendered = function() {
       //  layer.bindPopup(containerNode).openPopup();
         Session.set("circle_latlng",layer._latlng);
         Session.set("circle_radius",layer._radius);
-        if(Meteor.userId()){
-          Markers.insert(feature);
-        }else{
-          LocalMarkers.insert(feature);
-        }
+        Markers.insert(feature);
     });
 
     map.on('draw:deleted', function(event) {
@@ -667,7 +552,7 @@ Template.map.rendered = function() {
         }
     });
 
-    var query = Markers.find({"userid": Meteor.userId()});
+    var query = Markers.find({});
     query.observe({
         added: function(doc) {
             //console.log(doc);
@@ -703,49 +588,194 @@ Template.map.rendered = function() {
         }
     });
 
-    var query_local = LocalMarkers.find({"userid": null});
-    query_local.observe({
-      added: function(doc) {
-          //console.log(doc);
-          switch (doc.layerType) {
-              case 'marker':
-                  var marker = L.marker(doc.latlng);
-                  marker._leaflet_id = doc._id;
-                  marker.addTo(drawnItems);
-                  break;
-              case 'circle':
-                  var circle = L.circle(doc.latlng, doc.radius);
-                  circle._leaflet_id = doc._id;
-                  circle.addTo(drawnItems);
-                  break;
-              case 'polygon':
-                  var polygon = L.polygon(doc.latlngs);
-                  polygon._leaflet_id = doc._id;
-                  polygon.addTo(drawnItems);
-                  break;
-          }
-      },
-      removed: function(oldDocument) {
-          layers = map._layers;
-          var key, val;
-          for (key in layers) {
-              val = layers[key];
-              if (val._latlng) {
-                  if (val._latlng.lat === oldDocument.latlng.lat && val._latlng.lng === oldDocument.latlng.lng) {
-                      map.removeLayer(val);
-                  }
-              }
-          }
-      }
+    Deps.autorun(function(){
+      universityMessage = Session.get('university');
 
+      if(universityMessage==0)
+     {
+       map.panTo(new L.LatLng(43.0391534, -76.1351158));
+     }
+     else if(universityMessage==1)
+     {
+          map.panTo(new L.LatLng(33.7925195,-84.3239989));
+
+     }
+     else if(universityMessage==2)
+     {
+          map.panTo(new L.LatLng(29.7173941,-95.4018312));
+
+     }
+      else if(universityMessage==3)
+     {
+             map.panTo(new L.LatLng(33.7756178,-84.396285));
+     }
+      else if(universityMessage==4)
+     {
+          map.panTo(new L.LatLng(43.0008093,-78.7889697));
+     }
+       else if(universityMessage==5)
+     {
+          map.panTo(new L.LatLng(40.7686793,-73.9647192));
+     }
     });
+
+
 };
+
+Template.map.onRendered = function() {
+}
 
 Tracker.autorun(function(){
   var test = Session.get("circle_latlng");
   var radius = Session.get("circle_radius");
   //console.log(test);
 });
+
+
+renderEventsOnMap = function(){
+  console.log(Session.get('isCity'));
+   markerClusters.clearLayers();
+   var fromDate = Session.get('fromDate');
+   var toDate = Session.get('toDate');
+   var severity=Session.get('severity');
+   var crimeCategory=Session.get('crimeCategory');
+   if(crimeCategory != "Any"){
+          if (severity== 10){
+            var results = SafetyEvents.find({
+                "Date_Time_Reported": {
+                    $gte: new Date(fromDate),
+                    $lte: new Date(toDate)
+                  },
+                  "Is_City":+(Session.get('isCity')),
+                  "Nature_Classification": {
+                    $regex: crimeCategory
+                  }
+                });
+              }
+            else{
+                var results = SafetyEvents.find({
+                  "Date_Time_Reported": {
+                    $gte: new Date(fromDate),
+                    $lte: new Date(toDate)
+                  },
+                  "Is_City":+(Session.get('isCity')),
+                  "Severity": +severity,
+                  "Nature_Classification": {
+                    $regex: crimeCategory
+                  }
+                });
+              }
+    }else{
+      if (severity== 10){
+        var results = SafetyEvents.find({
+            "Date_Time_Reported": {
+                $gte: new Date(fromDate),
+                $lte: new Date(toDate)
+              },
+              "Is_City":+(Session.get('isCity'))
+            });
+          }
+        else{
+            var results = SafetyEvents.find({
+              "Date_Time_Reported": {
+                $gte: new Date(fromDate),
+                $lte: new Date(toDate)
+              },
+              "Is_City":+(Session.get('isCity')),
+              "Severity": +severity
+            });
+          }
+    }
+      if (typeof eventMarker == 'undefined') {
+          eventMarker=[];
+          triggeredEvents=[];
+      }
+
+
+      /*for(i=0;i<eventMarker.length;i++){
+          map.removeLayer(eventMarker[i]);
+      }*/
+      if(map.hasLayer(markerClusters)){
+        map.removeLayer(markerClusters);
+      }
+      triggeredEvents=[];
+      triggeredTips=[];
+      var tipsset = [];
+      i=0;
+      results.forEach(function(obj) { //add markers to map for each result
+          //break if events not within marker area
+          var withinSubscription=0;
+          var eventmarkers = Markers.find({});
+          eventmarkers.forEach(function(doc) {
+          if (doc.layerType =='circle'){
+              if (getDistanceFromLatLonInKm(obj.Lat,obj.Lon,doc.latlng.lat,doc.latlng.lng) < doc.radius/1000) //check if the point is within each of the markers
+                 withinSubscription=1;
+          }
+          else
+          {
+              if(isInPolygon(obj.Lat,obj.Lon,doc.latlngs))
+                  withinSubscription =1;
+          }
+          })
+          if(withinSubscription==1)
+          {
+              triggeredEvents.push(obj);
+              var tipsCategory = obj.Nature_Classification.split(" ");
+              if(tipsCategory[0].indexOf(',') > 0){
+                tipsCategory = obj.Nature_Classification.split(",");
+              }
+              var tips = SafetyTips.find({
+                "DescriptionCategory": {
+                  $regex: tipsCategory[0]
+                }
+              });
+              tips.forEach(function(tipItem){
+                if($.inArray(tipItem.DescriptionCategory,tipsset) == -1){
+                  triggeredTips.push(tipItem);
+                  tipsset.push(tipItem.DescriptionCategory);
+                }
+                /*console.log($.inArray(tipItem,triggeredTips));
+                if($.inArray(tipItem,triggeredTips) == -1){
+                  triggeredTips.push(tipItem);
+                }
+                console.log(triggeredTips);*/
+              })
+              if(obj.Severity==2)
+                      eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: highIcon,riseOnHover:true,opacity:0.8});
+              else if(obj.Severity==1)
+                      eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: mediumIcon,riseOnHover:true,opacity:0.8});
+              else if(obj.Severity==0)
+                      eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: lowIcon,riseOnHover:true,opacity:0.8});
+
+              eventMarker[i].eventId = obj.ReportID;//pass the event id
+              markerClusters.addLayer(eventMarker[i]);
+              map.addLayer(markerClusters);
+              //map.addLayer(eventMarker[i]);
+
+              markerClusters.on('clustermouseover', function (a) {
+                              // a.layer is actually a cluster
+                             // console.log('cluster ' + a.layer.getAllChildMarkers());
+                            //  markers = a.layer.getAllChildMarkers();
+                            //  console.log(markers.length);
+                                var popup = L.popup()
+                                    .setLatLng(a.layer.getLatLng())
+                                    .setContent(a.layer._childCount +' Locations(click to Zoom)')
+                                    .openOn(map);
+
+
+                          });
+
+
+
+
+
+                  i++;
+              }
+      })
+      triggeredEventsDep.changed();
+      triggeredTipsDep.changed();
+
+};
 
 
 

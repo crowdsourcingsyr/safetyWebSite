@@ -70,20 +70,24 @@
 
 
 <template name="form">
-<form id="filter-form">
+<form id="filter-form" style="height: 35%">
 	    <div class="form-group">
 	     <div class="row">
-		<div class="col-md-12">
-      <div>
+		       <div class="col-md-12">
+             <div style="padding-bottom: 5px;">
         <!--<select id="isCity" class="btn btn-default dropdown-toggle">
                   <option value="0" {{campusSelected}}>Campus Crime</option>
                 <option value="1" {{citySelected}}>City Crime</option>
               </select>-->
-              {{> toggle_button}}
-       </div>
-      <div>
-		      <label for="myInput">University</label>
-		        <select id="university" class="btn btn-default dropdown-toggle">
+                {{> toggle_button}}
+              </div>
+            </div>
+          </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div style="padding-bottom: 5px;">
+		      <label class = "CrimeMapLabel" for="myInput">University</label><br>
+		        <select id="university" class="btn btn-default dropdown-toggle CrimeMapSelect">
 	    		       <!--<option value="0" {{syracuseSelected}}>{{syracuseName}}</option>
 	    		       <option value="1" {{emorySelected}}>{{emoryName}}</option>
                  <option value="2" {{riceSelected}}>{{riceName}}</option>
@@ -96,21 +100,23 @@
 		        </select>
      </div>
 		</div>
-	     </div>
-      <div class="row">
-  		    <div class="col-md-12">
-              <div>
-  		        <label for="myInput">Severity&nbsp; &nbsp;</label>
-  		        <select id="severity" class="btn btn-default dropdown-toggle">
-  	    		       <option value="10" {{anySelected}}>Any</option>
-  	    		       <option value="0" {{lowSelected}}>Low</option>
-  			           <option value="1" {{mediumSelected}}>Medium</option>
-  			           <option value="2" {{highSelected}}>High</option>
-  		        </select>
+  		    <div class="col-xs-4">
+              <div style="padding-bottom: 5px">
+  		            <label class = "CrimeMapLabel" for="myInput">Severity&nbsp; &nbsp;</label><br>
+  		              <select id="severity" class="btn btn-default dropdown-toggle CrimeMapSelect">
+  	    		             <option value="10" {{anySelected}}>Any</option>
+  	    		             <option value="0" {{lowSelected}}>Low</option>
+  			                 <option value="1" {{mediumSelected}}>Medium</option>
+  			                 <option value="2" {{highSelected}}>High</option>
+  		              </select>
             </div>
-            <div>
-              <label for="myInput">Crime&nbsp;&nbsp; &nbsp; &nbsp;</label>
-              <select id="crimeCategory" class="btn btn-default dropdown-toggle">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+              <div style="padding-bottom: 7px;">
+              <label class = "CrimeMapLabel" for="myInput">Crime&nbsp;&nbsp; &nbsp; &nbsp;</label><br>
+              <select id="crimeCategory" class="btn btn-default dropdown-toggle CrimeMapSelect">
                   {{#each getoptions}}
                     <option value="{{crimeCategory}}" {{animateselected}}>{{crimeCategory}}</option>
                   {{/each}}
@@ -118,21 +124,21 @@
             </div>
   		    </div>
   	  </div>
-		 <div class="row">
+		  <div class="row" style="margin-left: -5px; padding-left: 0px; padding-bottom: 5px;">
 		     <div class="col-md-6">
-           <label for="myInput">Select Date Range</label><br>
-		       <input id="daterange" />
+           <label style="font-size: 15px margin-left: 10px; padding-bottom: 3px;" for="myInput">Select Date Range</label><br>
+           <input style="margin-left: 10px; font-size: 15px;" id="daterange"/>
 		     </div>
     </div>
 
 
 	    </div>
-        <button  type="submit" class="btn btn-danger reset" style="background-color:#303030">Reset</button>
+        <button style="margin-left:10px" type="button" class="btn btn-primary" id="resetbtn">Reset</button>
 
 	  </form>
     <div class="row">
 		<div id="tipsTable">
-		<table class="table">
+		<table class="table" style="margin-left: 17px;">
 			<thead>
 				<tr>
 					<th>
@@ -234,10 +240,10 @@
     <a></a>
   </div>-->
   <div id="toggle_switch" class="switch switch-blue">
-    <input type="radio" class="switch-input" name="view2" value="1" id="city" {{CityChecked}}>
-    <label for="city" class="switch-label switch-label-off">City</label>
-    <input type="radio" class="switch-input" name="view2" value="0" id="campus" {{CampusChecked}}>
-    <label for="campus" class="switch-label switch-label-on">Campus</label>
+    <input type="radio" class="switch-input" name="view2" value="1" id="campus" {{CampusChecked}}>
+    <label for="campus" class="switch-label switch-label-on">City</label>
+    <input type="radio" class="switch-input" name="view2" value="0" id="city" {{CityChecked}}>
+    <label for="city" class="switch-label switch-label-off">Campus</label>
     <span class="switch-selection"></span>
   </div>
 
