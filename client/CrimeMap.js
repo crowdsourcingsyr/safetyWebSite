@@ -88,6 +88,7 @@ if (Meteor.isClient) {
 
     Meteor.subscribe('markers', {
         onReady: function(){
+          console.log("ready");
         }
     });
     Meteor.subscribe('eventcomments', {
@@ -108,7 +109,6 @@ if (Meteor.isClient) {
         onReady: function() {
             //console.log("demo.js");
             //console.log(map._layers);
-            console.log("ready");
             var data_array = [0, 0, 0];
             Session.set('fromDate', "'"+moment().subtract(6, "months").format("L")+"'");
             Session.set('toDate', "'"+moment().format("L")+"'");
@@ -634,12 +634,15 @@ Tracker.autorun(function(){
 
 
 renderEventsOnMap = function(){
-  console.log(Session.get('isCity'));
    markerClusters.clearLayers();
    var fromDate = Session.get('fromDate');
    var toDate = Session.get('toDate');
    var severity=Session.get('severity');
    var crimeCategory=Session.get('crimeCategory');
+   var unitemp=Session.get('university');
+   var eventmarkers = Markers.find({
+     //"university": unitemp
+   });
    if(crimeCategory != "Any"){
           if (severity== 10){
             var results = SafetyEvents.find({
@@ -702,23 +705,20 @@ renderEventsOnMap = function(){
       triggeredEvents=[];
       triggeredTips=[];
       var tipsset = [];
-      //console.log(results.count());
       i=0;
       results.forEach(function(obj) { //add markers to map for each result
           //break if events not within marker area
           var withinSubscription=0;
-          var eventmarkers = Markers.find({
-            "university": Session.get('university')
-          });
           eventmarkers.forEach(function(doc) {
-          if (doc.layerType =='circle'){
+            //console.log(doc);
+          if (doc.layerType =='circle' && doc.university == Session.get('university')){
               if (getDistanceFromLatLonInKm(obj.Lat,obj.Lon,doc.latlng.lat,doc.latlng.lng) < doc.radius/1000) //check if the point is within each of the markers
                  withinSubscription=1;
           }
           else
           {
-              if(isInPolygon(obj.Lat,obj.Lon,doc.latlngs))
-                  withinSubscription =1;
+              //if(isInPolygon(obj.Lat,obj.Lon,doc.latlngs))
+                //  withinSubscription =1;
           }
         })
           if(withinSubscription==1)
