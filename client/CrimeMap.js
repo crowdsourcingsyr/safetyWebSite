@@ -2,7 +2,7 @@ if (Meteor.isClient) {
   Session.set('university',0);
   Session.set('crimeCategory','Any');
   Session.set('severity',10);
-  Session.set('isCity',1);
+  Session.set('isCity',0);
     //The universities information for select
     PlaceInfo = [
       {"_id": 0, "placeIndex": 0,"placeCategory": 'Syracuse University'},
@@ -286,7 +286,7 @@ Template.toggle_button.events({
     if(newValue != oldValue){
       Session.set('isCity', newValue);
       setPlaceInfo(newValue);
-    //  renderEventsOnMap();
+      renderEventsOnMap();
     }
   }
 });
@@ -364,7 +364,7 @@ Template.form.events({ //filter map data on form submit
     markerClusters = L.markerClusterGroup();
     $("#daterange").ionRangeSlider({
     type: "double",
-    min: +moment().subtract(3, "years").format("X"),
+    min: +moment().subtract(10, "years").format("X"),
     max: +moment().format("X"),
     from: +moment().subtract(6, "months").format("X"),
     to:+moment().format("X"),
@@ -515,7 +515,8 @@ Template.map.rendered = function() {
         var feature = {
             //userid: Meteor.userId(),
             options: event.layer.options,
-            layerType: event.layerType
+            layerType: event.layerType,
+            university: Session.get('university')
         };
         switch (event.layerType) {
             case 'marker':
@@ -701,11 +702,14 @@ renderEventsOnMap = function(){
       triggeredEvents=[];
       triggeredTips=[];
       var tipsset = [];
+      //console.log(results.count());
       i=0;
       results.forEach(function(obj) { //add markers to map for each result
           //break if events not within marker area
           var withinSubscription=0;
-          var eventmarkers = Markers.find({});
+          var eventmarkers = Markers.find({
+            "university": Session.get('university')
+          });
           eventmarkers.forEach(function(doc) {
           if (doc.layerType =='circle'){
               if (getDistanceFromLatLonInKm(obj.Lat,obj.Lon,doc.latlng.lat,doc.latlng.lng) < doc.radius/1000) //check if the point is within each of the markers
@@ -716,30 +720,35 @@ renderEventsOnMap = function(){
               if(isInPolygon(obj.Lat,obj.Lon,doc.latlngs))
                   withinSubscription =1;
           }
-          })
+        })
           if(withinSubscription==1)
           {
               triggeredEvents.push(obj);
-              var tipsCategory = obj.Nature_Classification.split(" ");
-              if(tipsCategory[0].indexOf(',') > 0){
-                tipsCategory = obj.Nature_Classification.split(",");
+              //console.log(obj);
+              if(typeof obj.Nature_Classification === 'undefined'){
+
+              }else{
+                var tipsCategory = obj.Nature_Classification.split(" ");
+                if(tipsCategory[0].indexOf(',') > 0){
+                  tipsCategory = obj.Nature_Classification.split(",");
+                }
+                var tips = SafetyTips.find({
+                  "DescriptionCategory": {
+                    $regex: tipsCategory[0]
+                  }
+                });
+                tips.forEach(function(tipItem){
+                  if($.inArray(tipItem.DescriptionCategory,tipsset) == -1){
+                    triggeredTips.push(tipItem);
+                    tipsset.push(tipItem.DescriptionCategory);
+                  }
+                  /*console.log($.inArray(tipItem,triggeredTips));
+                  if($.inArray(tipItem,triggeredTips) == -1){
+                    triggeredTips.push(tipItem);
+                  }
+                  console.log(triggeredTips);*/
+                })
               }
-              var tips = SafetyTips.find({
-                "DescriptionCategory": {
-                  $regex: tipsCategory[0]
-                }
-              });
-              tips.forEach(function(tipItem){
-                if($.inArray(tipItem.DescriptionCategory,tipsset) == -1){
-                  triggeredTips.push(tipItem);
-                  tipsset.push(tipItem.DescriptionCategory);
-                }
-                /*console.log($.inArray(tipItem,triggeredTips));
-                if($.inArray(tipItem,triggeredTips) == -1){
-                  triggeredTips.push(tipItem);
-                }
-                console.log(triggeredTips);*/
-              })
               if(obj.Severity==2)
                       eventMarker[i] =  L.marker([obj.Lat, obj.Lon], {icon: highIcon,riseOnHover:true,opacity:0.8});
               else if(obj.Severity==1)
